@@ -1,5 +1,7 @@
-import { testfun } from '@young-ui/utils'
+import Button from './src/button'
+import Icon from './src/icon'
 
-const result = testfun(1, 1)
-
-console.log(result)
+export {
+  Button,
+  Icon
+}
