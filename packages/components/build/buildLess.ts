@@ -12,11 +12,6 @@ const targetEs = resolve(__dirname, '../es/src')
 //src目
 const srcDir = resolve(__dirname, '../src')
 
-console.log('构建css开始。。。', srcDir);
-console.log('targetLib', targetLib);
-console.log('targetEs', targetEs);
-
-
 const buildLess = async () => {
   //直接将less文件复制到打包后目录
   await cpy(`${sourceDir}/**/*.less`, targetLib)
