@@ -45,10 +45,11 @@
     <Button size="medium">中等按钮</Button>
     <Button size="small">小型按钮</Button>
     <Button size="mini">超小按钮</Button>
+    <Icon name="yixuan" />
   </div>
 </template>
 <script lang="ts" setup>
-import { Button } from 'young-ui';
+import { Button, Icon } from 'young-ui';
 </script>
 
 <style lang="less">
