@@ -45,7 +45,11 @@
     <Button size="medium">中等按钮</Button>
     <Button size="small">小型按钮</Button>
     <Button size="mini">超小按钮</Button>
-    <Icon name="yixuan" />
+    <div>
+      <Icon name="zuo" />
+      <Icon name="you" dot />
+      <Icon name="yixuanze" dot badge="1" />
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
@@ -55,5 +59,10 @@ import { Button, Icon } from 'young-ui';
 <style lang="less">
 .y-button {
   margin-right: 10px;
+}
+.y-icon {
+  font-size: 36px;
+  color: #666;
+  margin-right: 20px;
 }
 </style>
