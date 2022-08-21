@@ -46,6 +46,14 @@
     <Button size="small">小型按钮</Button>
     <Button size="mini">超小按钮</Button>
     <div>
+      <Button type="success" icon="zuo">图标按钮</Button>
+      <Button type="primary" icon="zengjia" icon-position="right"
+        >图标按钮</Button
+      >
+      <Button type="primary" icon="zengjia"></Button>
+    </div>
+
+    <div class="icon-grpup">
       <Icon name="zuo" />
       <Icon name="you" dot />
       <Icon name="yixuanze" dot badge="1" />
@@ -60,7 +68,7 @@ import { Button, Icon } from 'young-ui';
 .y-button {
   margin-right: 10px;
 }
-.y-icon {
+.icon-grpup .y-icon {
   font-size: 36px;
   color: #666;
   margin-right: 20px;
