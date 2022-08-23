@@ -6,32 +6,23 @@
     <div v-if="dot" class="y-info" :class="styleDot">{{ badge }}</div>
   </div>
 </template>
-<script lang="ts">
+<script setup lang="ts">
 import './font/iconfont.js';
 import './style/index.less';
-import { defineComponent, computed } from 'vue';
+import { computed } from 'vue';
 import { iconProps } from './types';
-export default defineComponent({
-  props: iconProps,
-  setup(props) {
-    console.log('props', props);
 
-    const iconName = computed(() => {
-      return `#young-${props.name}`;
-    });
-    const styleDot = computed(() => {
-      return {
-        [`y-dot`]: props.dot && !props.badge,
-      };
-    });
-    const badge = computed(() => {
-      return props.badge;
-    });
-    return {
-      iconName,
-      styleDot,
-      badge,
-    };
-  },
+const props = defineProps(iconProps);
+console.log('props', props);
+const iconName = computed(() => {
+  return `#young-${props.name}`;
+});
+const styleDot = computed(() => {
+  return {
+    [`y-dot`]: props.dot && !props.badge,
+  };
+});
+const badge = computed(() => {
+  return props.badge;
 });
 </script>
