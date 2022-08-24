@@ -1,6 +1,6 @@
 <template>
   <div class="y-icon">
-    <svg class="icon" aria-hidden="true">
+    <svg class="icon" :style="iconColor" aria-hidden="true">
       <use :xlink:href="iconName"></use>
     </svg>
     <div v-if="dot" class="y-info" :class="styleDot">{{ badge }}</div>
@@ -25,4 +25,9 @@ const styleDot = computed(() => {
 const badge = computed(() => {
   return props.badge;
 });
+const iconColor = computed(() => {
+  return {
+    color: props.color
+  }
+})
 </script>

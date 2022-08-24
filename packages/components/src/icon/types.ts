@@ -9,6 +9,9 @@ export const iconProps = {
   },
   badge: {
     type: String
+  },
+  color: {
+    type: String
   }
 }
 export type IconProps = ExtractPropTypes<typeof iconProps>

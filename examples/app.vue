@@ -55,7 +55,7 @@
 
     <div class="icon-grpup">
       <Icon name="zuo" />
-      <Icon name="you" dot />
+      <Icon name="you" color="red" dot />
       <Icon name="yixuanze" dot badge="1" />
     </div>
   </div>
