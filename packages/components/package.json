@@ -1,5 +1,5 @@
 {
-  "name": "young-ui",
+  "name": "young-design",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@young-ui/utils": "workspace:^1.0.0"
+    "@young-design/utils": "workspace:^1.0.0"
   }
 }

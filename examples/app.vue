@@ -61,7 +61,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { Button, Icon } from 'young-ui';
+import { Button, Icon } from 'young-design';
 </script>
 
 <style lang="less">

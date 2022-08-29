@@ -26,17 +26,15 @@ importers:
 
   examples:
     specifiers:
-      young-ui: workspace:^1.0.0
+      young-design: workspace:^1.0.0
     dependencies:
-      young-ui: link:../packages/components
+      young-design: link:../packages/components
 
   packages/components:
     specifiers:
-      '@young-ui/utils': workspace:^1.0.0
-      examples: workspace:^1.0.0
+      '@young-design/utils': workspace:^1.0.0
     dependencies:
-      '@young-ui/utils': link:../utils
-      examples: link:../../examples
+      '@young-design/utils': link:../utils
 
 packages:
 
