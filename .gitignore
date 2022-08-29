@@ -1,3 +1,4 @@
 node_modules
+packages/components/dist/
 packages/components/es/
 packages/components/lib/

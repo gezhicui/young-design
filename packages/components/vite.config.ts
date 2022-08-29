@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue"
 import dts from 'vite-plugin-dts'
-
+import { resolve } from 'path'
 export default defineConfig(
   {
     build: {
@@ -9,11 +9,11 @@ export default defineConfig(
       //打包文件目录
       outDir: "es",
       //压缩
-      minify: false,
+      minify: true,
       //css分离
       //cssCodeSplit: true,
       rollupOptions: {
-        //忽略打包vue和.less文件
+        //忽略打包vue文件和.less文件
         external: ['vue', /\.less/],
         input: ['src/index.ts'],
         output: [
@@ -24,8 +24,8 @@ export default defineConfig(
             //让打包目录和我们目录对应
             preserveModules: true,
             //配置打包根目录
-            dir: 'es',
-            preserveModulesRoot: 'src'
+            dir: resolve(__dirname, './dist/es'),
+            preserveModulesRoot: 'dist'
           },
           {
             format: 'cjs',
@@ -34,7 +34,7 @@ export default defineConfig(
             //让打包目录和我们目录对应
             preserveModules: true,
             //配置打包根目录
-            dir: 'lib',
+            dir: resolve(__dirname, './dist/lib'),
             preserveModulesRoot: 'src'
           }
         ]
@@ -47,12 +47,13 @@ export default defineConfig(
     plugins: [
       vue(),
       dts({
+        outputDir: resolve(__dirname, './dist/es'),
         //指定使用的tsconfig.json为我们整个项目根目录下掉,如果不配置,你也可以在components下新建tsconfig.json
         tsConfigFilePath: '../../tsconfig.json'
       }),
       //因为这个插件默认打包到es下，我们想让lib目录下也生成声明文件需要再配置一个
       dts({
-        outputDir: 'lib',
+        outputDir: resolve(__dirname, './dist/lib'),
         tsConfigFilePath: '../../tsconfig.json'
       }),
 
@@ -75,6 +76,11 @@ export default defineConfig(
         }
       }
 
-    ]
+    ],
+    resolve: {
+      alias: {
+        '@': resolve(__dirname, 'src'),
+      },
+    }
   }
 )
