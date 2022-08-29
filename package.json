@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd examples && pnpm dev",
-    "build": "gulp -f packages/components/build/gulpfile.ts"
+    "build": "gulp -f packages/components/build/gulpfile.ts",
+    "publish": "gulp -f packages/components/publish/gulpfile.ts"
   },
   "keywords": [],
   "author": "",
