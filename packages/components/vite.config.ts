@@ -13,7 +13,7 @@ export default defineConfig(
       //css分离
       //cssCodeSplit: true,
       rollupOptions: {
-        //忽略打包vue文件和.less文件
+        //忽略打包vue源码文件和.less文件
         external: ['vue', /\.less/],
         input: ['src/index.ts'],
         output: [

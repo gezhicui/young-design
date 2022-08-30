@@ -6,7 +6,7 @@ import less from "gulp-less"
 import autoprefixer from 'gulp-autoprefixer'
 
 //组件库根目录
-const componentPath = resolve(__dirname, '../')
+const componentPath = resolve(__dirname, '../../')
 console.log('componentPath', componentPath);
 
 
