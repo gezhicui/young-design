@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "young-design": "workspace:^1.0.6"
+    "young-design": "workspace:^1.0.12"
   }
 }

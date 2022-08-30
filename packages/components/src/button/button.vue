@@ -14,13 +14,18 @@
   </button>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'y-button',
+};
+</script>
+
 <script setup lang="ts">
 import './style/index.less';
 import { computed } from 'vue';
 import Icon from '../Icon/icon.vue';
 import { buttonProps } from './types';
 
-const name = 'y-button';
 const props = defineProps(buttonProps);
 
 const styleClass = computed(() => {

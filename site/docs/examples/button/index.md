@@ -4,7 +4,7 @@
         border-radius: 5px;
         padding:20px
     }
-    .el-button {
+    .example .y-button {
         margin:10px 5px
     }
     
@@ -24,29 +24,29 @@
 
 <div class="example">
     <div>
-        <el-button>默认按钮</el-button>
-        <el-button type="primary">主要按钮</el-button>
-        <el-button type="success">成功按钮</el-button>
-        <el-button type="info">信息按钮</el-button>
-        <el-button type="warning">警告按钮</el-button>
-        <el-button type="danger">危险按钮</el-button>
-        <el-button type="text">文字按钮</el-button>
+        <y-button>默认按钮</y-button>
+        <y-button type="primary">主要按钮</y-button>
+        <y-button type="success">成功按钮</y-button>
+        <y-button type="info">信息按钮</y-button>
+        <y-button type="warning">警告按钮</y-button>
+        <y-button type="danger">危险按钮</y-button>
+        <y-button type="text">文字按钮</y-button>
         <br>
         <br>
-        <el-button plain>朴素按钮</el-button>
-        <el-button type="primary" plain>主要按钮</el-button>
-        <el-button type="success" plain>成功按钮</el-button>
-        <el-button type="info" plain>信息按钮</el-button>
-        <el-button type="warning" plain>警告按钮</el-button>
-        <el-button type="danger" plain>危险按钮</el-button>
+        <y-button plain>朴素按钮</y-button>
+        <y-button type="primary" plain>主要按钮</y-button>
+        <y-button type="success" plain>成功按钮</y-button>
+        <y-button type="info" plain>信息按钮</y-button>
+        <y-button type="warning" plain>警告按钮</y-button>
+        <y-button type="danger" plain>危险按钮</y-button>
         <br>
         <br>
-        <el-button round>圆角按钮</el-button>
-        <el-button type="primary" round>主要按钮</el-button>
-        <el-button type="success" round>成功按钮</el-button>
-        <el-button type="info" round>信息按钮</el-button>
-        <el-button type="warning" round>警告按钮</el-button>
-        <el-button type="danger" round>危险按钮</el-button>
+        <y-button round>圆角按钮</y-button>
+        <y-button type="primary" round>主要按钮</y-button>
+        <y-button type="success" round>成功按钮</y-button>
+        <y-button type="info" round>信息按钮</y-button>
+        <y-button type="warning" round>警告按钮</y-button>
+        <y-button type="danger" round>危险按钮</y-button>
     </div>
 </div>
 
@@ -56,36 +56,36 @@
 ```vue
 <template>
   <div>
-    <el-button>默认按钮</el-button>
-    <el-button type="primary">主要按钮</el-button>
-    <el-button type="success">成功按钮</el-button>
-    <el-button type="info">信息按钮</el-button>
-    <el-button type="warning">警告按钮</el-button>
-    <el-button type="danger">危险按钮</el-button>
-    <el-button type="text">文字按钮</el-button>
+    <y-button>默认按钮</y-button>
+    <y-button type="primary">主要按钮</y-button>
+    <y-button type="success">成功按钮</y-button>
+    <y-button type="info">信息按钮</y-button>
+    <y-button type="warning">警告按钮</y-button>
+    <y-button type="danger">危险按钮</y-button>
+    <y-button type="text">文字按钮</y-button>
     <br />
     <br />
-    <el-button plain>朴素按钮</el-button>
-    <el-button type="primary" plain>主要按钮</el-button>
-    <el-button type="success" plain>成功按钮</el-button>
-    <el-button type="info" plain>信息按钮</el-button>
-    <el-button type="warning" plain>警告按钮</el-button>
-    <el-button type="danger" plain>危险按钮</el-button>
+    <y-button plain>朴素按钮</y-button>
+    <y-button type="primary" plain>主要按钮</y-button>
+    <y-button type="success" plain>成功按钮</y-button>
+    <y-button type="info" plain>信息按钮</y-button>
+    <y-button type="warning" plain>警告按钮</y-button>
+    <y-button type="danger" plain>危险按钮</y-button>
     <br />
     <br />
-    <el-button round>圆角按钮</el-button>
-    <el-button type="primary" round>主要按钮</el-button>
-    <el-button type="success" round>成功按钮</el-button>
-    <el-button type="info" round>信息按钮</el-button>
-    <el-button type="warning" round>警告按钮</el-button>
-    <el-button type="danger" round>危险按钮</el-button>
+    <y-button round>圆角按钮</y-button>
+    <y-button type="primary" round>主要按钮</y-button>
+    <y-button type="success" round>成功按钮</y-button>
+    <y-button type="info" round>信息按钮</y-button>
+    <y-button type="warning" round>警告按钮</y-button>
+    <y-button type="danger" round>危险按钮</y-button>
   </div>
 </template>
 <script lang="ts" setup>
-import { el-button } from "kitty-ui";
+import { y-button } from "young-design";
 </script>
 <style>
-.k-el-button {
+.k-y-button {
   margin-right: 10px;
 }
 </style>
@@ -97,20 +97,20 @@ import { el-button } from "kitty-ui";
 
 <div class="example">
     <div>
-        <el-button disabled>禁用按钮</el-button>
-        <el-button type="primary" disabled>主要按钮</el-button>
-        <el-button type="success" disabled>成功按钮</el-button>
-        <el-button type="info" disabled>信息按钮</el-button>
-        <el-button type="warning" disabled>警告按钮</el-button>
-        <el-button type="danger" disabled>危险按钮</el-button>
+        <y-button disabled>禁用按钮</y-button>
+        <y-button type="primary" disabled>主要按钮</y-button>
+        <y-button type="success" disabled>成功按钮</y-button>
+        <y-button type="info" disabled>信息按钮</y-button>
+        <y-button type="warning" disabled>警告按钮</y-button>
+        <y-button type="danger" disabled>危险按钮</y-button>
         <br>
         <br>
-        <el-button disabled>禁用按钮</el-button>
-        <el-button type="primary" disabled plain>主要按钮</el-button>
-        <el-button type="success" disabled plain>成功按钮</el-button>
-        <el-button type="info" disabled plain>信息按钮</el-button>
-        <el-button type="warning" disabled plain>警告按钮</el-button>
-        <el-button type="danger" disabled plain>危险按钮</el-button>
+        <y-button disabled>禁用按钮</y-button>
+        <y-button type="primary" disabled plain>主要按钮</y-button>
+        <y-button type="success" disabled plain>成功按钮</y-button>
+        <y-button type="info" disabled plain>信息按钮</y-button>
+        <y-button type="warning" disabled plain>警告按钮</y-button>
+        <y-button type="danger" disabled plain>危险按钮</y-button>
     </div>
 </div>
 
@@ -120,27 +120,27 @@ import { el-button } from "kitty-ui";
 ```vue
 <template>
   <div>
-    <el-button disabled>禁用按钮</el-button>
-    <el-button type="primary" disabled>主要按钮</el-button>
-    <el-button type="success" disabled>成功按钮</el-button>
-    <el-button type="info" disabled>信息按钮</el-button>
-    <el-button type="warning" disabled>警告按钮</el-button>
-    <el-button type="danger" disabled>危险按钮</el-button>
+    <y-button disabled>禁用按钮</y-button>
+    <y-button type="primary" disabled>主要按钮</y-button>
+    <y-button type="success" disabled>成功按钮</y-button>
+    <y-button type="info" disabled>信息按钮</y-button>
+    <y-button type="warning" disabled>警告按钮</y-button>
+    <y-button type="danger" disabled>危险按钮</y-button>
     <br />
     <br />
-    <el-button disabled>禁用按钮</el-button>
-    <el-button type="primary" disabled plain>主要按钮</el-button>
-    <el-button type="success" disabled plain>成功按钮</el-button>
-    <el-button type="info" disabled plain>信息按钮</el-button>
-    <el-button type="warning" disabled plain>警告按钮</el-button>
-    <el-button type="danger" disabled plain>危险按钮</el-button>
+    <y-button disabled>禁用按钮</y-button>
+    <y-button type="primary" disabled plain>主要按钮</y-button>
+    <y-button type="success" disabled plain>成功按钮</y-button>
+    <y-button type="info" disabled plain>信息按钮</y-button>
+    <y-button type="warning" disabled plain>警告按钮</y-button>
+    <y-button type="danger" disabled plain>危险按钮</y-button>
   </div>
 </template>
 <script lang="ts" setup>
-import { el-button } from "kitty-ui";
+import { y-button } from "young-design";
 </script>
 <style>
-.k-el-button {
+.k-y-button {
   margin-right: 10px;
 }
 </style>
@@ -152,10 +152,10 @@ import { el-button } from "kitty-ui";
 
 <div class="example">
     <div>
-        <el-button>默认按钮</el-button>
-        <el-button size="medium">中等按钮</el-button>
-        <el-button size="small">小型按钮</el-button>
-        <el-button size="mini">超小按钮</el-button>
+        <y-button>默认按钮</y-button>
+        <y-button size="medium">中等按钮</y-button>
+        <y-button size="small">小型按钮</y-button>
+        <y-button size="mini">超小按钮</y-button>
     </div>
 </div>
 
@@ -165,17 +165,17 @@ import { el-button } from "kitty-ui";
 ```vue
 <template>
   <div>
-    <el-button>默认按钮</el-button>
-    <el-button size="medium">中等按钮</el-button>
-    <el-button size="small">小型按钮</el-button>
-    <el-button size="mini">超小按钮</el-button>
+    <y-button>默认按钮</y-button>
+    <y-button size="medium">中等按钮</y-button>
+    <y-button size="small">小型按钮</y-button>
+    <y-button size="mini">超小按钮</y-button>
   </div>
 </template>
 <script lang="ts" setup>
-import { el-button } from "kitty-ui";
+import { y-button } from "young-design";
 </script>
 <style>
-.k-el-button {
+.k-y-button {
   margin-right: 10px;
 }
 </style>

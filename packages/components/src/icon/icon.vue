@@ -6,6 +6,7 @@
     <div v-if="dot" class="y-info" :class="styleDot">{{ badge }}</div>
   </div>
 </template>
+
 <script setup lang="ts">
 import './font/iconfont.js';
 import './style/index.less';
@@ -27,7 +28,7 @@ const badge = computed(() => {
 });
 const iconColor = computed(() => {
   return {
-    color: props.color
-  }
-})
+    color: props.color,
+  };
+});
 </script>

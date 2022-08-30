@@ -40,15 +40,12 @@ importers:
 
   examples:
     specifiers:
-      young-design: workspace:^1.0.6
+      young-design: workspace:^1.0.12
     dependencies:
       young-design: link:../packages/components
 
   packages/components:
-    specifiers:
-      '@young-design/utils': workspace:^1.0.0
-    dependencies:
-      '@young-design/utils': link:../utils
+    specifiers: {}
 
   packages/utils:
     specifiers: {}
@@ -57,7 +54,7 @@ importers:
     specifiers:
       element-plus: ^2.2.15
       vitepress: 1.0.0-alpha.12
-      young-design: workspace:^1.0.6
+      young-design: workspace:^1.0.12
     dependencies:
       element-plus: 2.2.15
       young-design: link:../packages/components
