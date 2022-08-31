@@ -8,10 +8,13 @@
 </template>
 
 <script setup lang="ts" name="y-icon">
-import './font/iconfont.js';
 import './style/index.less';
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import { iconProps } from './types';
+
+onMounted(() => {
+  import('./font/iconfont.js' as any);
+});
 
 const props = defineProps(iconProps);
 const iconName = computed(() => {
