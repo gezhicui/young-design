@@ -12,10 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "1.0.0-alpha.12"
+    "vitepress": "1.0.0-alpha.4"
   },
   "dependencies": {
-    "element-plus": "^2.2.15",
     "young-design": "workspace:^1.0.12"
   }
 }
