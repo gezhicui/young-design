@@ -35,6 +35,36 @@
     color: #fff;
   }
 }
+.y-button--primary.is-plain {
+  color: #409eff;
+  background: #ecf5ff;
+  border-color: #b3d8ff;
+  &:hover {
+    color: #fff;
+    background-color: #409eff;
+    border-color: #409eff;
+  }
+}
+
+.y-button--primary.is-disabled,
+.y-button--primary.is-disabled:active,
+.y-button--primary.is-disabled:focus,
+.y-button--primary.is-disabled:hover {
+  color: #fff;
+  background-color: #a0cfff;
+  border-color: #a0cfff;
+  cursor: not-allowed;
+}
+//朴素按钮禁用
+.y-button--primary.is-disabled.is-plain,
+.y-button--primary.is-disabled.is-plain:active,
+.y-button--primary.is-disabled.is-plain:focus,
+.y-button--primary.is-disabled.is-plain:hover {
+  color: #8cc5ff;
+  background-color: #ecf5ff;
+  border-color: #d9ecff;
+  cursor: not-allowed;
+}
 .y-button--text {
   border-color: transparent;
   color: #409eff;
@@ -47,45 +77,168 @@
     background-color: transparent;
   }
 }
+.y-button--success {
+  color: #fff;
+  background-color: #67c23a;
+  border-color: #67c23a;
+  &:hover {
+    background: #85ce61;
+    border-color: #85ce61;
+    color: #fff;
+  }
+}
+.y-button--success.is-plain {
+  color: #67c23a;
+  background: #f0f9eb;
+  border-color: #c2e7b0;
+  &:hover {
+    color: #fff;
+    background-color: #67c23a;
+    border-color: #67c23a;
+  }
+}
+.y-button--success.is-disabled,
+.y-button--success.is-disabled:active,
+.y-button--success.is-disabled:focus,
+.y-button--success.is-disabled:hover {
+  color: #fff;
+  background-color: #b3e19d;
+  border-color: #b3e19d;
+  cursor: not-allowed;
+}
+//朴素按钮禁用
+.y-button--success.is-disabled.is-plain,
+.y-button--success.is-disabled.is-plain:active,
+.y-button--success.is-disabled.is-plain:focus,
+.y-button--success.is-disabled.is-plain:hover {
+  color: #a4da89;
+  background-color: #f0f9eb;
+  border-color: #e1f3d8;
+  cursor: not-allowed;
+}
+.y-button--info {
+  color: #fff;
+  background-color: #909399;
+  border-color: #909399;
+  &:hover {
+    background: #a6a9ad;
+    border-color: #a6a9ad;
+    color: #fff;
+  }
+}
+.y-button--info.is-plain {
+  color: #909399;
+  background-color: #f4f4f5;
+  border-color: #d3d4d6;
+  &:hover {
+    color: #fff;
+    background-color: #909399;
+    border-color: #909399;
+  }
+}
 
-.y-button--primary.is-plain {
-  color: #409eff;
+.y-button--info.is-disabled,
+.y-button--info.is-disabled:active,
+.y-button--info.is-disabled:focus,
+.y-button--info.is-disabled:hover {
+  color: #fff;
+  background-color: #c8c9cc;
+  border-color: #c8c9cc;
+  cursor: not-allowed;
+}
+//朴素按钮禁用
+.y-button--info.is-disabled.is-plain,
+.y-button--info.is-disabled.is-plain:active,
+.y-button--info.is-disabled.is-plain:focus,
+.y-button--info.is-disabled.is-plain:hover {
+  color: #bcbec2;
+  background-color: #f4f4f5;
+  border-color: #e9e9eb;
+  cursor: not-allowed;
+}
+.y-button--warning {
+  color: #fff;
+  background-color: #e6a23c;
+  border-color: #e6a23c;
+  &:hover {
+    background: #ebb563;
+    border-color: #ebb563;
+    color: #fff;
+  }
+}
+.y-button--warning.is-plain {
+  color: #e6a23c;
   background: #ecf5ff;
   border-color: #b3d8ff;
   &:hover {
     color: #fff;
-    background-color: #409eff;
-    border-color: #409eff;
+    background-color: #e6a23c;
+    border-color: #e6a23c;
   }
 }
+.y-button--warning.is-disabled,
+.y-button--warning.is-disabled:active,
+.y-button--warning.is-disabled:focus,
+.y-button--warning.is-disabled:hover {
+  color: #fff;
+  background-color: #f3d19e;
+  border-color: #f3d19e;
+  cursor: not-allowed;
+}
+//朴素按钮禁用
+.y-button--warning.is-disabled.is-plain,
+.y-button--warning.is-disabled.is-plain:active,
+.y-button--warning.is-disabled.is-plain:focus,
+.y-button--warning.is-disabled.is-plain:hover {
+  color: #f0c78a;
+  background-color: #fdf6ec;
+  border-color: #faecd8;
+  cursor: not-allowed;
+}
+.y-button--danger {
+  color: #fff;
+  background-color: #f56c6c;
+  border-color: #f56c6c;
+  &:hover {
+    background: #f78989;
+    border-color: #f78989;
+    color: #fff;
+  }
+}
+.y-button--warning.is-plain {
+  color: #f56c6c;
+  background: #fef0f0;
+  border-color: #fbc4c4;
+  &:hover {
+    color: #fff;
+    background-color: #f56c6c;
+    border-color: #f56c6c;
+  }
+}
+.y-button--danger.is-disabled,
+.y-button--danger.is-disabled:active,
+.y-button--danger.is-disabled:focus,
+.y-button--danger.is-disabled:hover {
+  color: #fff;
+  background-color: #fab6b6;
+  border-color: #fab6b6;
+  cursor: not-allowed;
+}
+.y-button--danger.is-disabled.is-plain,
+.y-button--danger.is-disabled.is-plain:active,
+.y-button--danger.is-disabled.is-plain:focus,
+.y-button--danger.is-disabled.is-plain:hover {
+  color: #f9a7a7;
+  background-color: #fef0f0;
+  border-color: #fde2e2;
+  cursor: not-allowed;
+}
+
 .is-round {
   border-radius: 20px;
 }
 
-.y-button.is-disabled {
-  color: #c0c4cc;
-  cursor: not-allowed;
-  background-image: none;
-  background-color: #fff;
-  border-color: #ebeef5;
-}
-.y-button--primary.is-disabled,
-.y-button--primary.is-disabled:active,
-.y-button--primary.is-disabled:focus,
-.y-button--primary.is-disabled:hover {
-  color: #fff;
-  background-color: #a0cfff;
-  border-color: #a0cfff;
-}
-//朴素按钮禁用
-.y-button--primary.is-disabled.is-plain,
-.y-button--primary.is-disabled.is-plain:active,
-.y-button--primary.is-disabled.is-plain:focus,
-.y-button--primary.is-disabled.is-plain:hover {
-  color: #8cc5ff;
-  background-color: #ecf5ff;
-  border-color: #d9ecff;
-}
+// size
 .y-button--medium {
   padding: 10px 20px;
   font-size: 14px;
