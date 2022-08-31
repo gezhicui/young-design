@@ -14,13 +14,7 @@
   </button>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'y-button',
-};
-</script>
-
-<script setup lang="ts">
+<script setup lang="ts" name="y-button">
 import './style/index.less';
 import { computed } from 'vue';
 import Icon from '../Icon/icon.vue';

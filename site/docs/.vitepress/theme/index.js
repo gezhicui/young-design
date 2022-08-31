@@ -8,7 +8,8 @@ export default {
     // custom router. `siteData`` is a `ref`` of current site-level metadata.
     import('young-design').then((module) => {
       console.log(module);
-      app.use(module.YButton);
+      app.use(module.Button);
+      app.use(module.Icon);
     });
   },
 };

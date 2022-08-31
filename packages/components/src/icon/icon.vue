@@ -7,14 +7,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" name="y-icon">
 import './font/iconfont.js';
 import './style/index.less';
 import { computed } from 'vue';
 import { iconProps } from './types';
 
 const props = defineProps(iconProps);
-console.log('props', props);
 const iconName = computed(() => {
   return `#young-${props.name}`;
 });
