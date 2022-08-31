@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd examples && pnpm dev",
-    "build": "gulp -f packages/components/script/build/gulpfile.ts"
+    "start": "pnpm run --filter examples dev",
+    "build": "gulp -f packages/components/script/build/gulpfile.ts",
+    "start:docs": "cd site && pnpm docs:dev",
+    "build:docs": "cd site && pnpm docs:build"
   },
   "keywords": [],
   "author": "",
