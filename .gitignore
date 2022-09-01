@@ -2,3 +2,4 @@ node_modules
 components/dist/
 components/es/
 components/lib/
+site/docs/.vitepress/dist
