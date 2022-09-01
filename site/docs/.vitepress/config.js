@@ -44,7 +44,7 @@ export default {
             },
             {
               text: 'Icon图标',
-              link: '/examples/Icon/',
+              link: '/examples/icon/',
             },
           ],
         },
