@@ -53,6 +53,12 @@ importers:
     devDependencies:
       vite-plugin-vue-setup-extend: 0.4.0
 
+  packages/components/transitpkg:
+    specifiers:
+      '@young-design/utils': workspace:^1.0.0
+    dependencies:
+      '@young-design/utils': link:../../utils
+
   packages/utils:
     specifiers: {}
 
