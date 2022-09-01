@@ -15,8 +15,8 @@ export default defineConfig(
       //cssCodeSplit: true,
       rollupOptions: {
         //忽略打包vue源码文件和.less文件
-        external: ['vue', /\.less/],
-        input: ['src/index.ts'],
+        external: ['vue', /\.less/, '@young-design/utils'],
+        input: ['index.ts'],
         output: [
           {
             format: 'es',
@@ -26,7 +26,7 @@ export default defineConfig(
             preserveModules: true,
             //配置打包根目录
             dir: resolve(__dirname, './dist/es'),
-            preserveModulesRoot: 'dist'
+            preserveModulesRoot: resolve(__dirname, 'src')
           },
           {
             format: 'cjs',
@@ -36,26 +36,23 @@ export default defineConfig(
             preserveModules: true,
             //配置打包根目录
             dir: resolve(__dirname, './dist/lib'),
-            preserveModulesRoot: 'src'
+            preserveModulesRoot: resolve(__dirname, 'src')
           }
         ]
       },
       lib: {
         entry: './index.ts',
-        formats: ['es', 'cjs']
+        name: 'young-design',
       }
     },
+
     plugins: [
       vue(),
       vueSetupExtend(),
       dts({
-        outputDir: resolve(__dirname, './dist/es'),
+        entryRoot: 'src',
+        outputDir: [resolve(__dirname, './dist/es/src'), resolve(__dirname, './dist/lib/src')],
         //指定使用的tsconfig.json为我们整个项目根目录下掉,如果不配置,你也可以在components下新建tsconfig.json
-        tsConfigFilePath: '../../tsconfig.json'
-      }),
-      //因为这个插件默认打包到es下，我们想让lib目录下也生成声明文件需要再配置一个
-      dts({
-        outputDir: resolve(__dirname, './dist/lib'),
         tsConfigFilePath: '../../tsconfig.json'
       }),
 
@@ -83,6 +80,6 @@ export default defineConfig(
       alias: {
         '@': resolve(__dirname, 'src'),
       },
-    }
+    },
   }
 )

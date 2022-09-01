@@ -46,7 +46,10 @@ importers:
 
   packages/components:
     specifiers:
+      '@young-design/utils': workspace:^1.0.0
       vite-plugin-vue-setup-extend: ^0.4.0
+    dependencies:
+      '@young-design/utils': link:../utils
     devDependencies:
       vite-plugin-vue-setup-extend: 0.4.0
 

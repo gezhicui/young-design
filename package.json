@@ -8,7 +8,8 @@
     "start": "pnpm run --filter examples dev",
     "build": "gulp -f packages/components/script/build/gulpfile.ts",
     "start:docs": "cd site && pnpm docs:dev",
-    "build:docs": "cd site && pnpm docs:build"
+    "build:docs": "cd site && pnpm docs:build",
+    "build:utils": "cd packages/utils && pnpm build"
   },
   "keywords": [],
   "author": "",

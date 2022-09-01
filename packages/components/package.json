@@ -16,5 +16,8 @@
   "license": "ISC",
   "devDependencies": {
     "vite-plugin-vue-setup-extend": "^0.4.0"
+  },
+  "dependencies": {
+    "@young-design/utils": "workspace:^1.0.0"
   }
 }
