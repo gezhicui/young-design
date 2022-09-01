@@ -6,11 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "pnpm run --filter examples dev",
-    "build": "gulp -f packages/components/script/build/gulpfile.ts",
-    "publish:comp": "gulp -f packages/components/script/publish/gulpfile.ts",
+    "build": "gulp -f components/script/build/gulpfile.ts",
+    "publish:comp": "gulp -f components/script/publish/gulpfile.ts",
     "start:docs": "cd site && pnpm docs:dev",
-    "build:docs": "cd site && pnpm docs:build",
-    "build:utils": "cd packages/utils && pnpm build"
+    "build:docs": "cd site && pnpm docs:build"
   },
   "keywords": [],
   "author": "",

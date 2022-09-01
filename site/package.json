@@ -11,10 +11,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "vitepress": "1.0.0-alpha.4"
-  },
   "dependencies": {
-    "young-design": "workspace:^1.0.12"
+    "@algolia/client-search": "^4.9.1",
+    "vitepress": "1.0.0-alpha.13",
+    "young-design": "workspace:^1.0.18"
   }
 }

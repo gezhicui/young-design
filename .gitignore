@@ -1,6 +1,4 @@
 node_modules
-packages/components/dist/
-packages/components/es/
-packages/components/lib/
-packages/utils/dist
-site/docs/.vitepress/dist
+components/dist/
+components/es/
+components/lib/

@@ -9,10 +9,10 @@
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "lib": ["esnext", "dom"],
-    "rootDirs": ["./", "./packages/components"],
+    "rootDirs": ["./", "./components"],
     "paths": {
       "@/*": [
-        "packages/components/src/*"
+        "./components/src/*"
       ]
     },
   }
