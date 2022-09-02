@@ -40,9 +40,9 @@ importers:
 
   examples:
     specifiers:
-      young-design: ^1.0.18
+      young-design: workspace:^1.0.18
     dependencies:
-      young-design: 1.0.18
+      young-design: link:../components
 
   site:
     specifiers:
@@ -4070,10 +4070,6 @@ packages:
       y18n: 3.2.2
       yargs-parser: 5.0.1
     dev: true
-
-  /young-design/1.0.18:
-    resolution: {integrity: sha512-xhnJ9panSF98+/JuyO2upI/N1PrzahERxCw4O1HcPYTqm0e+pa7i2BpcTiNI45JT+lDuhk9YvO8mL+L/wPpRkA==}
-    dev: false
 
   /z-schema/5.0.3:
     resolution: {integrity: sha512-sGvEcBOTNum68x9jCpCVGPFJ6mWnkD0YxOcddDlJHRx3tKdB2q8pCHExMVZo/AV/6geuVJXG7hljDaWG8+5GDw==}

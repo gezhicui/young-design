@@ -1,0 +1,96 @@
+.y-link {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+.y-link.is-disabled {
+  cursor: not-allowed;
+}
+
+.y-link.is-underline:hover:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  bottom: 0;
+}
+
+// primary样式
+.y-link--primary {
+  color: #409eff;
+}
+.y-link--primary:hover {
+  color: #66b1ff;
+}
+.y-link.is-underline.y-link--primary:hover:after {
+  border-bottom: 1px solid #409eff;
+}
+.y-link--primary.is-disabled {
+  color: #a0cfff;
+}
+
+// success样式
+.y-link--success {
+  color: #67c23a;
+}
+.y-link--success:hover {
+  color: #85ce61;
+}
+.y-link.is-underline.y-link--success:hover:after {
+  border-bottom: 1px solid #67c23a;
+}
+.y-link--success.is-disabled {
+  color: #b3e19d;
+}
+
+// warning样式
+.y-link--warning {
+  color: #e6a23c;
+}
+.y-link--warning:hover {
+  color: #ebb563;
+}
+.y-link.is-underline.y-link--warning:hover:after {
+  border-bottom: 1px solid #e6a23c;
+}
+.y-link--warning.is-disabled {
+  color: #f3d19e;
+}
+
+// danger样式
+.y-link--danger {
+  color: #f56c6c;
+}
+.y-link--danger:hover {
+  color: #f78989;
+}
+.y-link.is-underline.y-link--danger:hover:after {
+  border-bottom: 1px solid #f56c6c;
+}
+.y-link--danger.is-disabled {
+  color: #fab6b6;
+}
+
+// info样式
+.y-link--info {
+  color: #909399;
+}
+.y-link--info:hover {
+  color: #a6a9ad;
+}
+.y-link.is-underline.y-link--info:hover:after {
+  border-bottom: 1px solid #909399;
+}
+.y-link--info.is-disabled {
+  color: #c8c9cc;
+}
