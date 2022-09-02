@@ -7,15 +7,12 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'y-icon',
-};
-</script>
 <script setup lang="ts">
 import './style/index.less';
 import { computed, onMounted } from 'vue';
 import { iconProps } from './types';
+
+defineOptions({ name: 'y-icon' });
 
 onMounted(() => {
   import('./font/iconfont.js' as any);
