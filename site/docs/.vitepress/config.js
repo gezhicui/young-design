@@ -51,6 +51,10 @@ export default {
               text: 'Icon图标',
               link: '/examples/icon/',
             },
+            {
+              text: 'Upload上传',
+              link: '/examples/upload/',
+            },
           ],
         },
       ],
