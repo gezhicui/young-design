@@ -53,10 +53,12 @@ importers:
   site:
     specifiers:
       '@algolia/client-search': ^4.9.1
+      minimist: ^1.2.6
       vitepress: 1.0.0-alpha.13
       young-design: workspace:^1.0.18
     dependencies:
       '@algolia/client-search': 4.14.2
+      minimist: 1.2.6
       vitepress: 1.0.0-alpha.13_tbpndr44ulefs3hehwpi2mkf2y
       young-design: link:../components
 
@@ -2722,6 +2724,10 @@ packages:
     dependencies:
       brace-expansion: 2.0.1
     dev: true
+
+  /minimist/1.2.6:
+    resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
+    dev: false
 
   /mixin-deep/1.3.2:
     resolution: {integrity: sha512-WRoDn//mXBiJ1H40rqa3vH0toePwSsGb45iInWlTySa+Uu4k3tYUSxa2v1KqAiLtvlrSzaExqS1gtk96A9zvEA==}

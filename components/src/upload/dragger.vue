@@ -29,9 +29,9 @@ onMounted(() => {
       filesList.value.push(...Array.from(e.dataTransfer.files as FileList));
       emits('getFilesList', filesList.value);
     },
-    true
+    false
   );
-  fileArea.value.addEventListener('dragover', onDragover, true);
+  fileArea.value.addEventListener('dragover', onDragover, false);
 });
 
 const onDragover = (e) => {

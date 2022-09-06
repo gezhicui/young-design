@@ -1,4 +1,9 @@
+const argv = require('minimist')(process.argv.slice(2));
+const build = argv.build || false;
+const baseBuild = build ? '/young-design-docs/' : '/';
+
 export default {
+  base: baseBuild,
   themeConfig: {
     siteTitle: false,
     logo: '/logo.png',
