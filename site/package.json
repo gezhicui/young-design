@@ -12,9 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@algolia/client-search": "^4.9.1",
-    "minimist": "^1.2.6",
-    "vitepress": "1.0.0-alpha.13",
     "young-design": "workspace:^1.0.18"
+  },
+  "devDependencies": {
+    "minimist": "^1.2.6",
+    "vitepress": "1.0.0-alpha.4"
   }
 }

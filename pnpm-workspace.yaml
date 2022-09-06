@@ -2,3 +2,4 @@ packages:
   # - 'packages/**'
   - 'components'
   - 'examples'
+  - 'site'
