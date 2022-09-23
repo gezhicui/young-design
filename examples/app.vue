@@ -17,7 +17,8 @@ const ctx = getCurrentInstance();
 console.log(ctx.appContext);
 const messageInfo = () => {
   ctx.appContext.config.globalProperties.$message.info({
-    message: "这里是信息请查看",
+    message: "<strong>This is <i>HTML</i> string</strong>",
+    showClose: true,
   });
 };
 const messageWarn = () => {

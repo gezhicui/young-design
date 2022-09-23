@@ -2,12 +2,12 @@
   <transition
     @before-leave="onClose"
     @after-leave="onDestroy"
-    name="message-fade"
+    name="y-message-fade"
   >
     <div v-show="visiable" :class="messageStyle" :style="{ top: `${top}px` }">
       <Icon class="before-icon" v-if="iconType" :name="iconType" />
-      <span>{{ message }}</span>
-      <Icon @click="close" class="close-icon" name="close" />
+      <div class="y-message-content" v-html="message"></div>
+      <Icon v-if="showClose" @click="close" class="close-icon" name="close" />
     </div>
   </transition>
 </template>
@@ -22,7 +22,7 @@ const props = defineProps(MessageProps);
 
 const visiable = ref(false);
 
-const messageStyle = computed(() => ["message", props.type]);
+const messageStyle = computed(() => ["y-message", props.type]);
 
 const iconType = computed(() => {
   switch (props.type) {

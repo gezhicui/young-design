@@ -28,6 +28,10 @@ export const MessageProps = {
     type: Number,
     default: 3000,
   },
+  showClose: {
+    type: Boolean,
+    default: false
+  },
   onDestroy: Function,
   onClose: Function,
 }
