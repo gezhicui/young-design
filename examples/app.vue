@@ -12,7 +12,6 @@
 </template>
 
 <script setup>
-// import Message from "./src/Message";
 import { getCurrentInstance } from "vue";
 const ctx = getCurrentInstance();
 console.log(ctx.appContext);

@@ -19,6 +19,7 @@ function Message(options) {
       close(vm);
     },
     onDestroy() {
+      console.log('onDestroy');
       render(null, container);
     },
   });
@@ -27,7 +28,9 @@ function Message(options) {
   instances.push(vm);
 }
 function close(vm) {
+  console.log('closevm', instances);
   const index = instances.findIndex((ins) => ins === vm);
+  console.log('index', index);
   if (index === -1) {
     return;
   }

@@ -6,7 +6,7 @@
   >
     <div v-show="visiable" :class="messageStyle" :style="{ top: `${top}px` }">
       <span>{{ message }}?</span>
-      <Icon class="closeIcon" name="close" />
+      <Icon @click="close" class="closeIcon" name="close" />
     </div>
   </transition>
 </template>
