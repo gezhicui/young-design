@@ -22,6 +22,8 @@
 
 <script setup lang="ts">
 const iconList  = [
+'close-circle',
+'info-circle',
 'check-circle',
 'left-circle',
 'down-circle',
@@ -106,7 +108,11 @@ const iconList  = [
 'zengjia',
 'yixuanze',
 'yixuan',
-'you'
+'you',
+'close-circle-fill',
+'info-circle-fill',
+'question-circle-fill',
+'warning-circle-fill',
 ]
 </script>
 
