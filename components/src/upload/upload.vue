@@ -29,20 +29,20 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 export default defineComponent({
-  name: 'y-upload',
+  name: "y-upload",
 });
 </script>
 <script setup lang="ts">
-import './style/index.less';
-import { ref } from 'vue';
-import Icon from '../Icon/icon.vue';
-import { uoloadType } from './types';
-import Drager from './dragger.vue';
+import "./style/index.less";
+import { ref } from "vue";
+import Icon from "../Icon/icon.vue";
+import { uoloadType } from "./types";
+import Drager from "./dragger.vue";
 const props = defineProps(uoloadType);
 const kIpt = ref();
-const emits = defineEmits(['getFilesList']);
+const emits = defineEmits(["getFilesList"]);
 const filesList = ref<File[]>([]);
 const fileUpload = () => {
   kIpt.value.click();
@@ -53,16 +53,16 @@ const getFiles = (e: Event) => {
   if (!files) return;
 
   filesList.value.push(...Array.from(files));
-  emits('getFilesList', filesList.value);
+  emits("getFilesList", filesList.value);
 };
 
 const delFile = (index: number) => {
   filesList.value.splice(index, 1);
-  emits('getFilesList', filesList.value);
+  emits("getFilesList", filesList.value);
 };
 
 const getFilesList = (file: File[]) => {
   filesList.value = file;
-  emits('getFilesList', file);
+  emits("getFilesList", file);
 };
 </script>

@@ -14,21 +14,27 @@
   </button>
 </template>
 
-<script setup lang="ts">
-import './style/index.less';
-import { computed } from 'vue';
-import Icon from '../Icon/icon.vue';
-import { buttonProps } from './types';
+<script lang="ts">
+import { defineComponent } from "vue";
+export default defineComponent({
+  name: "y-button",
+});
+</script>
 
-defineOptions({ name: 'y-button' });
+<script setup lang="ts">
+import "./style/index.less";
+import { computed } from "vue";
+import Icon from "../Icon/icon.vue";
+import { buttonProps } from "./types";
+
 const props = defineProps(buttonProps);
 
 const styleClass = computed(() => {
   return {
     [`y-button--${props.type}`]: props.type,
-    'is-plain': props.plain,
-    'is-round': props.round,
-    'is-disabled': props.disabled,
+    "is-plain": props.plain,
+    "is-round": props.round,
+    "is-disabled": props.disabled,
     [`y-button--${props.size}`]: props.size,
   };
 });

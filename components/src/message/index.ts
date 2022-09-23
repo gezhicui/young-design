@@ -1,7 +1,4 @@
 import Message from './message.js'
-// import { withInstall } from '@/utils'
-// const Message = withInstall(message)
-// export default Message
 
 export default {
   install(app: any) {

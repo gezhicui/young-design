@@ -5,7 +5,8 @@
     name="message-fade"
   >
     <div v-show="visiable" :class="messageStyle" :style="{ top: `${top}px` }">
-      <span>{{ message }}</span>
+      <span>{{ message }}?</span>
+      <Icon class="closeIcon" name="close" />
     </div>
   </transition>
 </template>
@@ -13,6 +14,7 @@
 <script setup>
 import types from "./types";
 import "./style/index.less";
+import Icon from "../Icon/icon.vue";
 import { onMounted, ref, computed } from "vue";
 
 const props = defineProps({

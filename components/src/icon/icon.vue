@@ -7,15 +7,20 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import './style/index.less';
-import { computed, onMounted } from 'vue';
-import { iconProps } from './types';
+<script lang="ts">
+import { defineComponent } from "vue";
+export default defineComponent({
+  name: "y-icon",
+});
+</script>
 
-defineOptions({ name: 'y-icon' });
+<script setup lang="ts">
+import "./style/index.less";
+import { computed, onMounted } from "vue";
+import { iconProps } from "./types";
 
 onMounted(() => {
-  import('./font/iconfont.js' as any);
+  import("./font/iconfont.js" as any);
 });
 
 const props = defineProps(iconProps);
