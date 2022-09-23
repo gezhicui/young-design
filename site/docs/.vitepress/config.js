@@ -11,9 +11,7 @@ export default {
       { text: '指南', link: '/guild/installation' },
       { text: '组件', link: '/examples/button/' },
     ],
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/gezhicui/young-design' },
-    ],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/gezhicui/young-design' }],
     sidebar: {
       '/guild/': [
         {
@@ -54,6 +52,10 @@ export default {
             {
               text: 'Upload上传',
               link: '/examples/upload/',
+            },
+            {
+              text: 'Message消息提示',
+              link: '/examples/message/',
             },
           ],
         },

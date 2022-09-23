@@ -1,19 +1,21 @@
 <template>
   <div class="pl-2">
-    <h1 class="text-2xl mb-4">ElementPlus Message & MessageBox Component</h1>
+    <h1 class="text-2xl mb-4">antdesign</h1>
     <button @click="doLogin">登录</button>
     <div class="mt-4">
       <h2 class="text-lg">Message test</h2>
-      <Button @click="Message.info({ message: 'nihao' })">Info Message</Button>
-      <Button @click="Message({ type: 'warning', message: 'nihao' })"
-        >Warning Message</Button
+      <y-button @click="Message.info({ message: 'nihao' })"
+        >Info Message</y-button
       >
-      <Button @click="Message.danger({ message: 'nihao' })"
-        >Error Message</Button
+      <y-button @click="Message({ type: 'warning', message: 'nihao' })"
+        >Warning Message</y-button
       >
-      <Button
+      <y-button @click="Message.danger({ message: 'nihao' })"
+        >Error Message</y-button
+      >
+      <y-button
         @click="Message({ type: 'success', message: 'nihao', duration: 5000 })"
-        >Success Message</Button
+        >Success Message</y-button
       >
     </div>
   </div>
@@ -22,11 +24,10 @@
 <script setup>
 // import Message from "./src/Message";
 import { getCurrentInstance } from "vue";
-const { appContext } = getCurrentInstance();
-import { Button } from "young-design";
+const ctx = getCurrentInstance();
 const doLogin = () => {
-  console.log(appContext);
-  appContext.config.globalProperties.$message({
+  console.log(ctx);
+  ctx.appContext.config.globalProperties.$message({
     type: "success",
     message: "nihao",
     duration: 5000,
