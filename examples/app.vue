@@ -35,8 +35,14 @@ const messageDanger = () => {
 const messageSuccess = () => {
   ctx.appContext.config.globalProperties.$message({
     type: "success",
-    message: "成功了 成功信息",
+    message: `
+    <div style="height:100px;width:100px;background:red;">
+    <div>safafas</div>
+    <div style="background:green">2222</div>
+    </div>
+    `,
     duration: 50000,
+    showClose: true,
   });
 };
 </script>
