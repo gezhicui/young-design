@@ -113,6 +113,7 @@ const iconList  = [
 'info-circle-fill',
 'question-circle-fill',
 'warning-circle-fill',
+'check-circle-fill',
 ]
 </script>
 

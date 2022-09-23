@@ -1,4 +1,4 @@
-import Message from './message.js'
+import Message from './message'
 
 export default {
   install(app: any) {

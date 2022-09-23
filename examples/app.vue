@@ -16,21 +16,25 @@ import { getCurrentInstance } from "vue";
 const ctx = getCurrentInstance();
 console.log(ctx.appContext);
 const messageInfo = () => {
-  ctx.appContext.config.globalProperties.$message.info({ message: "nihao" });
+  ctx.appContext.config.globalProperties.$message.info({
+    message: "这里是信息请查看",
+  });
 };
 const messageWarn = () => {
   ctx.appContext.config.globalProperties.$message({
     type: "warning",
-    message: "nihao",
+    message: "一条警告信息",
   });
 };
 const messageDanger = () => {
-  ctx.appContext.config.globalProperties.$message.danger({ message: "nihao" });
+  ctx.appContext.config.globalProperties.$message.danger({
+    message: "一个危险操作",
+  });
 };
 const messageSuccess = () => {
   ctx.appContext.config.globalProperties.$message({
     type: "success",
-    message: "nihao",
+    message: "成功了 成功信息",
     duration: 50000,
   });
 };

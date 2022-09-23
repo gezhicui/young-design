@@ -5,45 +5,37 @@
     name="message-fade"
   >
     <div v-show="visiable" :class="messageStyle" :style="{ top: `${top}px` }">
-      <span>{{ message }}?</span>
-      <Icon @click="close" class="closeIcon" name="close" />
+      <Icon class="before-icon" v-if="iconType" :name="iconType" />
+      <span>{{ message }}</span>
+      <Icon @click="close" class="close-icon" name="close" />
     </div>
   </transition>
 </template>
 
 <script setup>
-import types from "./types";
+import { messageType, MessageProps } from "./types";
 import "./style/index.less";
 import Icon from "../Icon/icon.vue";
 import { onMounted, ref, computed } from "vue";
 
-const props = defineProps({
-  type: {
-    type: String,
-    default: "info",
-    validator(value) {
-      return Object.values(types).includes(value);
-    },
-  },
-  top: {
-    type: Number,
-    default: 20,
-  },
-  message: {
-    type: String,
-    required: true,
-  },
-  duration: {
-    type: Number,
-    default: 3000,
-  },
-  onDestroy: Function,
-  onClose: Function,
-});
+const props = defineProps(MessageProps);
 
 const visiable = ref(false);
 
 const messageStyle = computed(() => ["message", props.type]);
+
+const iconType = computed(() => {
+  switch (props.type) {
+    case messageType.SUCCESS:
+      return "check-circle-fill";
+    case messageType.WARNING:
+      return "warning-circle-fill";
+    case messageType.DANGER:
+      return "close-circle-fill";
+    case messageType.INFO:
+      return "info-circle-fill";
+  }
+});
 
 const close = () => {
   visiable.value = false;
