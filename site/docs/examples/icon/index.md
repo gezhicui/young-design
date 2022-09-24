@@ -1,24 +1,69 @@
-<style>
-.icon-wrap{
-  display:flex;
-  flex-wrap:wrap;
-}
-.icon-item{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  height:100px;
-  width:16.6%
-}
-.icon-name{
-  font-size:12px
-}
-.y-icon {
-  font-size: 36px;
-  color: #666;
-  margin-bottom:10px
-}
-</style>
+# Icon 图标
+
+## 基础用法
+
+<div class="icon-wrap">
+  <div class="icon-item"  v-for="(item, index) in iconList" :key="item">
+    <y-icon :name="item"/> 
+    <span class="icon-name">{{item}}</span>
+  </div>
+</div>
+
+```vue
+<template>
+  <y-icon name="组件名称" />
+</template>
+```
+
+## 修改颜色
+
+<div class="icon-wrap">
+  <div class="icon-item" >
+    <y-icon name="cloud-download" color="red"/> 
+  </div>
+   <div class="icon-item" >
+    <y-icon name="like" color="green"/> 
+  </div>
+   <div class="icon-item" >
+    <y-icon name="heart" color="orange"/> 
+  </div>
+   <div class="icon-item" >
+    <y-icon name="delete" color="blue"/> 
+  </div>
+</div>
+
+```vue
+<template>
+  <y-icon name="cloud-download" color="red" />
+  <y-icon name="like" color="green" />
+  <y-icon name="heart" color="orange" />
+  <y-icon name="delete" color="blue" />
+</template>
+```
+
+## 添加角标
+
+<div class="icon-wrap">
+<y-icon name="phone" dot />
+</div>
+
+```vue
+<template>
+  <y-icon name="phone" dot />
+</template>
+```
+
+## 数字角标
+
+<div class="icon-wrap">
+<y-icon name="phone" dot badge="1" />
+</div>
+
+```vue
+<template>
+  <y-icon name="phone" dot badge="1" />
+</template>
+```
 
 <script setup lang="ts">
 const iconList  = [
@@ -117,65 +162,24 @@ const iconList  = [
 ]
 </script>
 
-# Icon 图标
-
-## 基础用法
-
-<div class="icon-wrap">
-  <div class="icon-item"  v-for="(item, index) in iconList" :key="item">
-    <y-icon :name="item"/> 
-    <span class="icon-name">{{item}}</span>
-  </div>
-</div>
-
-```vue
-<template>
-  <y-icon name="组件名称" />
-</template>
-```
-
-## 修改颜色
-
-<div class="icon-wrap">
-  <div class="icon-item" >
-    <y-icon name="cloud-download" color="red"/> 
-  </div>
-   <div class="icon-item" >
-    <y-icon name="like" color="green"/> 
-  </div>
-   <div class="icon-item" >
-    <y-icon name="heart" color="orange"/> 
-  </div>
-   <div class="icon-item" >
-    <y-icon name="delete" color="blue"/> 
-  </div>
-</div>
-
-```vue
-<template>
-  <y-icon name="cloud-download" color="red" />
-  <y-icon name="like" color="green" />
-  <y-icon name="heart" color="orange" />
-  <y-icon name="delete" color="blue" />
-</template>
-```
-
-## 添加角标
-
-<y-icon name="phone" dot />
-
-```vue
-<template>
-  <y-icon name="phone" dot />
-</template>
-```
-
-## 数字角标
-
-<y-icon name="phone" dot badge="1" />
-
-```vue
-<template>
-  <y-icon name="phone" dot badge="1" />
-</template>
-```
+<style scope>
+.icon-wrap{
+  display:flex;
+  flex-wrap:wrap;
+}
+.icon-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  height:100px;
+  width:16.6%
+}
+.icon-name{
+  font-size:12px
+}
+.icon-wrap .y-icon {
+  font-size: 36px;
+  color: #666;
+  margin-bottom:10px
+}
+</style>

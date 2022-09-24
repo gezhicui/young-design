@@ -2,11 +2,10 @@
 
 ## 基础用法
 
-<style>
-.y-button{
-  margin-right:10px
-}
-</style>
+<y-button type='info' plain @click="messageInfo">Info Message</y-button>
+<y-button type='warning' plain @click="messageWarn">Warning Message</y-button>
+<y-button type='danger' plain @click="messageDanger">Error Message</y-button>
+<y-button type='success' plain @click="messageSuccess">Success Message</y-button>
 
 <script setup lang="ts">
 import { getCurrentInstance } from "vue";
@@ -43,7 +42,8 @@ const messageSuccess = () => {
 };
 </script>
 
-<y-button type='info' plain @click="messageInfo">Info Message</y-button>
-<y-button type='warning' plain @click="messageWarn">Warning Message</y-button>
-<y-button type='danger' plain @click="messageDanger">Error Message</y-button>
-<y-button type='success' plain @click="messageSuccess">Success Message</y-button>
+<style scope>
+.y-button{
+  margin-right:10px
+}
+</style>

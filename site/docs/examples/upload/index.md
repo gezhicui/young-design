@@ -2,22 +2,6 @@
 
 在控制台可查看上传文件变化时的文件数组
 
-<style>
-.upload-demo {
-  width: 400px;
-  margin: 50px;
-
-}
-.upload-demo .y-icon{
-  font-size:20px
-}
-</style>
-<script setup lang="ts">
-  const getFilesList = (files: File[]) => {
-  console.log(files);
-};
-</script>
-
 ## 基本使用
 
 <div class="upload-demo">
@@ -105,3 +89,20 @@ const getFilesList = (files: File[]) => {
 };
 </script>
 ```
+
+<script setup lang="ts">
+  const getFilesList = (files: File[]) => {
+  console.log(files);
+};
+</script>
+
+<style scope>
+.upload-demo {
+  width: 400px;
+  margin: 50px;
+
+}
+.upload-demo .y-icon{
+  font-size:20px
+}
+</style>
