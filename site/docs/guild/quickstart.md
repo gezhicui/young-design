@@ -1,32 +1,63 @@
 # 快速开始
 
-本节将介绍如何在项目中使用 young-design
+本节将介绍如何在项目中使用 `young-design`
 
 ## 用法
 
-```
+### 1、直接在组件中导入
+
+```vue
 <template>
   <Button>按钮</Button>
 </template>
 
 <script setup>
-
-import { Button } from 'young-design'
-
+import { Button } from 'young-design';
 </script>
 ```
 
-或
+### 2、在 main.js 中全部注册
+
+```diff
+//main.js
++ import youngDesign from 'young-design';
+import { createApp } from 'vue';
+import App from './app.vue';
+const app = createApp(App);
++ app.use(youngDesign);
+app.mount('#app');
 
 ```
-//main.js
-import { Button } from 'young-design'
-app.use(Button)
-//组件
+
+在组件中可以直接使用
+
+```vue
 <template>
   <y-utton>按钮</y-utton>
+  <y-icon name="phone" dot />
 </template>
+```
 
-<script setup>
+### 3.在 main.js 中按需注册
 
+```diff
+//main.js
++ import import { Button, Icon } from 'young-design';
+import { createApp } from 'vue';
+import App from './app.vue';
+const app = createApp(App);
++ app.use(Button);
++ app.use(Icon);
+app.mount('#app');
+
+
+```
+
+在组件中可以直接使用
+
+```vue
+<template>
+  <y-utton>按钮</y-utton>
+  <y-icon name="phone" dot />
+</template>
 ```

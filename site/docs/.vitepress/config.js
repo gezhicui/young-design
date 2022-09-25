@@ -31,8 +31,8 @@ export default {
           text: '进阶',
           items: [
             {
-              text: 'xx',
-              link: '/xx',
+              text: '开发中',
+              link: '/guild/advanced',
             },
           ],
         },
