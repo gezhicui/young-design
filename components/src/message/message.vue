@@ -45,5 +45,7 @@ onMounted(() => {
   visiable.value = true;
 });
 
-setTimeout(close, props.duration);
+if (props.duration) {
+  setTimeout(close, props.duration);
+}
 </script>
