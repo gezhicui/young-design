@@ -107,6 +107,68 @@ const messageSuccess = () => {
 
 </details>
 
+## 可关闭的消息提示
+
+可以添加关闭按钮。
+
+默认的 Message 是不可以被人工关闭的。 如果你需要手动关闭功能，你可以把 showClose 设置为 true 此外，Message 拥有可控的 duration， 默认的关闭时间为 3000 毫秒，当把这个属性的值设置为 0 便表示该消息不会被自动关闭。
+
+<y-button plain @click="closeInfo">Info Message</y-button>
+<y-button plain @click="closeWarn">Warning Message</y-button>
+<y-button plain @click="closeDanger">Error Message</y-button>
+<y-button plain @click="closesuccess">Success Message</y-button>
+
+<details>
+<summary>展开查看</summary>
+
+```vue
+<template>
+  <div>
+    <y-button plain @click="closeInfo">Info Message</y-button>
+    <y-button plain @click="closeWarn">Warning Message</y-button>
+    <y-button plain @click="closeDanger">Error Message</y-button>
+    <y-button plain @click="closesuccess">Success Message</y-button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { getCurrentInstance } from 'vue';
+const { appContext } = getCurrentInstance();
+const message = appContext.config.globalProperties.$message;
+
+const closeInfo = () => {
+  message({
+    showClose: true,
+    message: 'This is a message.',
+  });
+};
+const closeWarn = () => {
+  message({
+    showClose: true,
+    message: 'Congrats, this is a success message.',
+    type: 'success',
+  });
+};
+const closeDanger = () => {
+  message({
+    showClose: true,
+    message: 'Warning, this is a warning message.',
+    type: 'warning',
+  });
+};
+const closesuccess = () => {
+  message({
+    showClose: true,
+    message: 'Oops, this is a error message.',
+    type: 'danger',
+    duration: 0,
+  });
+};
+</script>
+```
+
+</details>
+
 <script setup lang="ts">
 import { getCurrentInstance } from "vue";
 const { appContext } = getCurrentInstance();
@@ -142,6 +204,35 @@ const messageSuccess = () => {
     message: 'Congrats, this is a success message.',
   });
 };
+
+const closeInfo = () => {
+  message({
+    showClose: true,
+    message: 'This is a message.',
+  })
+}
+const closeWarn = () => {
+  message({
+    showClose: true,
+    message: 'Congrats, this is a success message.',
+    type: 'success',
+  })
+}
+const closeDanger = () => {
+  message({
+    showClose: true,
+    message: 'Warning, this is a warning message.',
+    type: 'warning',
+  })
+}
+const closesuccess = () => {
+  message({
+    showClose: true,
+    message: 'Oops, this is a error message.',
+    type: 'danger',
+    duration:0
+  })
+}
 </script>
 
 <style scope>
