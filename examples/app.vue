@@ -1,48 +1,43 @@
 <template>
-  <div class="pl-2">
-    <h1 class="text-2xl mb-4">antdesign</h1>
-    <div class="mt-4">
-      <h2 class="text-lg">Message test</h2>
-      <y-button @click="messageInfo">Info Message</y-button>
-      <y-button @click="messageWarn">Warning Message</y-button>
-      <y-button @click="messageDanger">Error Message</y-button>
-      <y-button @click="messageSuccess">Success Message</y-button>
-    </div>
-  </div>
+  <Dialog
+    :visible="normalViaible"
+    @cancel="handleClickCancelButton(1, 2, 3, $event)"
+    @confirm="handleConfirmButton"
+    title="这是标题"
+    width="500px"
+  >
+    <!-- <template v-slot:headerContent>
+      <div>我是 header：啊实打实大所</div>
+    </template> -->
+    这是内容这是内容这是内容这是内容这是内容
+  </Dialog>
+  <Button @click="changeNormalVisible">点击</Button>
 </template>
 
-<script setup>
-import { getCurrentInstance } from "vue";
-const ctx = getCurrentInstance();
-console.log(ctx.appContext);
-const messageInfo = () => {
-  ctx.appContext.config.globalProperties.$message.info({
-    message: "<strong>This is <i>HTML</i> string</strong>",
-    showClose: true,
-  });
+<script lang="ts" setup>
+// import { Options, Vue } from "vue-class-component";
+import Dialog from "./src/Dialog.vue";
+import { Button } from "young-design";
+import { ref } from "vue";
+// export default {
+//   components: {
+//     Dialog,
+//   },
+// };
+const normalViaible = ref(false);
+const changeNormalVisible = () => {
+  console.log("changeNormalVisible");
+  normalViaible.value = !normalViaible.value;
 };
-const messageWarn = () => {
-  ctx.appContext.config.globalProperties.$message({
-    type: "warning",
-    message: "一条警告信息",
-  });
+
+const handleClickCancelButton = () => {
+  console.log("handleClickCancelButton");
+  normalViaible.value = !normalViaible.value;
 };
-const messageDanger = () => {
-  ctx.appContext.config.globalProperties.$message.danger({
-    message: "一个危险操作",
-  });
-};
-const messageSuccess = () => {
-  ctx.appContext.config.globalProperties.$message({
-    type: "success",
-    message: `
-    <div style="height:100px;width:100px;background:red;">
-    <div>safafas</div>
-    <div style="background:green">2222</div>
-    </div>
-    `,
-    duration: 50000,
-    showClose: true,
-  });
+
+const handleConfirmButton = () => {
+  console.log("handleConfirmButton");
+  normalViaible.value = !normalViaible.value;
+  alert("点击了确定");
 };
 </script>
