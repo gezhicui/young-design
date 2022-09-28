@@ -1,7 +1,7 @@
-import { series } from 'gulp'
-import { publish } from './index'
+import { series, parallel } from 'gulp'
+import { publish, copyReadme } from './index'
 
 export default series(
-    async () => publish()
+  async () => publish(),
 )
 

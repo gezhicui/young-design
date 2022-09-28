@@ -1,9 +1,8 @@
 {
   "name": "young-design",
-  "version": "1.0.18",
+  "version": "1.0.0",
   "description": "",
-  "main": "dist/lib/index.js",
-  "module": "dist/es/index.js",
+  "main": "index.ts",
   "files": [
     "dist"
   ],
@@ -13,8 +12,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "unplugin-vue-define-options": "^0.11.1"
-  }
+  "license": "ISC"
 }

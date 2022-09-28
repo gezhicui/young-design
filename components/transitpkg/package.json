@@ -1,0 +1,22 @@
+{
+  "name": "young-design",
+  "version": "1.0.22",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "keywords": [
+    "young-design",
+    "vue3组件库"
+  ],
+  "author": "",
+  "license": "ISC",
+  "typings": "lib/index.d.ts"
+}
