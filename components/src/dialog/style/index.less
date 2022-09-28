@@ -1,0 +1,77 @@
+.y-dialog-warpper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  user-select: none;
+
+  .y-dialog-inner {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    .y-dialog-box {
+      border-radius: 4px;
+      display: inline-block;
+      // padding: 24px;
+      background: #fff;
+      text-align: left;
+    }
+  }
+
+  .y-dialog-header {
+    display: flex;
+    padding: 20px 20px 15px;
+    position: relative;
+
+    .y-dialog-title {
+      font-size: 18px;
+      color: #303133;
+    }
+    .y-dialog-close {
+      position: absolute;
+      right: 15px;
+      cursor: pointer;
+      &:hover{
+        color: #409eff;
+      }
+    }
+  }
+
+  .y-dialog-body{
+    padding: 20px;
+  }
+  .y-dialog-footer {
+    padding: 10px 20px 20px;
+    text-align: right;
+    &>*{
+      margin-left: 10px;
+    }
+  }
+}
+
+.y-dialog-fade-enter-to,
+.y-dialog-fade-leave-from {
+  transition: all 0.2s linear;
+  opacity: 1;
+}
+.y-dialog-fade-enter-from,
+.y-dialog-fade-leave-to {
+  transition: all 0.2s linear;
+  opacity: 0;
+}
+
+.y-dialog-fade-enter-to .transition-inner,
+.y-dialog-fade-leave-from .transition-inner {
+  transition: all 0.2s linear;
+  opacity: 1;
+}
+.y-dialog-fade-enter-from .transition-inner,
+.y-dialog-fade-leave-to .transition-inner {
+  transform: translateY(-20px);
+  transition: all 0.2s linear;
+  opacity: 0;
+}
