@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "young-design": "workspace:^1.0.18"
+    "young-design": "workspace:^1.0.0"
   },
   "devDependencies": {
     "minimist": "^1.2.6",
