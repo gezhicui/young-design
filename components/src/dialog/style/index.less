@@ -1,5 +1,6 @@
 .y-dialog-warpper {
   position: fixed;
+  z-index: 2022;
   left: 0;
   top: 0;
   width: 100vw;
@@ -34,20 +35,22 @@
     .y-dialog-close {
       position: absolute;
       right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
       cursor: pointer;
-      &:hover{
+      &:hover {
         color: #409eff;
       }
     }
   }
 
-  .y-dialog-body{
+  .y-dialog-body {
     padding: 20px;
   }
   .y-dialog-footer {
     padding: 10px 20px 20px;
     text-align: right;
-    &>*{
+    & > * {
       margin-left: 10px;
     }
   }

@@ -57,6 +57,10 @@ export default {
               text: 'Message消息提示',
               link: '/examples/message/',
             },
+            {
+              text: 'Dialog对话框',
+              link: '/examples/dialog/',
+            },
           ],
         },
       ],

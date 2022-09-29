@@ -4,11 +4,11 @@
       <div class="y-dialog-inner">
         <div class="y-dialog-box transition-inner" :style="`width:${width}`">
           <div>
-            <slot name="headerContent" />
-            <div class="y-dialog-header" v-if="showHeaderResult">
-              <span class="y-dialog-title">
+            <div class="y-dialog-header">
+              <span class="y-dialog-title" v-if="showHeader">
                 {{ title }}
               </span>
+              <slot v-else name="headerContent" />
               <Icon
                 v-if="showClose"
                 @click="onClickCancelButton"
@@ -24,7 +24,7 @@
 
           <div>
             <slot name="footerContent" />
-            <div class="y-dialog-footer" v-if="showFooterResult">
+            <div class="y-dialog-footer" v-if="showFooter">
               <Button v-if="showCancelButton" @click="onClickCancelButton">
                 {{ cancelText }}
               </Button>
@@ -52,7 +52,7 @@ export default defineComponent({
 
 <script setup lang="ts" >
 import "./style/index.less";
-import { ref, defineEmits, useSlots } from "vue";
+import { ref, useSlots } from "vue";
 import Button from "../button/button.vue";
 import Icon from "../icon/icon.vue";
 import { dialogProps } from "./types.ts";
@@ -70,18 +70,18 @@ const onClickConfirmButton = (e: Event) => {
 };
 
 // 自定义尾部
-const showFooterResult = ref(true);
+const showFooter = ref(true);
 const footerContent = slots?.footerContent;
 
 if (footerContent) {
-  showFooterResult.value = false;
+  showFooter.value = false;
 }
 
 // 自定义头部
-const showHeaderResult = ref(true);
+const showHeader = ref(true);
 const headerContent = slots?.headerContent;
 if (headerContent) {
-  showHeaderResult.value = false;
+  showHeader.value = false;
 }
 </script>
 
