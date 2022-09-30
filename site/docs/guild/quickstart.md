@@ -4,26 +4,16 @@
 
 ## 用法
 
-### 1、直接在组件中导入
-
-```vue
-<template>
-  <Button>按钮</Button>
-</template>
-
-<script setup>
-import { Button } from 'young-design';
-</script>
-```
-
-### 2、在 main.js 中全部注册
+### 1、在 main.js 中全部注册
 
 ```diff
 //main.js
 + import youngDesign from 'young-design';
 import { createApp } from 'vue';
 import App from './app.vue';
+
 const app = createApp(App);
+
 + app.use(youngDesign);
 app.mount('#app');
 
@@ -33,19 +23,20 @@ app.mount('#app');
 
 ```vue
 <template>
-  <y-utton>按钮</y-utton>
+  <y-button>按钮</y-button>
   <y-icon name="phone" dot />
 </template>
 ```
 
-### 3.在 main.js 中按需注册
+### 2.在 main.js 中按需注册
 
 ```diff
 //main.js
-+ import import { Button, Icon } from 'young-design';
++ import { Button, Icon } from 'young-design';
 import { createApp } from 'vue';
 import App from './app.vue';
 const app = createApp(App);
+
 + app.use(Button);
 + app.use(Icon);
 app.mount('#app');
@@ -57,7 +48,19 @@ app.mount('#app');
 
 ```vue
 <template>
-  <y-utton>按钮</y-utton>
+  <y-button>按钮</y-button>
   <y-icon name="phone" dot />
 </template>
+```
+
+### 3、直接在组件中导入
+
+```vue
+<template>
+  <Button>按钮</Button>
+</template>
+
+<script setup>
+import { Button } from 'young-design';
+</script>
 ```
