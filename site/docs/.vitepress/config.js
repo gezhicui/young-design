@@ -42,15 +42,19 @@ export default {
           text: '基础组件',
           items: [
             {
-              text: 'Button按钮',
+              text: 'Button 按钮',
               link: '/examples/button/',
             },
             {
-              text: 'Icon图标',
+              text: 'Icon 图标',
               link: '/examples/icon/',
             },
             {
-              text: 'Upload上传',
+              text: 'Container 布局容器',
+              link: '/examples/container/',
+            },
+            {
+              text: 'Upload 上传',
               link: '/examples/upload/',
             },
           ],
@@ -59,11 +63,11 @@ export default {
           text: '反馈组件',
           items: [
             {
-              text: 'Message消息提示',
+              text: 'Message 消息提示',
               link: '/examples/message/',
             },
             {
-              text: 'Dialog对话框',
+              text: 'Dialog 对话框',
               link: '/examples/dialog/',
             },
           ],
