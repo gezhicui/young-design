@@ -44,10 +44,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-  name: "y-dialog",
-});
+export default { name: "y-dialog" };
 </script>
 
 <script setup lang="ts" >

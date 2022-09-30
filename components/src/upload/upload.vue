@@ -28,12 +28,11 @@
     </div>
   </div>
 </template>
+
 <script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-  name: "y-upload",
-});
+export default { name: "y-upload" };
 </script>
+
 <script setup lang="ts">
 import "./style/index.less";
 import { ref } from "vue";

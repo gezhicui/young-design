@@ -8,10 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-  name: "y-icon",
-});
+export default { name: "y-icon" };
 </script>
 
 <script setup lang="ts">

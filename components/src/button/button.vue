@@ -15,10 +15,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-  name: "y-button",
-});
+export default { name: "y-button" };
 </script>
 
 <script setup lang="ts">
