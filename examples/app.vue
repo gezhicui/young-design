@@ -1,7 +1,10 @@
 <template>
-  <Dialog />
+  <Container />
 </template>
 
 <script lang="ts" setup>
-import Dialog from "./src/Dialog.vue";
+import Container from "./src/Container.vue";
 </script>
+
+<style scoped>
+</style>
