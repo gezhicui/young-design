@@ -8,7 +8,7 @@
     "start": "pnpm run --filter examples dev",
     "build": "gulp -f components/script/build/gulpfile.ts",
     "publish:comp": "gulp -f components/script/publish/gulpfile.ts",
-    "start:docs": "cd site && pnpm docs:dev",
+    "start:docs": "pnpm run --filter site docs:dev",
     "build:docs": "cd site  && ./deploy.sh"
   },
   "keywords": [],

@@ -53,6 +53,11 @@ export default {
               text: 'Upload上传',
               link: '/examples/upload/',
             },
+          ],
+        },
+        {
+          text: '反馈组件',
+          items: [
             {
               text: 'Message消息提示',
               link: '/examples/message/',
