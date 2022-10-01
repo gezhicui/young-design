@@ -162,25 +162,25 @@
 
 :::
 
-## y-container Attributes
+## y-container
 
 | 参数      | 说明             | 类型   | 可选值                | 默认值 |
 | --------- | ---------------- | ------ | --------------------- | ------ |
 | direction | 子元素的排列方向 | string | horizontal / vertical | ——     |
 
-## y-header Attributes
+## y-header
 
 | 参数   | 说明     | 类型   | 可选值 | 默认值 |
 | ------ | -------- | ------ | ------ | ------ |
 | height | 顶栏高度 | string | ——     | 60px   |
 
-## y-aside Attributes
+## y-aside
 
 | 参数  | 说明       | 类型   | 可选值 | 默认值 |
 | ----- | ---------- | ------ | ------ | ------ |
 | width | 侧边栏宽度 | string | ——     | 200px  |
 
-## y-footer Attributes
+## y-footer
 
 | 参数   | 说明     | 类型   | 可选值 | 默认值 |
 | ------ | -------- | ------ | ------ | ------ |

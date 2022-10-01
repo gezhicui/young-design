@@ -27,8 +27,7 @@ const open = () => {
 <y-button :plain="true" @click="open">Show message</y-button>
 <y-button :plain="true" @click="openVn">自定义 html</y-button>
 
-<details>
-<summary>展开查看</summary>
+::: details 显示代码
 
 ```vue
 <template>
@@ -53,7 +52,7 @@ const openVn = () => {
 </script>
 ```
 
-</details>
+:::
 
 ## 不同状态
 
@@ -66,8 +65,7 @@ const openVn = () => {
 <y-button type='danger' plain @click="messageDanger">Error Message</y-button>
 <y-button type='success' plain @click="messageSuccess">Success Message</y-button>
 
-<details>
-<summary>展开查看</summary>
+::: details 显示代码
 
 ```vue
 <template>
@@ -105,7 +103,7 @@ const messageSuccess = () => {
 </script>
 ```
 
-</details>
+:::
 
 ## 可关闭的消息提示
 
@@ -118,8 +116,7 @@ const messageSuccess = () => {
 <y-button plain @click="closeDanger">Error Message</y-button>
 <y-button plain @click="closesuccess">Success Message</y-button>
 
-<details>
-<summary>展开查看</summary>
+::: details 显示代码
 
 ```vue
 <template>
@@ -167,7 +164,7 @@ const closesuccess = () => {
 </script>
 ```
 
-</details>
+:::
 
 <script setup lang="ts">
 import { getCurrentInstance } from "vue";

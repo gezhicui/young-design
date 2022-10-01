@@ -12,8 +12,7 @@
 
 <y-button @click="openDefaultDialog">点击显示 dialog</y-button>
 
-<details>
-<summary>展开查看</summary>
+::: details 显示代码
 
 ```vue
 <template>
@@ -41,7 +40,7 @@ const handleClose = () => {
 </script>
 ```
 
-</details>
+:::
 
 ## 自定义内容
 
@@ -55,8 +54,7 @@ const handleClose = () => {
 
 <y-button @click="openContentDialog">自定义内容的 dialog</y-button>
 
-<details>
-<summary>展开查看</summary>
+::: details 显示代码
 
 ```vue
 <template>
@@ -83,7 +81,7 @@ const handleClose = () => {
 </script>
 ```
 
-</details>
+:::
 
 ## 自定义头部和尾部
 
@@ -107,8 +105,7 @@ const handleClose = () => {
 
 <y-button @click="openCustomDialog">显示自定义头尾 dialog</y-button>
 
-<details>
-<summary>展开查看</summary>
+::: details 显示代码
 
 ```vue
 <template>
@@ -147,7 +144,30 @@ const handleClose = () => {
 </script>
 ```
 
-</details>
+:::
+
+## API
+
+| 参数              | 说明                  | 类型    | 可选值 | 默认值 |
+| ----------------- | --------------------- | ------- | ------ | ------ |
+| title             | 标题                  | string  |        |        |
+| visible           | dialog 是否出现       | boolean |        | false  |
+| cancelText        | cancel 按钮的文字     | string  |        | 取消   |
+| confirmText       | confirm 按钮的文字    | string  |        | 确认   |
+| showHeader        | 是否需要头部          | boolean |        | true   |
+| showFooter        | 是否需要尾部          | boolean |        | true   |
+| showClose         | 是否需要 close        | boolean |        | true   |
+| showCancelButton  | 是否需要 cancel 按钮  | boolean |        | true   |
+| showConfirmButton | 是否需要 confirm 按钮 | boolean |        | true   |
+| width             | 自定义宽度            | string  |        | auto   |
+
+## slot
+
+| 插槽名        | 描述                    |
+| ------------- | ----------------------- |
+| default       | 默认插槽，dialog 的内容 |
+| headerContent | 头部插槽                |
+| footerContent | 尾部插槽                |
 
 <script setup lang="ts">
   import { ref } from "vue";

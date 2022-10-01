@@ -90,6 +90,14 @@ const getFilesList = (files: File[]) => {
 </script>
 ```
 
+## API
+
+| 参数     | 说明                                                   | 类型    | 可选值 | 默认值 |
+| -------- | ------------------------------------------------------ | ------- | ------ | ------ |
+| multiple | 是否可以多选                                           | boolean |        | false  |
+| accept   | 可以选择的文件 MIME 类型，多个 MIME 类型用英文逗号分开 | string  |        |        |
+| drag     | 是否是拖拽上传                                         | boolean |        | false  |
+
 <script setup lang="ts">
   const getFilesList = (files: File[]) => {
   console.log(files);

@@ -32,8 +32,7 @@
     </div>
 </div>
 
-<details>
-<summary>展开查看</summary>
+::: details 显示代码
 
 ```vue
 <template>
@@ -73,7 +72,7 @@ import { y-button } from "young-design";
 </style>
 ```
 
-</details>
+:::
 
 ## 禁用状态
 
@@ -96,8 +95,7 @@ import { y-button } from "young-design";
     </div>
 </div>
 
-<details>
-<summary>展开查看</summary>
+::: details 显示代码
 
 ```vue
 <template>
@@ -128,7 +126,7 @@ import { y-button } from "young-design";
 </style>
 ```
 
-</details>
+:::
 
 ## 调整尺寸
 
@@ -141,8 +139,7 @@ import { y-button } from "young-design";
     </div>
 </div>
 
-<details>
-<summary>展开查看</summary>
+::: details 显示代码
 
 ```vue
 <template>
@@ -163,7 +160,19 @@ import { y-button } from "young-design";
 </style>
 ```
 
-</details>
+:::
+
+## API
+
+| 参数         | 说明         | 类型    | 可选值                                                    | 默认值 |
+| ------------ | ------------ | ------- | --------------------------------------------------------- | ------ |
+| type         | 按钮类型     | string  | 'primary', 'success', 'info', 'warning', 'danger', 'text' |        |
+| size         | 按钮大小     | string  | 'medium', 'small', 'mini'                                 |        |
+| plain        | 是否朴素按钮 | boolean |                                                           |        |
+| round        | 是否圆角按钮 | boolean |                                                           |        |
+| disabled     | 是否禁用     | boolean |                                                           |        |
+| icon         | 图标名       | string  | 查看 Ion 中的图标 name                                    |        |
+| iconPosition | 图标位置     | string  | right/空                                                  | 空     |
 
 <style scope>
   .example{
@@ -175,10 +184,4 @@ import { y-button } from "young-design";
       margin:10px 5px
   }
   
-  details > summary:first-of-type {
-      font-size: 10px;
-      padding: 8px 0;
-      cursor: pointer;
-      color: #1989fa;
-  }
 </style>

@@ -65,6 +65,15 @@
 </template>
 ```
 
+## API
+
+| 参数  | 说明                             | 类型    | 可选值       | 默认值 |
+| ----- | -------------------------------- | ------- | ------------ | ------ |
+| name  | icon 名                          | string  | 查看上方按钮 |        |
+| dot   | 是否有角标                       | boolean |              | false  |
+| badge | 数字角标内容(dot 为 true 才生效) | string  |              |        |
+| color | icon 颜色                        | string  |              |        |
+
 <script setup lang="ts">
 const iconList  = [
 'close-circle',
