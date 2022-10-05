@@ -1,9 +1,9 @@
 <template>
-  <Container />
+  <YImage />
 </template>
 
 <script lang="ts" setup>
-import Container from "./src/Container.vue";
+import YImage from "./src/Info.vue";
 </script>
 
 <style scoped>

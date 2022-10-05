@@ -53,6 +53,15 @@ export default {
               text: 'Container 布局容器',
               link: '/examples/container/',
             },
+          ],
+        },
+        {
+          text: '数据展示',
+          items: [
+            {
+              text: 'Avatar头像',
+              link: '/examples/avatar/',
+            },
             {
               text: 'Upload 上传',
               link: '/examples/upload/',
