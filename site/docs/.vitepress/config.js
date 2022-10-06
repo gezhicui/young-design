@@ -67,6 +67,10 @@ export default {
               link: '/examples/info/',
             },
             {
+              text: 'Card 卡片',
+              link: '/examples/card/',
+            },
+            {
               text: 'Upload 上传',
               link: '/examples/upload/',
             },
