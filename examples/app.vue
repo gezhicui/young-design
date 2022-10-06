@@ -1,9 +1,9 @@
 <template>
-  <YImage />
+  <Card />
 </template>
 
 <script lang="ts" setup>
-import YImage from "./src/Info.vue";
+import Card from "./src/Card.vue";
 </script>
 
 <style scoped>

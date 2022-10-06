@@ -25,6 +25,7 @@
   >
     这是内容这是内容这是内容这是内容这是内容
   </y-dialog>
+  <y-button @click="openDefaultDialog">点击显示 dialog</y-button>
 </template>
 
 <script setup lang="ts">
