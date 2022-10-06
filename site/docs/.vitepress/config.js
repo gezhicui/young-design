@@ -59,8 +59,12 @@ export default {
           text: '数据展示',
           items: [
             {
-              text: 'Avatar头像',
+              text: 'Avatar 头像',
               link: '/examples/avatar/',
+            },
+            {
+              text: 'Info 信息栏',
+              link: '/examples/info/',
             },
             {
               text: 'Upload 上传',
