@@ -1,7 +1,12 @@
 {
   "name": "young-design",
-  "version": "1.0.22",
-  "description": "",
+  "version": "1.0.25",
+  "description": "monorepo+vite+vue3组件库",
+  "homepage": "http://xiang0515.gitee.io/young-design-docs/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gezhicui/young-design"
+  },
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [

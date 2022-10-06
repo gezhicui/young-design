@@ -1,5 +1,5 @@
 <script lang="ts">
-import "../styles/index.less";
+import "../style/index.less";
 export default { name: "y-main" };
 </script>
 

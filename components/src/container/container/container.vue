@@ -3,7 +3,7 @@ export default { name: "y-container" };
 </script>
 
 <script lang="ts" setup>
-import "../styles/index.less";
+import "../style/index.less";
 import { computed, useSlots } from "vue";
 import type { Component, VNode } from "vue";
 

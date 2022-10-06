@@ -28,7 +28,7 @@ import Icon from "../Icon/icon.vue";
 import { ref, computed } from "vue";
 import { avatarProps } from "./types";
 import type { CSSProperties } from "vue";
-import "./styles/index.less";
+import "./style/index.less";
 
 const prop = defineProps(avatarProps);
 const emit = defineEmits(["error", "load"]);

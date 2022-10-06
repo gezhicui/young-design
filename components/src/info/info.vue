@@ -32,7 +32,7 @@ export default { name: "y-info" };
 </script>
 <script lang="ts" setup >
 import { infoProps } from "./props";
-import "./styles/index.less";
+import "./style/index.less";
 defineProps(infoProps);
 </script>
 

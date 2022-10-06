@@ -3,7 +3,7 @@ export default { name: "y-footer" };
 </script>
 
 <script lang="ts" setup>
-import "../styles/index.less";
+import "../style/index.less";
 defineProps({
   height: {
     type: String,
