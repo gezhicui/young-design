@@ -1,9 +1,9 @@
 <template>
-  <Card />
+  <Switch />
 </template>
 
 <script lang="ts" setup>
-import Card from "./src/Card.vue";
+import Switch from "./src/Switch.vue";
 </script>
 
 <style scoped>

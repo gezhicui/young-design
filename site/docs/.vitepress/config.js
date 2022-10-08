@@ -71,6 +71,10 @@ export default {
               link: '/examples/card/',
             },
             {
+              text: 'Switch 开关',
+              link: '/examples/switch/',
+            },
+            {
               text: 'Upload 上传',
               link: '/examples/upload/',
             },

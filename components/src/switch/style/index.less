@@ -1,0 +1,36 @@
+.y-switch {
+  display: inline-block;
+  transition: 0.3s;
+  position: relative;
+  cursor: pointer;
+  .y-switch-roll {
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+    background-color: #fff;
+  }
+}
+
+.y-switch-disabled {
+  opacity: 0.6;
+  cursor: no-drop;
+}
+
+.y-switch-closeText,
+.y-switch-openText {
+  vertical-align: top;
+  font-size: 13px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.y-switch-closeText {
+  margin-right: 5px;
+}
+
+.y-switch-openText {
+  margin-left: 5px;
+}

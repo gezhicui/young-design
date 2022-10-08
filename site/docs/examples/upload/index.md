@@ -98,6 +98,12 @@ const getFilesList = (files: File[]) => {
 | accept   | 可以选择的文件 MIME 类型，多个 MIME 类型用英文逗号分开 | string  |        |        |
 | drag     | 是否是拖拽上传                                         | boolean |        | false  |
 
+## Events
+
+| 事件名称     | 说明               | 回调参数     |
+| ------------ | ------------------ | ------------ |
+| getFilesList | 文件列表改变时触发 | 新的文件列表 |
+
 <script setup lang="ts">
   const getFilesList = (files: File[]) => {
   console.log(files);
