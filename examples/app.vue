@@ -1,5 +1,5 @@
 <template>
-  <Select :options="options" disabled></Select>
+  <Select :options="options"></Select>
 </template>
 
 <script lang="ts" setup>
@@ -22,6 +22,7 @@ const state = reactive({
     {
       label: "俄罗斯",
       value: "russia",
+      disabled: true,
     },
     {
       label: "韩国",

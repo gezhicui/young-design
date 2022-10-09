@@ -3,12 +3,18 @@
     <input
       type="text"
       readonly
+      :class="{ 't-disabled': disabled }"
       :value="selectVal"
       placeholder="请选择"
       :disabled="disabled"
     />
     <div class="t-position-box" v-if="positionShow">
-      <li v-for="item in options" :key="item.value" @click="change(item)">
+      <li
+        v-for="item in options"
+        :key="item.value"
+        @click="change(item)"
+        :class="{ 't-disabled': item.disabled }"
+      >
         {{ item.label }}
       </li>
     </div>
@@ -30,7 +36,6 @@ const props = defineProps({
   },
   disabled: Boolean,
 });
-console.log(props.options);
 const selectVal = ref("");
 const positionShow = ref(false);
 const vClickOutSide = {
@@ -49,8 +54,10 @@ const vClickOutSide = {
 };
 
 const change = (item) => {
-  selectVal.value = item.label;
-  positionShow.value = false;
+  if (!item.disabled) {
+    selectVal.value = item.label;
+    positionShow.value = false;
+  }
 };
 </script>
 
@@ -87,6 +94,11 @@ const change = (item) => {
         background: #f0f0f0;
       }
     }
+  }
+  .t-disabled {
+    cursor: no-drop !important;
+    color: #808080;
+    background: #f0f0f0;
   }
 }
 </style>
