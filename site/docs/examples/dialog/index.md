@@ -162,7 +162,7 @@ const handleClose = () => {
 | showConfirmButton | 是否需要 confirm 按钮 | boolean |        | true   |
 | width             | 自定义宽度            | string  |        | auto   |
 
-## slots
+## Slots
 
 | 插槽名        | 描述                    |
 | ------------- | ----------------------- |

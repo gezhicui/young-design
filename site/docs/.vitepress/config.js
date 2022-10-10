@@ -75,6 +75,10 @@ export default {
               link: '/examples/switch/',
             },
             {
+              text: 'Select 选择器',
+              link: '/examples/select/',
+            },
+            {
               text: 'Upload 上传',
               link: '/examples/upload/',
             },
