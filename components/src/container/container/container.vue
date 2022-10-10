@@ -28,7 +28,6 @@ function Container() {
     }
     if (slots && slots.default) {
       return slots.default().some((n: VNode) => {
-        console.log(n);
         const tag = n.type && (n.type as Component).name;
         return tag === "y-header" || tag === "y-footer";
       });

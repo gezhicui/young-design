@@ -30,7 +30,6 @@ function Message(options: MessageProps | string) {
       close(vm);
     },
     onDestroy() {
-      console.log('onDestroy');
       render(null, container);
     },
   });
@@ -39,9 +38,7 @@ function Message(options: MessageProps | string) {
   instances.push(vm);
 }
 function close(vm: VNode) {
-  console.log('closevm', instances);
   const index = instances.findIndex((ins) => ins === vm);
-  console.log('index', index);
   if (index === -1) {
     return;
   }

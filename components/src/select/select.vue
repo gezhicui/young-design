@@ -70,7 +70,6 @@ watchEffect(() => {
   const selectItem = props.options.find(
     (item) => item[props.fieldValue] === props.modelValue
   );
-  console.log(selectItem);
   if (selectItem) {
     inputlabel.value = selectItem[props.fieldLabel];
   }
