@@ -1,15 +1,15 @@
 <template>
-  <Select
+  <y-select
     :options="options"
     fieldLabel="name"
     fieldValue="id"
     v-model="SleVal"
     @change="changeSelect"
-  ></Select>
+  ></y-select>
 </template>
 
 <script lang="ts" setup>
-import Select from "./src/Select.vue";
+// import Select from "./src/Select.vue";
 import { reactive, ref } from "vue";
 const state = reactive({
   options: [

@@ -30,7 +30,7 @@ import { avatarProps } from "./types";
 import type { CSSProperties } from "vue";
 import "./style/index.less";
 
-const prop = defineProps(avatarProps);
+const props = defineProps(avatarProps);
 const emit = defineEmits(["error", "load"]);
 
 const isError = ref<boolean>(false);
@@ -42,22 +42,22 @@ const onError = (): void => {
 
 const isSize = computed((): CSSProperties => {
   return {
-    width: `${prop.size * 10}px`,
-    height: `${prop.size * 10}px`,
+    width: `${props.size * 10}px`,
+    height: `${props.size * 10}px`,
   };
 });
 
 const errorClass = computed((): (string | object)[] => {
-  return ["y-avatar-error", { "y-avatar-round": prop.round }];
+  return ["y-avatar-error", { "y-avatar-round": props.round }];
 });
 
 const successClass = computed((): object[] => {
   return [
     {
-      [`y-avatar-${prop.fit}`]: prop.fit,
-      "y-avatar-round": prop.round,
-      "y-avatar-border": prop.border,
-      "y-avatar-select": prop.select,
+      [`y-avatar-${props.fit}`]: props.fit,
+      "y-avatar-round": props.round,
+      "y-avatar-border": props.border,
+      "y-avatar-select": props.select,
     },
   ];
 });

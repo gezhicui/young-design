@@ -33,42 +33,42 @@ import { switchProps } from "./types";
 import "./style/index.less";
 import type { CSSProperties } from "vue";
 
-const prop = defineProps(switchProps);
+const props = defineProps(switchProps);
 const emit = defineEmits(["update:modelValue", "change"]);
 
-const switchValue = ref<boolean>(prop.modelValue);
+const switchValue = ref<boolean>(props.modelValue);
 
 const clickSwitch = (): void => {
-  if (prop.disabled) return;
+  if (props.disabled) return;
   switchValue.value = !switchValue.value;
   emit("update:modelValue", switchValue.value);
   emit("change", switchValue.value);
 };
 
 const switchColor = computed((): string => {
-  return prop.modelValue ? prop.openColor : prop.closeColor;
+  return props.modelValue ? props.openColor : props.closeColor;
 });
 
 const switchStyle = computed((): CSSProperties => {
-  const width = ref<number>(prop.width);
+  const width = ref<number>(props.width);
   if (width.value < 20) width.value = 20;
   return {
     width: `${width.value}px`,
     height: `${width.value / 2}px`,
     backgroundColor: switchColor.value,
-    borderRadius: prop.type === "square" ? "" : `${width.value / 4}px`,
+    borderRadius: props.type === "square" ? "" : `${width.value / 4}px`,
   };
 });
 
 const switchRollStyle = computed((): CSSProperties => {
-  const width = ref<number>(prop.width);
+  const width = ref<number>(props.width);
   if (width.value < 20) width.value = 20;
   return {
     width: `${width.value / 2}px`,
     height: `${width.value / 2}px`,
-    left: prop.modelValue ? `${width.value / 2}px` : "0px",
+    left: props.modelValue ? `${width.value / 2}px` : "0px",
     border: `2px solid  ${switchColor.value}`,
-    borderRadius: prop.type === "square" ? "" : "50%",
+    borderRadius: props.type === "square" ? "" : "50%",
   };
 });
 </script>
