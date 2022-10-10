@@ -1,36 +1,48 @@
 <template>
-  <Select :options="options"></Select>
+  <Select
+    :options="options"
+    fieldLabel="name"
+    fieldValue="id"
+    v-model="SleVal"
+    @change="changeSelect"
+  ></Select>
 </template>
 
 <script lang="ts" setup>
 import Select from "./src/Select.vue";
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 const state = reactive({
   options: [
     {
-      label: "中国",
-      value: "china",
+      name: "中国",
+      id: "china",
     },
     {
-      label: "日本",
-      value: "japan",
+      name: "日本",
+      id: "japan",
     },
     {
-      label: "美国",
-      value: "usa",
+      name: "美国",
+      id: "usa",
     },
     {
-      label: "俄罗斯",
-      value: "russia",
+      name: "俄罗斯",
+      id: "russia",
       disabled: true,
     },
     {
-      label: "韩国",
-      value: "korea",
+      name: "韩国",
+      id: "korea",
     },
   ],
 });
 const { options } = state;
+const SleVal = ref("");
+const changeSelect = (item) => {
+  console.log(SleVal.value);
+
+  console.log(item);
+};
 </script>
 
 <style scoped>

@@ -1,23 +1,31 @@
 <template>
-  <div class="t-select" v-clickOutSide>
+  <div class="y-select" v-clickOutSide>
     <input
       type="text"
       readonly
-      :class="{ 't-disabled': disabled }"
-      :value="selectVal"
-      placeholder="请选择"
+      :class="{ 'y-disabled': disabled }"
+      :value="inputlabel"
+      :placeholder="placeholder"
       :disabled="disabled"
     />
-    <div class="t-position-box" v-if="positionShow">
-      <li
-        v-for="item in options"
-        :key="item.value"
-        @click="change(item)"
-        :class="{ 't-disabled': item.disabled }"
-      >
-        {{ item.label }}
-      </li>
-    </div>
+    <Transition name="slide-fade">
+      <div class="y-options-box" v-if="positionShow">
+        <li
+          v-for="(item, index) in options"
+          :key="item[fieldValue]"
+          @click="change(item, index)"
+          :class="[
+            {
+              'y-disabled': item.disabled,
+              'y-options-item-active': item[fieldValue] === modelValue,
+            },
+            'y-options-item',
+          ]"
+        >
+          {{ item[fieldLabel] }}
+        </li>
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -28,24 +36,46 @@ export default {
 </script>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
 const props = defineProps({
   options: {
     type: Array,
     default: () => [],
   },
   disabled: Boolean,
+  fieldLabel: {
+    type: String,
+    default: "label",
+  },
+  fieldValue: {
+    type: String,
+    default: "value",
+  },
+  placeholder: {
+    type: String,
+    default: "请选择",
+  },
+  modelValue: String,
 });
-const selectVal = ref("");
+
+const emit = defineEmits(["change", "update:modelValue"]);
+
+const inputlabel = ref("");
 const positionShow = ref(false);
+
 const vClickOutSide = {
   beforeMount(el) {
     const handler = (e) => {
       if (!props.disabled) {
-        if (el.contains(e.target)) {
+        if (
+          el.contains(e.target) &&
+          e.target.className.indexOf("y-options-item") === -1
+        ) {
           positionShow.value = true;
         } else {
-          positionShow.value = false;
+          if (e.target.className.indexOf("y-disabled") === -1) {
+            positionShow.value = false;
+          }
         }
       }
     };
@@ -53,17 +83,28 @@ const vClickOutSide = {
   },
 };
 
-const change = (item) => {
+watchEffect(() => {
+  const selectItem = props.options.find(
+    (item) => item[props.fieldValue] === props.modelValue
+  );
+  console.log(selectItem);
+  if (selectItem) {
+    inputlabel.value = selectItem[props.fieldLabel];
+  }
+});
+
+const change = (item, index) => {
   if (!item.disabled) {
-    selectVal.value = item.label;
     positionShow.value = false;
+    emit("update:modelValue", item[props.fieldValue]);
+    emit("change", item);
   }
 };
 </script>
 
 <style lang="less" scoped>
 @border: #d4d3d3;
-.t-select {
+.y-select {
   min-width: 250px;
   display: inline-block;
   height: 40px;
@@ -75,7 +116,9 @@ const change = (item) => {
     width: 100%;
     box-sizing: border-box;
   }
-  .t-position-box {
+  .y-options-box {
+    z-index: 99;
+    background: #fff;
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -95,10 +138,25 @@ const change = (item) => {
       }
     }
   }
-  .t-disabled {
+  .y-disabled {
     cursor: no-drop !important;
     color: #808080;
     background: #f0f0f0;
   }
+  .y-options-item-active {
+    color: #409eff;
+  }
+}
+.slide-fade-enter-active {
+  transition: all 0.2s ease-out;
+}
+.slide-fade-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-15px);
+  opacity: 0;
 }
 </style>
