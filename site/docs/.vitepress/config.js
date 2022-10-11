@@ -79,6 +79,10 @@ export default {
               link: '/examples/select/',
             },
             {
+              text: 'Textarea 文本域',
+              link: '/examples/textarea/',
+            },
+            {
               text: 'Upload 上传',
               link: '/examples/upload/',
             },
