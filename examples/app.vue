@@ -1,9 +1,9 @@
 <template>
-  <Textarea></Textarea>
+  <Radio></Radio>
 </template>
 
 <script lang="ts" setup>
-import Textarea from "./src/Textarea.vue";
+import Radio from "./src/Radio.vue";
 </script>
 
 <style scoped>
