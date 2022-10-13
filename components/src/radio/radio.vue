@@ -11,7 +11,7 @@
   >
     <span :class="isClass">
       <input
-        v-model="modelValue"
+        :checked="isLabel"
         type="radio"
         :name="name"
         :value="label"
@@ -71,8 +71,6 @@ const isStyle = computed((): CSSProperties => {
 });
 
 const labelStyle = computed((): CSSProperties => {
-  console.log(props.disabled, props.border);
-
   return {
     cursor: props.disabled ? "no-drop" : "pointer",
     border: props.border
