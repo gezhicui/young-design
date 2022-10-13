@@ -1,7 +1,8 @@
-import { PropType } from 'vue'
-import type { Size } from './interface'
+import { PropType, ExtractPropTypes } from 'vue'
 
-export const Props = {
+export type Size = 'large' | 'medium' | 'small' | 'mini'
+
+export const radioProps = {
   modelValue: String,
   label: String,
   name: String,
@@ -14,4 +15,6 @@ export const Props = {
       return ['large', 'medium', 'small', 'mini', ''].includes(v)
     }
   }
-} as const
+}
+
+export type RadioProps = ExtractPropTypes<typeof radioProps>
