@@ -7,7 +7,7 @@ titleTemplate: 一个Vue3组件库
 hero:
   name: Young-design
   text: 一个Vue3组件库
-  tagline: 没啥特点仅供学习
+  tagline: 看起来还不错
   image:
     src: /logo.png
     alt: Young-design
