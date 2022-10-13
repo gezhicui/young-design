@@ -83,6 +83,10 @@ export default {
               link: '/examples/textarea/',
             },
             {
+              text: 'Radio 单选框',
+              link: '/examples/radio/',
+            },
+            {
               text: 'Upload 上传',
               link: '/examples/upload/',
             },
