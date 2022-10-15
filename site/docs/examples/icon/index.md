@@ -4,7 +4,7 @@
 
 <div class="icon-wrap">
   <div class="icon-item"  v-for="(item, index) in iconList" :key="item">
-    <y-icon :name="item"/> 
+    <y-icon size="36" :name="item"/> 
     <span class="icon-name">{{item}}</span>
   </div>
 </div>
@@ -19,16 +19,16 @@
 
 <div class="icon-wrap">
   <div class="icon-item" >
-    <y-icon name="cloud-download" color="red"/> 
+    <y-icon name="cloud-download" color="red"   size="36"/> 
   </div>
    <div class="icon-item" >
-    <y-icon name="like" color="green"/> 
+    <y-icon name="like" color="green"  size="36"/> 
   </div>
    <div class="icon-item" >
-    <y-icon name="heart" color="orange"/> 
+    <y-icon name="heart" color="orange"  size="36"/> 
   </div>
    <div class="icon-item" >
-    <y-icon name="delete" color="blue"/> 
+    <y-icon name="delete" color="blue"  size="36"/> 
   </div>
 </div>
 
@@ -41,10 +41,36 @@
 </template>
 ```
 
+## 控制大小
+
+<div class="icon-wrap">
+  <div class="icon-item" >
+    <y-icon name="cloud-download" size="10"/> 
+  </div>
+   <div class="icon-item" >
+    <y-icon name="like" size="20"/> 
+  </div>
+   <div class="icon-item" >
+    <y-icon name="heart" :size="30"/> 
+  </div>
+   <div class="icon-item" >
+    <y-icon name="delete" :size="40"/> 
+  </div>
+</div>
+
+```vue
+<template>
+  <y-icon name="cloud-download" size="10" />
+  <y-icon name="like" size="20" />
+  <y-icon name="heart" :size="30" />
+  <y-icon name="delete" :size="40" />
+</template>
+```
+
 ## 添加角标
 
 <div class="icon-wrap">
-<y-icon name="phone" dot />
+<y-icon name="phone" dot   size="36"/>
 </div>
 
 ```vue
@@ -56,7 +82,7 @@
 ## 数字角标
 
 <div class="icon-wrap">
-<y-icon name="phone" dot badge="1" />
+<y-icon name="phone" dot badge="1" size="36" />
 </div>
 
 ```vue
@@ -67,12 +93,13 @@
 
 ## API
 
-| 参数  | 说明                             | 类型    | 可选值       | 默认值 |
-| ----- | -------------------------------- | ------- | ------------ | ------ |
-| name  | icon 名                          | string  | 查看上方按钮 |        |
-| dot   | 是否有角标                       | boolean |              | false  |
-| badge | 数字角标内容(dot 为 true 才生效) | string  |              |        |
-| color | icon 颜色                        | string  |              |        |
+| 参数  | 说明                             | 类型          | 可选值       | 默认值 |
+| ----- | -------------------------------- | ------------- | ------------ | ------ |
+| name  | icon 名                          | string        | 查看上方按钮 |        |
+| dot   | 是否有角标                       | boolean       |              | false  |
+| badge | 数字角标内容(dot 为 true 才生效) | string        |              |        |
+| color | icon 颜色                        | string        |              |        |
+| size  | icon 大小,传入 25 就是 25px      | string/number |              | 16     |
 
 <script setup lang="ts">
 const iconList =[
@@ -699,8 +726,9 @@ const iconList =[
 .icon-name{
   font-size:12px
 }
-.icon-wrap .y-icon {
-  font-size: 36px;
+.icon-wrap .y-icon .icon{
+  /* width:36px;
+  height:36px; */
   color: #666;
   margin-bottom:10px
 }

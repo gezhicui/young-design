@@ -1,6 +1,6 @@
 <template>
   <div class="y-icon">
-    <svg class="icon" :style="iconColor" aria-hidden="true">
+    <svg class="icon" :style="iconStyle" aria-hidden="true">
       <use :xlink:href="iconName"></use>
     </svg>
     <div v-if="dot" class="y-info" :class="styleDot">{{ badge }}</div>
@@ -8,16 +8,16 @@
 </template>
 
 <script lang="ts">
-export default { name: "y-icon" };
+export default { name: 'y-icon' };
 </script>
 
 <script setup lang="ts">
-import "./style/index.less";
-import { computed, onMounted } from "vue";
-import { iconProps } from "./types";
+import './style/index.less';
+import { computed, onMounted } from 'vue';
+import { iconProps } from './types';
 
 onMounted(() => {
-  import("./font/iconfont.js" as any);
+  import('./font/iconfont.js' as any);
 });
 
 const props = defineProps(iconProps);
@@ -32,9 +32,11 @@ const styleDot = computed(() => {
 const badge = computed(() => {
   return props.badge;
 });
-const iconColor = computed(() => {
+const iconStyle = computed(() => {
   return {
     color: props.color,
+    width: props.size,
+    height: props.size,
   };
 });
 </script>
