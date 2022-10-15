@@ -66,7 +66,7 @@
 import { y-button } from "young-design";
 </script>
 <style>
-.k-y-button {
+.y-button {
   margin-right: 10px;
 }
 </style>
@@ -120,7 +120,7 @@ import { y-button } from "young-design";
 import { y-button } from "young-design";
 </script>
 <style>
-.k-y-button {
+.y-button {
   margin-right: 10px;
 }
 </style>
@@ -128,7 +128,7 @@ import { y-button } from "young-design";
 
 :::
 
-## 调整尺寸
+## 调整按钮尺寸
 
 <div class="example">
     <div>
@@ -154,7 +154,59 @@ import { y-button } from "young-design";
 import { y-button } from "young-design";
 </script>
 <style>
-.k-y-button {
+.y-button {
+  margin-right: 10px;
+}
+</style>
+```
+
+:::
+
+## 图标、图标位置及图标尺寸
+
+可以通过配置`icon`属性和 `iconPosition`来确定图标及图标位置
+
+使用`iconSize`来确定图标尺寸
+
+<div class="example">
+  <y-button icon="cloud-download">下载</y-button>
+  <y-button icon="like">赞</y-button>
+  <y-button icon="heart" iconPosition="right">喜欢</y-button>
+  <y-button icon="delete" iconPosition="right">删除</y-button>
+  <br>
+  <y-button icon="cloud-download" iconSize="10" />
+  <y-button icon="like"  iconSize="20"/>
+  <y-button icon="heart" round iconPosition="right" iconSize="30" />
+  <y-button icon="delete" round iconPosition="right" type='danger'  iconSize="40"/>
+</div>
+
+::: details 显示代码
+
+```vue
+<template>
+  <div>
+    <y-button icon="cloud-download">下载</y-button>
+    <y-button icon="like">赞</y-button>
+    <y-button icon="heart" iconPosition="right">喜欢</y-button>
+    <y-button icon="delete" iconPosition="right">删除</y-button>
+    <br />
+    <y-button icon="cloud-download" iconSize="10" />
+    <y-button icon="like" iconSize="20" />
+    <y-button icon="heart" round iconPosition="right" iconSize="30" />
+    <y-button
+      icon="delete"
+      round
+      iconPosition="right"
+      type="danger"
+      iconSize="40"
+    />
+  </div>
+</template>
+<script lang="ts" setup>
+import { y-button } from "young-design";
+</script>
+<style>
+.y-button {
   margin-right: 10px;
 }
 </style>
@@ -164,15 +216,16 @@ import { y-button } from "young-design";
 
 ## API
 
-| 参数         | 说明         | 类型    | 可选值                                                    | 默认值 |
-| ------------ | ------------ | ------- | --------------------------------------------------------- | ------ |
-| type         | 按钮类型     | string  | 'primary', 'success', 'info', 'warning', 'danger', 'text' |        |
-| size         | 按钮大小     | string  | 'medium', 'small', 'mini'                                 |        |
-| plain        | 是否朴素按钮 | boolean |                                                           |        |
-| round        | 是否圆角按钮 | boolean |                                                           |        |
-| disabled     | 是否禁用     | boolean |                                                           |        |
-| icon         | 图标名       | string  | 查看 Ion 中的图标 name                                    |        |
-| iconPosition | 图标位置     | string  | right/空                                                  | 空     |
+| 参数         | 说明         | 类型                        | 可选值                                                    | 默认值 |
+| ------------ | ------------ | --------------------------- | --------------------------------------------------------- | ------ |
+| type         | 按钮类型     | string                      | 'primary', 'success', 'info', 'warning', 'danger', 'text' |        |
+| size         | 按钮大小     | string                      | 'medium', 'small', 'mini'                                 |        |
+| plain        | 是否朴素按钮 | boolean                     |                                                           |        |
+| round        | 是否圆角按钮 | boolean                     |                                                           |        |
+| disabled     | 是否禁用     | boolean                     |                                                           |        |
+| icon         | 图标名       | string                      | 查看 Ion 中的图标 name                                    |        |
+| iconPosition | 图标位置     | string                      | right/空                                                  | 空     |
+| iconSize     | 图           | icon 大小,传入 25 就是 25px | string/number                                             | 空     |
 
 <style scope>
   .example{

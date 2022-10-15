@@ -1,5 +1,6 @@
 .y-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
@@ -21,8 +22,11 @@
     border-color: #c6e2ff;
     background-color: #ecf5ff;
   }
-  .icon {
-    margin: 0 1px;
+  .y-button-icon-left {
+    margin-right: 5px;
+  }
+  .y-button-icon-right {
+    margin-left: 5px;
   }
 }
 .y-button--primary {
