@@ -11,7 +11,9 @@ export default {
       { text: '指南', link: '/guild/installation' },
       { text: '组件', link: '/examples/button/' },
     ],
-    socialLinks: [{ icon: 'github', link: 'https://github.com/gezhicui/young-design' }],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/gezhicui/young-design' },
+    ],
     sidebar: {
       '/guild/': [
         {
@@ -85,6 +87,10 @@ export default {
             {
               text: 'Radio 单选框',
               link: '/examples/radio/',
+            },
+            {
+              text: 'Rate 评分',
+              link: '/examples/rate/',
             },
             {
               text: 'Upload 上传',

@@ -1,10 +1,9 @@
 <template>
-  <Radio></Radio>
+  <Rate></Rate>
 </template>
 
 <script lang="ts" setup>
-import Radio from "./src/Radio.vue";
+import Rate from './src/Rate.vue';
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
