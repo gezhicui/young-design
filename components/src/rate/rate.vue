@@ -33,6 +33,7 @@ const textContent = computed((): string => {
     <div class="y-rate-list" @mouseout="width = modelValue">
       <Icon
         v-for="(num, index) in 5"
+        :size="iconSize"
         :key="num"
         :name="iconName"
         :color="width > index ? effectColor : invalidColor"

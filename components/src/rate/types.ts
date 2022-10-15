@@ -9,6 +9,10 @@ export const rateProps = {
     type: String,
     default: (): string => 'star-fill',
   },
+  iconSize: {
+    type: [String, Number],
+    default: (): string => '20',
+  },
   effectColor: {
     type: String,
     default: (): string => '#fbcc30',
