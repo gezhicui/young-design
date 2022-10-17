@@ -16,3 +16,4 @@ export { default as Select } from './select';
 export { default as Textarea } from './textarea';
 export { default as Radio } from './radio';
 export { default as Rate } from './rate';
+export { default as Table } from './table';

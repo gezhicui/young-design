@@ -1,9 +1,9 @@
 <template>
-  <Rate></Rate>
+  <y-table></y-table>
 </template>
 
 <script lang="ts" setup>
-import Rate from './src/Rate.vue';
+import YTable from './src/Table.vue';
 </script>
 
 <style scoped></style>
