@@ -96,6 +96,10 @@ export default {
               text: 'Upload 上传',
               link: '/examples/upload/',
             },
+            {
+              text: 'Table 表格',
+              link: '/examples/table/',
+            },
           ],
         },
         {

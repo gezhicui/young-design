@@ -6,7 +6,7 @@
         @click="handleClickButtonItem(record)"
         size="mini"
         type="primary"
-        >点击就送</y-button
+        >点我log</y-button
       >
     </template>
   </y-table>

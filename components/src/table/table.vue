@@ -2,11 +2,11 @@
 export default { name: 'y-table' };
 </script>
 <script lang="ts" setup>
-import { Props } from './props';
+import { tableProps } from './types';
 import type { CSSProperties } from 'vue';
 import './style/index.less';
 
-const prop = defineProps(Props);
+const prop = defineProps(tableProps);
 
 const importantStyle = (i: number): CSSProperties => {
   const importants: number[] = prop.important;
@@ -50,6 +50,7 @@ const isBorder = (): object => {
           </th>
         </tr>
       </thead>
+
       <tbody class="y-tbody">
         <tr
           v-for="(dataItem, ind) in (data as any)"
@@ -71,8 +72,9 @@ const isBorder = (): object => {
             {{ ind + 1 }}
           </td>
           <td
-            v-for="(colItem, index) in columns"
+            v-for="(colItem, index) in (columns as any)"
             :key="index"
+            :style="{ width: `${colItem.width * 10}px` }"
             :class="[`y-tbody-td`, isBorder()]"
             :align="align || 'left'"
           >
