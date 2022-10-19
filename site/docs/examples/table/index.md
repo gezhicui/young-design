@@ -476,6 +476,99 @@
 
 :::
 
+## 自定义列模板
+
+可以在`column`中配置`slot`,然后为`y-table`注入该 slot 实现自定义列，可组合其他组件使用,代码参考如下
+
+<div class="tableContent">
+<y-table :data="tableData" :columns="columns3"  >
+ <template #nameSlot="record">
+  <div class="username"><y-icon name="user"/>{{record.rowData.name}}</div>
+ </template>
+    <template #addressSlot="record">
+      <y-button
+        @click="handleClickButtonItem(record)"
+        size="mini"
+        type="primary"
+        >打印本行</y-button >
+      {{ record.rowData.name + '住在' + record.rowData.address }}
+    </template>
+</y-table>
+</div>
+
+::: details 显示代码
+
+```html
+<template>
+  <y-table :data="tableData" :columns="columns3">
+    <template #nameSlot="record">
+      <div class="username"><y-icon name="user" />{{record.rowData.name}}</div>
+    </template>
+    <template #addressSlot="record">
+      <y-button
+        @click="handleClickButtonItem(record)"
+        size="mini"
+        type="primary"
+        >打印本行</y-button
+      >
+      {{ record.rowData.name + '住在' + record.rowData.address }}
+    </template>
+  </y-table>
+</template>
+
+<script setup>
+  const columns3 = [
+    {
+      title: '日期',
+      key: 'date',
+    },
+    {
+      title: '姓名',
+      key: 'name',
+      slots: 'nameSlot',
+    },
+    {
+      title: '地址',
+      key: 'address',
+      slots: 'addressSlot',
+    },
+  ];
+  const tableData = [
+    {
+      date: '2021-11-02',
+      name: '张三',
+      address: '浙江省杭州市上城区 231 号',
+    },
+    {
+      date: '2021-12-04',
+      name: '李四',
+      address: '浙江省杭州市西湖区 12 号',
+    },
+    {
+      date: '2021-10-01',
+      name: '王英',
+      address: '浙江省杭州市临平区 2 号',
+    },
+    {
+      date: '2021-11-03',
+      name: '李逵',
+      address: '浙江省杭州市拱墅区 199 号',
+    },
+  ];
+  const handleClickButtonItem = (item) => {
+    console.log(item);
+  };
+</script>
+<style scope>
+  .username {
+    display: flex;
+    align-items: center;
+  }
+</style>
+```
+
+:::
+
 ## API
 
 | 参数           | 说明             | 类型    | 可选值                | 默认值  |
@@ -523,6 +616,22 @@
       key: 'address'
     }
   ]
+    const columns3 = [
+    {
+      title: '日期',
+      key: 'date',
+    },
+    {
+      title: '姓名',
+      key: 'name',
+      slots:'nameSlot'
+    },
+    {
+      title: '地址',
+      key: 'address',
+      slots: 'addressSlot',
+    }
+  ]
   const tableData = [
     {
       date: '2021-11-02',
@@ -545,6 +654,9 @@
       address: '浙江省杭州市拱墅区 199 号'
     }
   ]
+  const handleClickButtonItem = (item) => {
+  console.log(item);
+  }
 </script>
 
 <style  scope>
@@ -581,6 +693,19 @@
   background-color: unset;
 }
 
+.username{
+  display:flex;
+  align-items:center;
+}
 
+.tableContent ::-webkit-scrollbar {
+    width: 6px;
+    background-color: #ffffff;
+  }
+  
+.tableContent ::-webkit-scrollbar-thumb {
+    background: #dddddd;
+    border-radius: 6px;
+}
 
 </style>
