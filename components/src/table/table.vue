@@ -26,7 +26,7 @@ const isBorder = (): object => {
 <template>
   <div class="y-table" :style="{ height }">
     <table
-      class="y-table-table"
+      class="y-origin-table"
       border="0"
       cellspacing="0"
       cellpadding="0"

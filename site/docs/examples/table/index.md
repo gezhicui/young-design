@@ -6,7 +6,9 @@
 
 `columns` 属性可以配置表格的标题和键值，它接收一个数组，里面是对象，对象的 `title` 配置标题，`key` 配置键值，名字是必须的，否则将不能正常工作！详情参考文档
 
+<div class="tableContent">
 <y-table :data="tableData" :columns="columns" />
+</div>
 
 ::: details 显示代码
 
@@ -61,13 +63,15 @@
 
 `trHeight` 属性可以表格行高
 
-<y-table :data="tableData" :columns="columns" trHeight="50px" />
+<div class="tableContent">
+<y-table :data="tableData" :columns="columns" trHeight="100px" />
+</div>
 
 ::: details 显示代码
 
 ```html
 <template>
-  <y-table :data="tableData" :columns="columns" trHeight="50px" />
+  <y-table :data="tableData" :columns="columns" trHeight="100px" />
 </template>
 
 <script setup>
@@ -116,7 +120,9 @@
 
 `align` 属性可以表格文字居中还是居两侧
 
+<div class="tableContent">
 <y-table :data="tableData" :columns="columns" align="center" />
+</div>
 
 ::: details 显示代码
 
@@ -173,7 +179,9 @@
 
 `border` 属性可以配置边框
 
+<div class="tableContent">
 <y-table :data="tableData" :columns="columns" align="center" border zebra />
+</div>
 
 ::: details 显示代码
 
@@ -230,13 +238,9 @@
 
 `height` 属性可以配置表格高度
 
-<y-table
-  :data="tableData"
-  :columns="columns"
-  align="center"
-  width="500px"
-  height="200px"
-/>
+<div class="tableContent">
+<y-table :data="tableData" :columns="columns" align="center" width="500px" height="200px"/>
+</div>
 
 ::: details 显示代码
 
@@ -297,7 +301,9 @@
 
 `num` 属性可以配置带有序号的表格
 
+<div class="tableContent">
 <y-table :data="tableData" :columns="columns" align="center" num />
+</div>
 
 ::: details 显示代码
 
@@ -352,13 +358,9 @@
 
 `important` 属性可以配置重点行着重标注，它接收一个数组，里面包含重点行的行号
 
-<y-table
-  :data="tableData"
-  :columns="columns"
-  align="center"
-  num
-  :important="[2, 4]"
-/>
+<div class="tableContent">
+<y-table :data="tableData" :columns="columns" align="center"  num :important="[2, 4]"/>
+</div>
 
 ::: details 显示代码
 
@@ -415,11 +417,13 @@
 
 :::
 
-## 单独配置列度
+## 单独配置列宽度
 
-每一列的宽度也是可以单独配置的，可以在 `columns` 数组对象中添加 `width` 键值，来配置单独的列宽，比如下面将第一列和第二列设置宽度为 `100px`
+每一列的宽度也是可以单独配置的，可以在 `columns` 数组对象中添加 `width` 键值，来配置单独的列宽，比如下面将第一列 s 设置为`100px`,第二列设置宽度为 `200px`
 
+<div class="tableContent">
 <y-table :data="tableData" :columns="columns2" align="center" />
+</div>
 
 ::: details 显示代码
 
@@ -472,7 +476,7 @@
 
 :::
 
-## Attributes
+## API
 
 | 参数           | 说明             | 类型    | 可选值                | 默认值  |
 | -------------- | ---------------- | ------- | --------------------- | ------- |
@@ -512,7 +516,7 @@
     {
       title: '姓名',
       key: 'name',
-      width: '100px'
+      width: '200px'
     },
     {
       title: '地址',
@@ -543,36 +547,40 @@
   ]
 </script>
 
-<style scope>
-.vp-doc table {
-  display: unset;
-  border-collapse: unset;
+<style  scope>
+/* 还原vitepress默认样式 */
+.vp-doc .tableContent table {
+  display: table;
+  border-collapse: collapse;
   margin: unset;
   overflow-x: unset;
 }
 
-.vp-doc tr {
+.vp-doc .tableContent tr {
   border-top: unset;
   transition: unset;
 }
 
-.vp-doc tr:nth-child(2n) {
+.vp-doc .tableContent tr:nth-child(2n) {
   background-color: unset;
 }
 
-.vp-doc th,
-.vp-doc td {
+.vp-doc .tableContent th,
+.vp-doc .tableContent td {
   border: unset;
   padding:unset;
 }
 
-.vp-doc th {
+.vp-doc .tableContent th {
   font-size: unset;
   font-weight: unset;
   background-color: unset;
 }
 
-.dark .vp-doc th {
+.dark .vp-doc .tableContent th {
   background-color: unset;
 }
+
+
+
 </style>
