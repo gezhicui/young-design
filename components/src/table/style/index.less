@@ -14,6 +14,8 @@
     }
 
     .y-thead {
+      position: sticky;
+      top: 0;
       border-bottom: 1px solid #f1f2f3;
       color: rgb(70, 70, 70);
       background-color: #fafafa;
@@ -39,11 +41,12 @@
     }
   }
 
-  ::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
     background-color: #ffffff;
   }
-  ::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
     background: #dddddd;
     border-radius: 6px;
   }

@@ -11,7 +11,10 @@
 ::: details 显示代码
 
 ```html
-<y-avatar :size="10" src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png" />
+<y-avatar
+  :size="10"
+  src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png"
+/>
 ```
 
 :::
@@ -25,7 +28,10 @@
 ::: details 显示代码
 
 ```html
-<y-avatar round src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png" />
+<y-avatar
+  round
+  src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png"
+/>
 ```
 
 :::
@@ -63,7 +69,11 @@
   <div class="fitBox">
     <div class="item" v-for="fit in fits" :key="fit">
       <span class="text">{{ fit }}</span>
-      <y-avatar round src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png" :fit="fit" />
+      <y-avatar
+        round
+        src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png"
+        :fit="fit"
+      />
     </div>
   </div>
 </template>
@@ -85,8 +95,15 @@
 ::: details 显示代码
 
 ```html
-<y-avatar border src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png" />
-<y-avatar border round src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png" />
+<y-avatar
+  border
+  src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png"
+/>
+<y-avatar
+  border
+  round
+  src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png"
+/>
 ```
 
 :::
@@ -95,14 +112,19 @@
 
 `errorIcon` 属性配置加载失败的 `icon`
 
-<y-avatar src="https://tianyuhao.cn2/v3/assets/giraffe.jpg" />&emsp;
-<y-avatar errorIcon="info-circle" src="https://tianyuhao.cn2/v3/assets/giraffe.jpg"/>
+<y-avatar src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/assets/giraffe.jpg" />&emsp;
+<y-avatar errorIcon="info-circle" src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/assets/giraffe.jpg"/>
 
 ::: details 显示代码
 
 ```html
-<y-avatar src="https://tianyuhao.cn2/v3/assets/giraffe.jpg" />
-<y-avatar errorIcon="info-circle" src="https://tianyuhao.cn2/v3/assets/giraffe.jpg" />
+<y-avatar
+  src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/assets/giraffe.jpg"
+/>
+<y-avatar
+  errorIcon="info-circle"
+  src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/assets/giraffe.jpg"
+/>
 ```
 
 :::

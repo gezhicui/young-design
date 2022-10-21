@@ -2,7 +2,12 @@
   <div class="y-avatar">
     <div v-if="isError" :class="errorClass" :style="isSize">
       <slot name="error">
-        <Icon class="icon" :name="errorIcon" />
+        <Icon
+          class="icon"
+          :style="isSize"
+          :size="size * 10"
+          :name="errorIcon"
+        />
       </slot>
     </div>
     <img
@@ -18,25 +23,24 @@
   </div>
 </template>
 
-
 <script lang="ts">
-export default { name: "y-avatar" };
+export default { name: 'y-avatar' };
 </script>
 
-<script lang="ts" setup >
-import Icon from "../Icon/icon.vue";
-import { ref, computed } from "vue";
-import { avatarProps } from "./types";
-import type { CSSProperties } from "vue";
-import "./style/index.less";
+<script lang="ts" setup>
+import Icon from '../Icon/icon.vue';
+import { ref, computed } from 'vue';
+import { avatarProps } from './types';
+import type { CSSProperties } from 'vue';
+import './style/index.less';
 
 const props = defineProps(avatarProps);
-const emit = defineEmits(["error", "load"]);
+const emit = defineEmits(['error', 'load']);
 
 const isError = ref<boolean>(false);
 
 const onError = (): void => {
-  emit("error");
+  emit('error');
   isError.value = true;
 };
 
@@ -48,18 +52,17 @@ const isSize = computed((): CSSProperties => {
 });
 
 const errorClass = computed((): (string | object)[] => {
-  return ["y-avatar-error", { "y-avatar-round": props.round }];
+  return ['y-avatar-error', { 'y-avatar-round': props.round }];
 });
 
 const successClass = computed((): object[] => {
   return [
     {
       [`y-avatar-${props.fit}`]: props.fit,
-      "y-avatar-round": props.round,
-      "y-avatar-border": props.border,
-      "y-avatar-select": props.select,
+      'y-avatar-round': props.round,
+      'y-avatar-border': props.border,
+      'y-avatar-select': props.select,
     },
   ];
 });
 </script>
-
