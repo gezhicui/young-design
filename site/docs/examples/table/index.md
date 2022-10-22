@@ -569,23 +569,104 @@
 
 :::
 
-## API
+## 开启表格行数据多选
 
-| 参数           | 说明             | 类型    | 可选值                | 默认值  |
-| -------------- | ---------------- | ------- | --------------------- | ------- |
-| data           | 表单的内容数据   | array   | ——                    | []      |
-| columns        | 表头和键值       | array   | ——                    | []      |
-| trHeight       | 行高             | string  | ——                    | 40px    |
-| align          | 内容排向         | string  | left / right / center | left    |
-| zebra          | 是否显示斑马纹   | boolean | ——                    | false   |
-| border         | 是否显示边框     | boolean | ——                    | false   |
-| width          | 表格宽度         | string  | ——                    | 100%    |
-| height         | 表格高度         | string  | ——                    | auto    |
-| num            | 是否显示序号     | boolean | ——                    | false   |
-| important      | 重点行标注       | array   | ——                    | []      |
-| importantColor | 重点行标注背景色 | string  | ——                    | #fdf5e6 |
+<div class="tableContent">
+<y-table :data="tableData" :columns="columns"  :rowSelect="true"  v-model:selectItems="selectItems"/>
+<y-button @click="handleShowRowSelect">查看选中结果</y-button>
+</div>
+
+::: details 显示代码
+
+```html
+<template>
+  <y-table
+    :data="tableData"
+    :columns="columns"
+    :rowSelect="true"
+    v-model:selectItems="selectItems"
+  />
+  <y-button @click="handleShowRowSelect">查看选中结果</y-button>
+</template>
 
 <script setup>
+  import { ref } from 'vue';
+  const selectItems = ref([]);
+  const handleShowRowSelect = () => {
+    console.log(selectItems.value);
+  };
+
+  const columns = [
+    {
+      title: '日期',
+      key: 'date',
+    },
+    {
+      title: '姓名',
+      key: 'name',
+    },
+    {
+      title: '地址',
+      key: 'address',
+    },
+  ];
+  const tableData = [
+    {
+      id: '1',
+      date: '2021-11-02',
+      name: '张三',
+      address: '浙江省杭州市上城区 231 号',
+    },
+    {
+      id: '2',
+      date: '2021-12-04',
+      name: '李四',
+      address: '浙江省杭州市西湖区 12 号',
+    },
+    {
+      id: '3',
+      date: '2021-10-01',
+      name: '王英',
+      address: '浙江省杭州市临平区 2 号',
+    },
+    {
+      id: '4',
+      date: '2021-11-03',
+      name: '李逵',
+      address: '浙江省杭州市拱墅区 199 号',
+    },
+  ];
+</script>
+```
+
+:::
+
+## API
+
+| 参数        | 说明                                  | 类型              | 可选值                | 默认值 |
+| ----------- | ------------------------------------- | ----------------- | --------------------- | ------ |
+| data        | 表单的内容数据                        | array             | ——                    | []     |
+| columns     | 表头和键值                            | array             | ——                    | []     |
+| trHeight    | 行高                                  | string            | ——                    | 40px   |
+| align       | 内容排向                              | string            | left / right / center | left   |
+| zebra       | 是否显示斑马纹                        | boolean           | ——                    | false  |
+| border      | 是否显示边框                          | boolean           | ——                    | false  |
+| width       | 表格宽度                              | string            | ——                    | 100%   |
+| height      | 表格高度                              | string            | ——                    | auto   |
+| num         | 是否显示序号                          | boolean           | ——                    | false  |
+| important   | 重点行标注                            | array             | ——                    | []     |
+| rowSelect   | 开启行选择功能                        | boolean           | ——                    | false  |
+| selectItems | 初始选中行 id(开启行选择功能生效)     | (string/number)[] | ——                    | []     |
+| rowKey      | 表格行 key 的取值(开启行选择功能生效) | string /number    | ——                    | 'id'   |
+
+<script setup>
+  import {ref} from 'vue'
+
+  const selectItems=ref([])
+
+  const handleShowRowSelect = ()=>{
+    console.log(selectItems.value)
+  }
   const columns = [
     {
       title: '日期',
@@ -633,26 +714,30 @@
     }
   ]
   const tableData = [
-    {
+    { 
+      id:'1',
       date: '2021-11-02',
       name: '张三',
-      address: '浙江省杭州市上城区 231 号'
+      address: '浙江省杭州市上城区 231 号',
     },
-    {
+    { 
+      id:'2',
       date: '2021-12-04',
       name: '李四',
-      address: '浙江省杭州市西湖区 12 号'
+      address: '浙江省杭州市西湖区 12 号',
     },
-    {
+    { 
+      id:'3',
       date: '2021-10-01',
       name: '王英',
-      address: '浙江省杭州市临平区 2 号'
+      address: '浙江省杭州市临平区 2 号',
     },
-    {
+    { 
+      id:'4',
       date: '2021-11-03',
       name: '李逵',
-      address: '浙江省杭州市拱墅区 199 号'
-    }
+      address: '浙江省杭州市拱墅区 199 号',
+    },
   ]
   const handleClickButtonItem = (item) => {
   console.log(item);

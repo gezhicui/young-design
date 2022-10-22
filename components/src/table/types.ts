@@ -47,6 +47,15 @@ export const tableProps = {
     type: String,
     default: (): string => '#fdf5e6',
   },
+  selectItems: {
+    type: Array as PropType<unknown[]>,
+    default: (): any[] => [],
+  },
+  rowSelect: Boolean,
+  rowKey: {
+    type: String,
+    default: (): string => 'id',
+  },
 };
 
 export type TableProps = ExtractPropTypes<typeof tableProps>;
