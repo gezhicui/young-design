@@ -103,6 +103,15 @@ export default {
           ],
         },
         {
+          text: '导航组件',
+          items: [
+            {
+              text: 'BackTop 回到顶部',
+              link: '/examples/back-top/',
+            },
+          ],
+        },
+        {
           text: '反馈组件',
           items: [
             {
