@@ -44,26 +44,26 @@
 </template>
 
 <script lang="ts">
-export default { name: "y-dialog" };
+export default { name: 'y-dialog' };
 </script>
 
-<script setup lang="ts" >
-import "./style/index.less";
-import { ref, useSlots } from "vue";
-import Button from "../button/button.vue";
-import Icon from "../icon/icon.vue";
-import { dialogProps } from "./types.ts";
+<script setup lang="ts">
+import './style/index.less';
+import { ref, useSlots } from 'vue';
+import Button from '../button/button.vue';
+import Icon from '../icon/icon.vue';
+import { dialogProps } from './types';
 
 const props = defineProps(dialogProps);
-const emit = defineEmits(["cancel", "confirm"]);
+const emit = defineEmits(['cancel', 'confirm']);
 const slots = useSlots();
 
 const onClickCancelButton = (e: Event) => {
-  emit("cancel", e);
+  emit('cancel', e);
 };
 
 const onClickConfirmButton = (e: Event) => {
-  emit("confirm", e);
+  emit('confirm', e);
 };
 
 // 自定义尾部
@@ -81,4 +81,3 @@ if (headerContent) {
   showHeader.value = false;
 }
 </script>
-

@@ -1,9 +1,9 @@
 <template>
-  <y-table></y-table>
+  <BackTop></BackTop>
 </template>
 
 <script lang="ts" setup>
-import YTable from './src/Table.vue';
+import BackTop from './src/BackTop.vue';
 </script>
 
 <style scoped></style>
