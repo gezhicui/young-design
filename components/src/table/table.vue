@@ -14,6 +14,7 @@
             <input
               ref="checkAllBox"
               type="checkbox"
+              :checked="isAllChecked"
               @change="selectAllChange($event)"
             />
           </th>
