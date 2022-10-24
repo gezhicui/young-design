@@ -4,9 +4,11 @@ const baseBuild = build ? '/young-design-docs/' : '/';
 
 export default {
   base: baseBuild,
+  title: 'Young Design',
   themeConfig: {
     siteTitle: false,
     logo: '/logo.png',
+    head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
     nav: [
       { text: '指南', link: '/guild/installation' },
       { text: '组件', link: '/examples/button/' },
