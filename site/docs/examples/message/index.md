@@ -1,25 +1,5 @@
 # Message 消息提示
 
-常用于主动操作后的反馈提示,使用前先用`app.use`挂载为全局函数
-
-```js
-import { Message } from 'young-design';
-app.use(Message);
-```
-
-接着就可以这么使用:
-
-```vue
-<script setup lang="ts">
-import { getCurrentInstance, h } from 'vue';
-const { appContext } = getCurrentInstance();
-const message = appContext.config.globalProperties.$message;
-const open = () => {
-  message('我是个message');
-};
-</script>
-```
-
 ## 基础用法
 
 从顶部出现，3 秒后自动消失。
@@ -38,16 +18,14 @@ const open = () => {
 </template>
 
 <script setup lang="ts">
-import { getCurrentInstance } from 'vue';
-const { appContext } = getCurrentInstance();
-const message = appContext.config.globalProperties.$message;
+import { Message } from 'young-design';
 
 const open = () => {
-  message('我是个message');
+  Message('我是个message');
 };
 
 const openVn = () => {
-  message('<strong>This is <i>HTML</i> string</strong>');
+  Message('<strong>This is <i>HTML</i> string</strong>');
 };
 </script>
 ```
@@ -71,34 +49,38 @@ const openVn = () => {
 <template>
   <div>
     <y-button type="info" plain @click="messageInfo">Info Message</y-button>
-    <y-button type="warning" plain @click="messageWarn">Warning Message</y-button>
-    <y-button type="danger" plain @click="messageDanger">Error Message</y-button>
-    <y-button type="success" plain @click="messageSuccess">Success Message</y-button>
+    <y-button type="warning" plain @click="messageWarn"
+      >Warning Message</y-button
+    >
+    <y-button type="danger" plain @click="messageDanger"
+      >Error Message</y-button
+    >
+    <y-button type="success" plain @click="messageSuccess"
+      >Success Message</y-button
+    >
   </div>
 </template>
 
 <script setup lang="ts">
-import { getCurrentInstance } from 'vue';
-const { appContext } = getCurrentInstance();
-const message = appContext.config.globalProperties.$message;
+import { Message } from 'young-design';
 
 const messageInfo = () => {
-  message('this is a message.');
+  Message('this is a message.');
 };
 const messageWarn = () => {
-  message({
+  Message({
     type: 'warning',
     message: 'Warning, this is a warning message.',
   });
 };
 const messageDanger = () => {
-  message({
+  Message({
     type: 'danger',
     message: '一个危险操作',
   });
 };
 const messageSuccess = () => {
-  message.success('Congrats, this is a success message.');
+  Message.success('Congrats, this is a success message.');
 };
 </script>
 ```
@@ -129,32 +111,30 @@ const messageSuccess = () => {
 </template>
 
 <script setup lang="ts">
-import { getCurrentInstance } from 'vue';
-const { appContext } = getCurrentInstance();
-const message = appContext.config.globalProperties.$message;
+import { Message } from 'young-design';
 
 const closeInfo = () => {
-  message({
+  Message({
     showClose: true,
     message: 'This is a message.',
   });
 };
 const closeWarn = () => {
-  message({
+  Message({
     showClose: true,
     message: 'Congrats, this is a success message.',
     type: 'success',
   });
 };
 const closeDanger = () => {
-  message({
+  Message({
     showClose: true,
     message: 'Warning, this is a warning message.',
     type: 'warning',
   });
 };
 const closesuccess = () => {
-  message({
+  Message({
     showClose: true,
     message: 'Oops, this is a error message.',
     type: 'danger',
@@ -166,70 +146,117 @@ const closesuccess = () => {
 
 :::
 
+## 全局注册时的使用方法
+
+`vue`为我们提供了`app.config.globalProperties`来挂载全局属性和方法,如果不需要按需导入，而是在入口文件中直接注册整个组件库的话，则`Message`将挂载到全局,名为`$message`，不需要每个组件中都`import`
+
+<y-button plain @click="globalMessage">全局挂载</y-button>
+
+::: details 显示代码
+
+```js
+//main.ts
+import youngDesign from 'young-design';
+const app = createApp(App);
+app.use(youngDesign);
+app.mount('#app');
+```
+
+```vue
+<!-- 组件 -->
+<template>
+  <div>
+    <y-button plain @click="closeInfo">Info Message</y-button>
+  </div>
+</template>
+
 <script setup lang="ts">
-import { getCurrentInstance } from "vue";
-const { appContext } = getCurrentInstance();
-const message = appContext.config.globalProperties.$message
+import { getCurrentInstance } from 'vue';
+const { proxy } = getCurrentInstance();
+
+const globalMessage = () => {
+  proxy.$message({
+    showClose: true,
+    message: 'This is a message.',
+  });
+};
+</script>
+```
+
+:::
+
+<script setup lang="ts">
+
+import { Message } from 'young-design'
+import { getCurrentInstance } from 'vue';
+const { proxy } = getCurrentInstance();
 
 const open = ()=>{
-  message("我是个message");
+  Message("我是个message");
 }
 
 const openVn = ()=>{
-  message('<strong>This is <i>HTML</i> string</strong>');
+  Message('<strong>This is <i>HTML</i> string</strong>');
 }
 
 const messageInfo = () => {
-  message.info({
+  Message.info({
     message: "this is a message.",
   });
 };
 const messageWarn = () => {
-  message({
+  Message({
     type: "warning",
     message: "Warning, this is a warning message.",
   });
 };
 const messageDanger = () => {
-  message.danger({
+  Message.danger({
     message: "一个危险操作",
   });
 };
 const messageSuccess = () => {
-  message({
+  Message({
     type: "success",
     message: 'Congrats, this is a success message.',
   });
 };
 
 const closeInfo = () => {
-  message({
+  Message({
     showClose: true,
     message: 'This is a message.',
   })
 }
 const closeWarn = () => {
-  message({
+  Message({
     showClose: true,
     message: 'Congrats, this is a success message.',
     type: 'success',
   })
 }
 const closeDanger = () => {
-  message({
+  Message({
     showClose: true,
     message: 'Warning, this is a warning message.',
     type: 'warning',
   })
 }
 const closesuccess = () => {
-  message({
+  Message({
     showClose: true,
     message: 'Oops, this is a error message.',
     type: 'danger',
     duration:0
   })
 }
+
+const globalMessage = () => {
+  proxy.$message({
+    showClose: true,
+    message: 'This is a global message.',
+  });
+};
 </script>
 
 <style scope>

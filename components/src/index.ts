@@ -1,7 +1,6 @@
 export { default as Button } from './button';
 export { default as Icon } from './icon';
 export { default as Upload } from './upload';
-export { default as Message } from './message';
 export { default as Dialog } from './dialog';
 export { default as Container } from './container/container';
 export { default as Aside } from './container/aside';
@@ -18,3 +17,4 @@ export { default as Radio } from './radio';
 export { default as Rate } from './rate';
 export { default as Table } from './table';
 export { default as BackTop } from './back-top';
+export { default as Message } from './message';

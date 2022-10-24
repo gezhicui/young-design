@@ -1,9 +1,9 @@
 <template>
-  <BackTop></BackTop>
+  <Message></Message>
 </template>
 
 <script lang="ts" setup>
-import BackTop from './src/BackTop.vue';
+import Message from './src/Message.vue';
 </script>
 
 <style scoped></style>

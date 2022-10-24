@@ -8,13 +8,13 @@ import MessageCpn from './Message.vue';
 const instances: VNode[] = [];
 function Message(options: MessageProps | string) {
   // 处理入参
-  let optionsObj = {}
+  let optionsObj = {};
   if (typeof options === 'string') {
     optionsObj = {
-      message: options
-    }
+      message: options,
+    };
   } else {
-    optionsObj = options
+    optionsObj = options;
   }
 
   let top = 20;
@@ -49,11 +49,10 @@ function close(vm: VNode) {
     if (cpn) {
       cpn.props.top -= vm?.el?.offsetHeight + 16;
     }
-
   }
 }
 Object.values(messageType).forEach((type) => {
-  Message[type] = (options: MessageProps) => {
+  (Message as any)[type] = (options: MessageProps) => {
     options.type = type;
     return Message(options);
   };
