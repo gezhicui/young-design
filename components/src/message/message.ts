@@ -6,16 +6,28 @@ import { messageType, MessageProps } from './types';
 import MessageCpn from './Message.vue';
 
 const instances: VNode[] = [];
-function Message(options: MessageProps | string) {
-  // 处理入参
-  let optionsObj = {};
+
+const formatParams = (
+  options: MessageProps | string,
+  type: string = messageType.INFO
+) => {
+  let formatOpts: MessageProps = {
+    top: 20,
+    type,
+    message: '',
+    duration: 3000,
+    showClose: false,
+  };
   if (typeof options === 'string') {
-    optionsObj = {
-      message: options,
-    };
+    formatOpts.message = options;
   } else {
-    optionsObj = options;
+    formatOpts = { ...formatOpts, ...options };
   }
+  return formatOpts;
+};
+
+function Message(options: MessageProps | string) {
+  const formatOpts = formatParams(options);
 
   let top = 20;
   instances.forEach((vm: VNode) => {
@@ -24,7 +36,7 @@ function Message(options: MessageProps | string) {
   //创建一个文档碎片，把所有的新结点附加在其上，然后把文档碎片的内容一次性添加到document中
   const container: any = document.createDocumentFragment();
   const vm = h(MessageCpn, {
-    ...optionsObj,
+    ...formatOpts,
     top,
     onClose() {
       close(vm);
@@ -37,6 +49,7 @@ function Message(options: MessageProps | string) {
   document.body.appendChild(container);
   instances.push(vm);
 }
+
 function close(vm: VNode) {
   const index = instances.findIndex((ins) => ins === vm);
   if (index === -1) {
@@ -51,10 +64,11 @@ function close(vm: VNode) {
     }
   }
 }
+
 Object.values(messageType).forEach((type) => {
-  (Message as any)[type] = (options: MessageProps) => {
-    options.type = type;
-    return Message(options);
+  (Message as any)[type] = (options: MessageProps | string) => {
+    const formatOpts = formatParams(options, type);
+    return Message(formatOpts);
   };
 });
 

@@ -12,28 +12,28 @@
   </transition>
 </template>
 
-<script setup>
-import { messageType, MessageProps } from "./types";
-import "./style/index.less";
-import Icon from "../Icon/icon.vue";
-import { onMounted, ref, computed } from "vue";
+<script lang="ts" setup>
+import { messageType, MessageProps } from './types';
+import './style/index.less';
+import Icon from '../Icon/icon.vue';
+import { onMounted, ref, computed } from 'vue';
 
 const props = defineProps(MessageProps);
 
 const visiable = ref(false);
 
-const messageStyle = computed(() => ["y-message", props.type]);
+const messageStyle = computed(() => ['y-message', props.type]);
 
 const iconType = computed(() => {
   switch (props.type) {
     case messageType.SUCCESS:
-      return "check-circle-fill";
+      return 'check-circle-fill';
     case messageType.WARNING:
-      return "warning-circle-fill";
+      return 'warning-circle-fill';
     case messageType.DANGER:
-      return "close-circle-fill";
+      return 'close-circle-fill';
     case messageType.INFO:
-      return "info-circle-fill";
+      return 'info-circle-fill';
   }
 });
 

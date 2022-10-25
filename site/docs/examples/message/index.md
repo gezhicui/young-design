@@ -36,50 +36,96 @@ const openVn = () => {
 
 用来显示「成功、警告、消息、错误」类的操作反馈。
 
-当需要自定义更多属性时，Message 也可以接收一个对象为参数。 比如，设置 type 字段可以定义不同的状态，**默认为 info**。 此时正文内容以 message 的值传入。 同时，库也为 Message 的各种 type 注册了方法,可以在不传入 type 字段的情况下像 messageSuccess 那样直接调用。
+当需要自定义更多属性时，Message 也可以接收一个对象为参数。 比如，设置 type 字段可以定义不同的状态，**默认为 info**。 此时正文内容以 message 的值传入。
 
+同时，库也为 Message 的各种 type 注册了属性方法,可以在不传入 type 字段的情况下通过属性方法直接调用。
+
+### 方法调用
+
+<br>
 <y-button type='info' plain @click="messageInfo">Info Message</y-button>
 <y-button type='warning' plain @click="messageWarn">Warning Message</y-button>
 <y-button type='danger' plain @click="messageDanger">Error Message</y-button>
 <y-button type='success' plain @click="messageSuccess">Success Message</y-button>
+
+### 属性调用
+
+<br>
+<y-button type='info' plain @click="messageInfoAttr">Info Message</y-button>
+<y-button type='warning' plain @click="messageWarnAttr">Warning Message</y-button>
+<y-button type='danger' plain @click="messageDangerAttr">Error Message</y-button>
+<y-button type='success' plain @click="messageSuccessAttr">Success Message</y-button>
 
 ::: details 显示代码
 
 ```vue
 <template>
   <div>
-    <y-button type="info" plain @click="messageInfo">Info Message</y-button>
-    <y-button type="warning" plain @click="messageWarn"
-      >Warning Message</y-button
-    >
-    <y-button type="danger" plain @click="messageDanger"
-      >Error Message</y-button
-    >
-    <y-button type="success" plain @click="messageSuccess"
-      >Success Message</y-button
-    >
+    <y-button type="info" plain @click="messageInfoFun">
+      Info Message
+    </y-button>
+    <y-button type="warning" plain @click="messageWarnFun">
+      Warning Message
+    </y-button>
+    <y-button type="danger" plain @click="messageDangerFun">
+      Error Message
+    </y-button>
+    <y-button type="success" plain @click="messageSuccessFun">
+      Success Message
+    </y-button>
+  </div>
+  <div>
+    <y-button type="info" plain @click="messageInfoAttr">
+      Info Message
+    </y-button>
+    <y-button type="warning" plain @click="messageWarnAttr">
+      Warning Message
+    </y-button>
+    <y-button type="danger" plain @click="messageDangerAttr">
+      Error Message
+    </y-button>
+    <y-button type="success" plain @click="messageSuccessAttr">
+      Success Message
+    </y-button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { Message } from 'young-design';
 
-const messageInfo = () => {
+const messageInfoFun = () => {
+  //默认为info
   Message('this is a message.');
 };
-const messageWarn = () => {
+const messageWarnFun = () => {
   Message({
     type: 'warning',
     message: 'Warning, this is a warning message.',
   });
 };
-const messageDanger = () => {
+const messageDangerFun = () => {
   Message({
     type: 'danger',
     message: '一个危险操作',
   });
 };
-const messageSuccess = () => {
+const messageSuccessFun = () => {
+  Message({
+    type: 'success',
+    message: 'Congrats, this is a success message.',
+  });
+};
+
+const messageInfoAttr = () => {
+  Message.info('this is a message.');
+};
+const messageWarnAttr = () => {
+  Message.warning('Warning, this is a warning message.');
+};
+const messageDangerAttr = () => {
+  Message.danger('一个危险操作');
+};
+const messageSuccessAttr = () => {
   Message.success('Congrats, this is a success message.');
 };
 </script>
@@ -112,7 +158,7 @@ const messageSuccess = () => {
 
 <script setup lang="ts">
 import { Message } from 'young-design';
-
+//可以通过方法传入type
 const closeInfo = () => {
   Message({
     showClose: true,
@@ -126,18 +172,18 @@ const closeWarn = () => {
     type: 'success',
   });
 };
+
+//可以通过type属性方法调用
 const closeDanger = () => {
-  Message({
+  Message.warning({
     showClose: true,
     message: 'Warning, this is a warning message.',
-    type: 'warning',
   });
 };
 const closesuccess = () => {
-  Message({
+  Message.danger({
     showClose: true,
     message: 'Oops, this is a error message.',
-    type: 'danger',
     duration: 0,
   });
 };
@@ -184,6 +230,17 @@ const globalMessage = () => {
 ```
 
 :::
+
+## API
+
+方法调用和属性方法调用参数一致
+
+| 参数      | 说明                                          | 类型    | 可选值                              | 默认值 |
+| --------- | --------------------------------------------- | ------- | ----------------------------------- | ------ |
+| type      | message 类型                                  | string  | 'success','warning','danger','info' | 'info' |
+| message   | 消息提示内容                                  | string  | ——                                  | ——     |
+| duration  | 自动关闭的延时，单位毫秒。设为 0 时不自动关闭 | number  | ——                                  | 3000   |
+| showClose | 是否显示关闭按钮                              | boolean | ——                                  | false  |
 
 <script setup lang="ts">
 
@@ -256,6 +313,18 @@ const globalMessage = () => {
     showClose: true,
     message: 'This is a global message.',
   });
+};
+const messageInfoAttr = () => {
+  Message.info('this is a message.');
+};
+const messageWarnAttr = () => {
+  Message.warning('Warning, this is a warning message.');
+};
+const messageDangerAttr = () => {
+  Message.danger('一个危险操作');
+};
+const messageSuccessAttr = () => {
+  Message.success('Congrats, this is a success message.');
 };
 </script>
 

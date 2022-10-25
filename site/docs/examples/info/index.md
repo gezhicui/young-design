@@ -28,7 +28,11 @@
 ```html
 <y-info userInfo="咯吱脆" describe="hello world">
   <template v-slot:photo>
-    <y-avatar round :size="5" src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png" />
+    <y-avatar
+      round
+      :size="5"
+      src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png"
+    />
   </template>
   <template v-slot:right>
     <y-button simple type="primary" size="mini">关注 TA</y-button>
@@ -69,7 +73,11 @@
 ```html
 <y-info userInfo="咯吱脆" describe="hello world">
   <template v-slot:photo>
-    <y-avatar round :size="5" src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png" />
+    <y-avatar
+      round
+      :size="5"
+      src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png"
+    />
   </template>
   <template v-slot:right>
     <y-button simple type="primary" size="mini">关注 TA</y-button>
@@ -77,7 +85,9 @@
 
   <template v-slot:body>
     <span class="content">这是我今天拍的照片，好看吗？</span>
-    <img src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/yuhangyuan.jpg" />
+    <img
+      src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/yuhangyuan.jpg"
+    />
   </template>
 
   <template v-slot:footer>
@@ -101,16 +111,24 @@
 ::: details 显示代码
 
 ```html
-<y-info userInfo="咯吱脆" describe="hello world" linkUrl="https://www.yangyuxiang.top/">
+<y-info
+  userInfo="咯吱脆"
+  describe="hello world"
+  linkUrl="https://www.yangyuxiang.top/"
+>
   <template v-slot:photo>
-    <y-avatar round :size="5" src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png" />
+    <y-avatar
+      round
+      :size="5"
+      src="https://yangblogimg.oss-cn-hangzhou.aliyuncs.com/blogImg/avatar.png"
+    />
   </template>
 </y-info>
 ```
 
 :::
 
-## Attributes
+## API
 
 | 参数     | 说明               | 类型   | 可选值 | 默认值 |
 | -------- | ------------------ | ------ | ------ | ------ |

@@ -1,5 +1,4 @@
-
-import { ExtractPropTypes } from 'vue'
+import { ExtractPropTypes } from 'vue';
 
 export const messageType = {
   SUCCESS: 'success',
@@ -30,10 +29,10 @@ export const MessageProps = {
   },
   showClose: {
     type: Boolean,
-    default: false
+    default: false,
   },
   onDestroy: Function,
   onClose: Function,
-}
+};
 
-export type MessageProps = ExtractPropTypes<typeof MessageProps>
+export type MessageProps = ExtractPropTypes<typeof MessageProps>;
