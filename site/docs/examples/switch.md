@@ -138,16 +138,16 @@
 
 ## API
 
-| 参数       | 说明           | 类型    | 可选值        | 默认值  |
-| ---------- | -------------- | ------- | ------------- | ------- |
-| v-model    | 绑定的值       | boolean | ——            | true    |
-| closeColor | 关闭的颜色     | string  | ——            | #dcdfe6 |
-| openColor  | 开启的颜色     | string  | ——            | #3a6ff4 |
-| closeText  | 左侧的文字描述 | string  | ——            | ——      |
-| openText   | 右侧的文字描述 | string  | ——            | ——      |
-| disabled   | 是否禁用       | boolean | ——            | false   |
-| type       | 按钮类型       | string  | circle/square | circle  |
-| width      | 开关尺寸       | number  | ——            | 40      |
+| 参数       | 说明           | 类型    | 可选值              | 默认值    |
+| ---------- | -------------- | ------- | ------------------- | --------- |
+| v-model    | 绑定的值       | boolean | ——                  | true      |
+| closeColor | 关闭的颜色     | string  | ——                  | '#dcdfe6' |
+| openColor  | 开启的颜色     | string  | ——                  | '#3a6ff4' |
+| closeText  | 左侧的文字描述 | string  | ——                  | ——        |
+| openText   | 右侧的文字描述 | string  | ——                  | ——        |
+| disabled   | 是否禁用       | boolean | ——                  | false     |
+| type       | 按钮类型       | string  | ['circle','square'] | 'circle'  |
+| width      | 开关尺寸       | number  | ——                  | 40        |
 
 ## Events
 

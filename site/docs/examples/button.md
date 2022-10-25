@@ -216,16 +216,16 @@ import { y-button } from "young-design";
 
 ## API
 
-| 参数         | 说明         | 类型                        | 可选值                                                    | 默认值 |
-| ------------ | ------------ | --------------------------- | --------------------------------------------------------- | ------ |
-| type         | 按钮类型     | string                      | 'primary', 'success', 'info', 'warning', 'danger', 'text' |        |
-| size         | 按钮大小     | string                      | 'medium', 'small', 'mini'                                 |        |
-| plain        | 是否朴素按钮 | boolean                     |                                                           |        |
-| round        | 是否圆角按钮 | boolean                     |                                                           |        |
-| disabled     | 是否禁用     | boolean                     |                                                           |        |
-| icon         | 图标名       | string                      | 查看 Ion 中的图标 name                                    |        |
-| iconPosition | 图标位置     | string                      | right/空                                                  | 空     |
-| iconSize     | 图           | icon 大小,传入 25 就是 25px | string/number                                             | 空     |
+| 参数         | 说明                             | 类型          | 可选值                                                      | 默认值 |
+| ------------ | -------------------------------- | ------------- | ----------------------------------------------------------- | ------ |
+| type         | 按钮类型                         | string        | ['primary', 'success', 'info', 'warning', 'danger', 'text'] | ——     |
+| size         | 按钮大小                         | string        | ['medium', 'small', 'mini' ]                                | ——     |
+| plain        | 是否朴素按钮                     | boolean       | ——                                                          | ——     |
+| round        | 是否圆角按钮                     | boolean       | ——                                                          | ——     |
+| disabled     | 是否禁用                         | boolean       | ——                                                          | ——     |
+| icon         | 图标名                           | string        | 查看 Ion 中的图标 name                                      | ——     |
+| iconPosition | 图标位置                         | string        | ['right','left' ]                                           | 'left' |
+| iconSize     | 图标 icon 大小,传入 25 就是 25px | string/number | ——                                                          | ——     |
 
 <style scope>
   .example{

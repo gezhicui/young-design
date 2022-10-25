@@ -647,12 +647,12 @@
 | ----------- | ------------------------------------- | ----------------- | --------------------- | ------ |
 | data        | 表单的内容数据                        | array             | ——                    | []     |
 | columns     | 表头和键值                            | array             | ——                    | []     |
-| trHeight    | 行高                                  | string            | ——                    | 40px   |
+| trHeight    | 行高                                  | string            | ——                    | '40px' |
 | align       | 内容排向                              | string            | left / right / center | left   |
 | zebra       | 是否显示斑马纹                        | boolean           | ——                    | false  |
 | border      | 是否显示边框                          | boolean           | ——                    | false  |
-| width       | 表格宽度                              | string            | ——                    | 100%   |
-| height      | 表格高度                              | string            | ——                    | auto   |
+| width       | 表格宽度                              | string            | ——                    | '100%' |
+| height      | 表格高度                              | string            | ——                    | 'auto' |
 | num         | 是否显示序号                          | boolean           | ——                    | false  |
 | important   | 重点行标注                            | array             | ——                    | []     |
 | rowSelect   | 开启行选择功能                        | boolean           | ——                    | false  |

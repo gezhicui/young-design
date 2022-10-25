@@ -131,17 +131,17 @@
 
 ## API
 
-| 参数      | 说明               | 类型    | 可选值 | 默认值                      |
-| --------- | ------------------ | ------- | ------ | --------------------------- |
-| src       | 图片路径           | string  |        |                             |
-| size      | 图片大小           | number  |        | 8，(计算方式：(size\*10)px) |
-| round     | 圆角               | boolean |        | false                       |
-| border    | 边框               | boolean |        | false                       |
-| fit       | 图片如何适应容器框 | string  |        |                             |
-| alt       | 原生 alt 属性      | string  |        |                             |
-| select    | 是否可以选择       | boolean |        | false                       |
-| draggable | 是否可以拖动       | boolean |        | false                       |
-| errorIcon | 失败时显示的 icon  | string  |        | close-circle                |
+| 参数      | 说明               | 类型    | 可选值 | 默认值                     |
+| --------- | ------------------ | ------- | ------ | -------------------------- |
+| src       | 图片路径           | string  | ——     | ——                         |
+| size      | 图片大小           | number  | ——     | 8,(计算方式：(size\*10)px) |
+| round     | 圆角               | boolean | ——     | false                      |
+| border    | 边框               | boolean | ——     | false                      |
+| fit       | 图片如何适应容器框 | string  | ——     | ——                         |
+| alt       | 原生 alt 属性      | string  | ——     | ——                         |
+| select    | 是否可以选择       | boolean | ——     | false                      |
+| draggable | 是否可以拖动       | boolean | ——     | false                      |
+| errorIcon | 失败时显示的 icon  | string  | ——     | 'close-circle'             |
 
 ## Events
 

@@ -64,7 +64,13 @@
 
 ```html
 <template>
-  <y-select :options="options1" v-model="selectVal2" @change="changeSelect" disabled placeholder="请选择内容" />
+  <y-select
+    :options="options1"
+    v-model="selectVal2"
+    @change="changeSelect"
+    disabled
+    placeholder="请选择内容"
+  />
   <y-select :options="options2" v-model="selectVal3" @change="changeSelect" />
 </template>
 
@@ -123,7 +129,13 @@
 
 ```html
 <template>
-  <y-select :options="options3" fieldLabel="name" fieldValue="id" v-model="selectVal4" @change="changeSelect" />
+  <y-select
+    :options="options3"
+    fieldLabel="name"
+    fieldValue="id"
+    v-model="selectVal4"
+    @change="changeSelect"
+  />
 </template>
 
 <script setup>
@@ -166,12 +178,12 @@
 
 | 参数        | 说明       | 类型    | 可选值 | 默认值   |
 | ----------- | ---------- | ------- | ------ | -------- |
-| v-model     | 绑定的值   | string  | ——     |          |
-| options     | 下拉选项   | Array   |        |          |
-| disabled    | 是否禁用   | boolean |        | false    |
-| fieldLabel  | 自定义标签 | string  |        | 'label'  |
-| fieldValue  | 自定义值   | string  |        | 'value'  |
-| placeholder | 占位文字   | string  |        | '请选择' |
+| v-model     | 绑定的值   | string  | ——     | ——       |
+| options     | 下拉选项   | Array   | ——     | ——       |
+| disabled    | 是否禁用   | boolean | ——     | false    |
+| fieldLabel  | 自定义标签 | string  | ——     | 'label'  |
+| fieldValue  | 自定义值   | string  | ——     | 'value'  |
+| placeholder | 占位文字   | string  | ——     | '请选择' |
 
 ## Events
 

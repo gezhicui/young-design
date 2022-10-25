@@ -235,12 +235,12 @@ const globalMessage = () => {
 
 方法调用和属性方法调用参数一致
 
-| 参数      | 说明                                          | 类型    | 可选值                              | 默认值 |
-| --------- | --------------------------------------------- | ------- | ----------------------------------- | ------ |
-| type      | message 类型                                  | string  | 'success','warning','danger','info' | 'info' |
-| message   | 消息提示内容                                  | string  | ——                                  | ——     |
-| duration  | 自动关闭的延时，单位毫秒。设为 0 时不自动关闭 | number  | ——                                  | 3000   |
-| showClose | 是否显示关闭按钮                              | boolean | ——                                  | false  |
+| 参数      | 说明                                          | 类型    | 可选值                                | 默认值 |
+| --------- | --------------------------------------------- | ------- | ------------------------------------- | ------ |
+| type      | message 类型                                  | string  | ['success','warning','danger','info'] | 'info' |
+| message   | 消息提示内容                                  | string  | ——                                    | ——     |
+| duration  | 自动关闭的延时，单位毫秒。设为 0 时不自动关闭 | number  | ——                                    | 3000   |
+| showClose | 是否显示关闭按钮                              | boolean | ——                                    | false  |
 
 <script setup lang="ts">
 

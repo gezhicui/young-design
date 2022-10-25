@@ -121,17 +121,17 @@
 
 ## API
 
-| 参数        | 说明             | 类型            | 可选值                            | 默认值 |
-| ----------- | ---------------- | --------------- | --------------------------------- | ------ |
-| v-model     | 绑定值           | string / number | ——                                | ——     |
-| placeholder | 输入框占位文本   | string          | ——                                | ——     |
-| max         | 最大输入上限     | string          | ——                                | ——     |
-| disabled    | 是否禁用         | boolean         | ——                                | false  |
-| autofocus   | 是否自动获取焦点 | boolean         | ——                                | false  |
-| name        | 原生 name 属性   | string          | ——                                | ——     |
-| resize      | 拉伸方式         | string          | vertical / horizontal / none/both | both   |
-| rows        | 行数             | string          | ——                                | 3      |
-| cols        | 宽度             | string          | ——                                | 70     |
+| 参数        | 说明             | 类型                | 可选值                                      | 默认值 |
+| ----------- | ---------------- | ------------------- | ------------------------------------------- | ------ |
+| v-model     | 绑定值           | 'string' / 'number' | ——                                          | ——     |
+| placeholder | 输入框占位文本   | string              | ——                                          | ——     |
+| max         | 最大输入上限     | string              | ——                                          | ——     |
+| disabled    | 是否禁用         | boolean             | ——                                          | false  |
+| autofocus   | 是否自动获取焦点 | boolean             | ——                                          | false  |
+| name        | 原生 name 属性   | string              | ——                                          | ——     |
+| resize      | 拉伸方式         | string              | ['vertical' , 'horizontal' , 'none','both'] | 'both' |
+| rows        | 行数             | string              | ——                                          | 3      |
+| cols        | 宽度             | string              | ——                                          | 70     |
 
 ## Events
 

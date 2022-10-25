@@ -151,16 +151,16 @@ const handleClose = () => {
 
 | 参数              | 说明                  | 类型    | 可选值 | 默认值 |
 | ----------------- | --------------------- | ------- | ------ | ------ |
-| title             | 标题                  | string  |        |        |
-| visible           | dialog 是否出现       | boolean |        | false  |
-| cancelText        | cancel 按钮的文字     | string  |        | 取消   |
-| confirmText       | confirm 按钮的文字    | string  |        | 确认   |
-| showHeader        | 是否需要头部          | boolean |        | true   |
-| showFooter        | 是否需要尾部          | boolean |        | true   |
-| showClose         | 是否需要 close        | boolean |        | true   |
-| showCancelButton  | 是否需要 cancel 按钮  | boolean |        | true   |
-| showConfirmButton | 是否需要 confirm 按钮 | boolean |        | true   |
-| width             | 自定义宽度            | string  |        | auto   |
+| title             | 标题                  | string  | ——     | ——     |
+| visible           | dialog 是否出现       | boolean | ——     | false  |
+| cancelText        | cancel 按钮的文字     | string  | ——     | '取消' |
+| confirmText       | confirm 按钮的文字    | string  | ——     | '确认' |
+| showHeader        | 是否需要头部          | boolean | ——     | true   |
+| showFooter        | 是否需要尾部          | boolean | ——     | true   |
+| showClose         | 是否需要 close        | boolean | ——     | true   |
+| showCancelButton  | 是否需要 cancel 按钮  | boolean | ——     | true   |
+| showConfirmButton | 是否需要 confirm 按钮 | boolean | ——     | true   |
+| width             | 自定义宽度            | string  | ——     | 'auto' |
 
 ## Slots
 

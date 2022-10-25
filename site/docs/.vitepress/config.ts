@@ -11,7 +11,7 @@ export default {
     head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
     nav: [
       { text: '指南', link: '/guild/installation' },
-      { text: '组件', link: '/examples/button/' },
+      { text: '组件', link: '/examples/button' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/gezhicui/young-design' },
@@ -47,15 +47,15 @@ export default {
           items: [
             {
               text: 'Button 按钮',
-              link: '/examples/button/',
+              link: '/examples/button',
             },
             {
               text: 'Icon 图标',
-              link: '/examples/icon/',
+              link: '/examples/icon',
             },
             {
               text: 'Container 布局容器',
-              link: '/examples/container/',
+              link: '/examples/container',
             },
           ],
         },
@@ -64,43 +64,43 @@ export default {
           items: [
             {
               text: 'Avatar 头像',
-              link: '/examples/avatar/',
+              link: '/examples/avatar',
             },
             {
               text: 'Info 信息栏',
-              link: '/examples/info/',
+              link: '/examples/info',
             },
             {
               text: 'Card 卡片',
-              link: '/examples/card/',
+              link: '/examples/card',
             },
             {
               text: 'Switch 开关',
-              link: '/examples/switch/',
+              link: '/examples/switch',
             },
             {
               text: 'Select 选择器',
-              link: '/examples/select/',
+              link: '/examples/select',
             },
             {
               text: 'Textarea 文本域',
-              link: '/examples/textarea/',
+              link: '/examples/textarea',
             },
             {
               text: 'Radio 单选框',
-              link: '/examples/radio/',
+              link: '/examples/radio',
             },
             {
               text: 'Rate 评分',
-              link: '/examples/rate/',
+              link: '/examples/rate',
             },
             {
               text: 'Upload 上传',
-              link: '/examples/upload/',
+              link: '/examples/upload',
             },
             {
               text: 'Table 表格',
-              link: '/examples/table/',
+              link: '/examples/table',
             },
           ],
         },
@@ -109,7 +109,7 @@ export default {
           items: [
             {
               text: 'BackTop 回到顶部',
-              link: '/examples/back-top/',
+              link: '/examples/back-top',
             },
           ],
         },
@@ -118,11 +118,11 @@ export default {
           items: [
             {
               text: 'Message 消息提示',
-              link: '/examples/message/',
+              link: '/examples/message',
             },
             {
               text: 'Dialog 对话框',
-              link: '/examples/dialog/',
+              link: '/examples/dialog',
             },
           ],
         },
