@@ -2,17 +2,20 @@
 //render :把VNode渲染成一个 真实的dom节点
 
 import { h, render, VNode } from 'vue';
-import { messageType, MessageProps } from './types';
+import {
+  messageType,
+  MessageFun,
+  MessageFunAttrs,
+} from './types';
 import MessageCpn from './Message.vue';
 
 const instances: VNode[] = [];
 
 const formatParams = (
-  options: MessageProps | string,
+  options: MessageFunAttrs | string,
   type: string = messageType.INFO
 ) => {
-  let formatOpts: MessageProps = {
-    top: 20,
+  let formatOpts: MessageFunAttrs = {
     type,
     message: '',
     duration: 3000,
@@ -26,9 +29,8 @@ const formatParams = (
   return formatOpts;
 };
 
-function Message(options: MessageProps | string) {
+const Message: MessageFun = function (options: MessageFunAttrs | string) {
   const formatOpts = formatParams(options);
-
   let top = 20;
   instances.forEach((vm: VNode) => {
     top += vm?.el?.offsetHeight + 16 || 16;
@@ -48,9 +50,9 @@ function Message(options: MessageProps | string) {
   render(vm, container);
   document.body.appendChild(container);
   instances.push(vm);
-}
+};
 
-function close(vm: VNode) {
+const close = (vm: VNode) => {
   const index = instances.findIndex((ins) => ins === vm);
   if (index === -1) {
     return;
@@ -63,10 +65,10 @@ function close(vm: VNode) {
       cpn.props.top -= vm?.el?.offsetHeight + 16;
     }
   }
-}
+};
 
 Object.values(messageType).forEach((type) => {
-  (Message as any)[type] = (options: MessageProps | string) => {
+  (Message as MessageFun)[type] = (options: MessageFunAttrs | string) => {
     const formatOpts = formatParams(options, type);
     return Message(formatOpts);
   };

@@ -8,12 +8,11 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "moduleResolution": "Node",
+    "suppressImplicitAnyIndexErrors": true,
     "lib": ["esnext", "dom"],
     "rootDirs": ["./", "./components"],
     "paths": {
-      "@/*": [
-        "./components/src/*"
-      ]
-    },
+      "@/*": ["./components/src/*"]
+    }
   }
 }

@@ -223,7 +223,7 @@ import { y-button } from "young-design";
 | plain        | 是否朴素按钮                     | boolean       | ——                                                          | ——     |
 | round        | 是否圆角按钮                     | boolean       | ——                                                          | ——     |
 | disabled     | 是否禁用                         | boolean       | ——                                                          | ——     |
-| icon         | 图标名                           | string        | 查看 Ion 中的图标 name                                      | ——     |
+| icon         | 图标名                           | string        | <a href='/examples/icon'>Icon</a>                                    | ——     |
 | iconPosition | 图标位置                         | string        | ['right','left' ]                                           | 'left' |
 | iconSize     | 图标 icon 大小,传入 25 就是 25px | string/number | ——                                                          | ——     |
 

@@ -7,7 +7,23 @@ export const messageType = {
   INFO: 'info',
 };
 
-export const MessageProps = {
+export interface MessageFun {
+  (options: MessageFunAttrs | string): void;
+  success?: Function;
+  warning?: Function;
+  danger?: Function;
+  info?: Function;
+}
+
+export interface MessageFunAttrs {
+  type?: string;
+  message: string;
+  icon?:string;
+  duration?: number;
+  showClose?: boolean;
+}
+
+export const messageProps = {
   type: {
     type: String,
     default: messageType.INFO,
@@ -23,6 +39,7 @@ export const MessageProps = {
     type: String,
     required: true,
   },
+  icon:String,
   duration: {
     type: Number,
     default: 3000,
@@ -35,4 +52,4 @@ export const MessageProps = {
   onClose: Function,
 };
 
-export type MessageProps = ExtractPropTypes<typeof MessageProps>;
+export type MessageProps = ExtractPropTypes<typeof messageProps>;

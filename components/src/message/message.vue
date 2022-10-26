@@ -5,7 +5,7 @@
     name="y-message-fade"
   >
     <div v-show="visiable" :class="messageStyle" :style="{ top: `${top}px` }">
-      <Icon class="before-icon" v-if="iconType" :name="iconType" />
+      <Icon class="before-icon" v-if="iconType" :name="icon || iconType[type]" />
       <div class="y-message-content" v-html="message"></div>
       <Icon v-if="showClose" @click="close" class="close-icon" name="close" />
     </div>
@@ -13,29 +13,23 @@
 </template>
 
 <script lang="ts" setup>
-import { messageType, MessageProps } from './types';
+import { messageType, messageProps } from './types';
 import './style/index.less';
 import Icon from '../Icon/icon.vue';
 import { onMounted, ref, computed } from 'vue';
 
-const props = defineProps(MessageProps);
+const props = defineProps(messageProps);
 
 const visiable = ref(false);
 
 const messageStyle = computed(() => ['y-message', props.type]);
 
-const iconType = computed(() => {
-  switch (props.type) {
-    case messageType.SUCCESS:
-      return 'check-circle-fill';
-    case messageType.WARNING:
-      return 'warning-circle-fill';
-    case messageType.DANGER:
-      return 'close-circle-fill';
-    case messageType.INFO:
-      return 'info-circle-fill';
-  }
-});
+const iconType = {
+  [messageType.SUCCESS]: 'check-circle-fill',
+  [messageType.WARNING]: 'error-fill',
+  [messageType.DANGER]: 'close-circle-fill',
+  [messageType.INFO]: 'info-circle-fill',
+};
 
 const close = () => {
   visiable.value = false;

@@ -192,6 +192,39 @@ const closesuccess = () => {
 
 :::
 
+
+## 自定义Icon
+可以在配置对象中传入`icon`来自定义图标
+
+<y-button plain @click="custIcon">thunderbolt-fill</y-button>
+
+::: details 显示代码
+
+```vue
+<template>
+  <div>
+    <y-button plain @click="custIcon">thunderbolt-fill</y-button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { Message } from 'young-design';
+//可以通过方法传入type
+const custIcon= () => {
+  Message({
+    showClose: true,
+    icon:'thunderbolt-fill',
+    message: 'Oops, this is a error message.',
+    type: 'danger',
+  })
+}
+
+</script>
+```
+
+:::
+
+
 ## 全局注册时的使用方法
 
 `vue`为我们提供了`app.config.globalProperties`来挂载全局属性和方法,如果不需要按需导入，而是在入口文件中直接注册整个组件库的话，则`Message`将挂载到全局,名为`$message`，不需要每个组件中都`import`
@@ -239,6 +272,7 @@ const globalMessage = () => {
 | --------- | --------------------------------------------- | ------- | ------------------------------------- | ------ |
 | type      | message 类型                                  | string  | ['success','warning','danger','info'] | 'info' |
 | message   | 消息提示内容                                  | string  | ——                                    | ——     |
+| icon   | 自定义图标名                                  | string  | <a href='/examples/icon'>Icon</a>         | ——     |
 | duration  | 自动关闭的延时，单位毫秒。设为 0 时不自动关闭 | number  | ——                                    | 3000   |
 | showClose | 是否显示关闭按钮                              | boolean | ——                                    | false  |
 
@@ -305,6 +339,15 @@ const closesuccess = () => {
     message: 'Oops, this is a error message.',
     type: 'danger',
     duration:0
+  })
+}
+
+const custIcon= () => {
+  Message({
+    showClose: true,
+    icon:'thunderbolt-fill',
+    message: 'Oops, this is a error message.',
+    type: 'danger',
   })
 }
 
