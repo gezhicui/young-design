@@ -18,3 +18,4 @@ export { default as Rate } from './rate';
 export { default as Table } from './table';
 export { default as BackTop } from './back-top';
 export { default as Message } from './message';
+export { default as Notification } from './notification';

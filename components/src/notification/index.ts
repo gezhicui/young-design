@@ -3,24 +3,25 @@
 
 import { h, render, VNode } from 'vue';
 import {
-  messageType,
-  MessageFun,
-  MessageFunAttrs,
+  notificationType,
+  NotificationFun,
+  NotificationFunAttrs,
 } from './types';
-import MessageCpn from './Message.vue';
+import NotificationCpn from './notification.vue';
 
 const instances: VNode[] = [];
 
 const formatParams = (
-  options: MessageFunAttrs | string,
-  type: string = messageType.INFO
+  options: NotificationFunAttrs | string,
+  type?: string
 ) => {
-  let formatOpts: MessageFunAttrs = {
+  let formatOpts: NotificationFunAttrs = {
     type,
     message: '',
     duration: 3000,
     showClose: false,
   };
+
   if (typeof options === 'string') {
     formatOpts.message = options;
   } else {
@@ -29,15 +30,19 @@ const formatParams = (
   return formatOpts;
 };
 
-const Message: MessageFun = function (options: MessageFunAttrs | string) {
+const Notification: NotificationFun = function (
+  options: NotificationFunAttrs | string
+) {
   const formatOpts = formatParams(options);
+  console.log('formatOpts', formatOpts);
+
   let top = 20;
   instances.forEach((vm: VNode) => {
     top += vm?.el?.offsetHeight + 16 || 16;
   });
   //创建一个文档碎片，把所有的新结点附加在其上，然后把文档碎片的内容一次性添加到document中
   const container: any = document.createDocumentFragment();
-  const vm = h(MessageCpn, {
+  const vm = h(NotificationCpn, {
     ...formatOpts,
     top,
     onClose() {
@@ -67,11 +72,13 @@ const close = (vm: VNode) => {
   }
 };
 
-Object.values(messageType).forEach((type) => {
-  (Message as MessageFun)[type] = (options: MessageFunAttrs | string) => {
+Object.values(notificationType).forEach((type) => {
+  (Notification as NotificationFun)[type] = (
+    options: NotificationFunAttrs | string
+  ) => {
     const formatOpts = formatParams(options, type);
-    return Message(formatOpts);
+    return Notification(formatOpts);
   };
 });
 
-export default Message;
+export default Notification;

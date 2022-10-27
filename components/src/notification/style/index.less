@@ -1,0 +1,44 @@
+.y-notification {
+  width: 300px;
+  position: fixed;
+  display: flex;
+  z-index: 50;
+  right: 40px;
+  font-size: 14px;
+  border-radius: 0.3rem;
+  padding: 14px 24px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s linear;
+}
+.y-notification-content {
+  display: inline-block;
+  flex: 1;
+  width: 100%;
+  .y-notification-content-title {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .y-notification-content-description {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #98a6ad;
+    line-height: 20px;
+  }
+}
+.y-notification .before-icon {
+  width: 35px;
+  height: 100%;
+}
+.y-notification .close-icon {
+  width: 5px;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #a8a8a8;
+  cursor: pointer;
+}
+.y-notification-fade-enter-from,
+.y-notification-fade-leave-to {
+  transform: translateX(50%);
+  opacity: 0;
+}
