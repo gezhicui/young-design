@@ -1,3 +1,21 @@
+<template>
+  <div class="y-rate">
+    <div class="y-rate-list" @mouseout="width = modelValue">
+      <Icon
+        v-for="(num, index) in 5"
+        :size="sizeChange(iconSize)"
+        :key="num"
+        :name="iconName"
+        :color="width > index ? effectColor : invalidColor"
+        class="y-rete-icon"
+        @click="upDataValue"
+        @mouseover="width = num"
+      />
+    </div>
+    <span v-if="showText" class="show-text">{{ textContent }}</span>
+  </div>
+</template>
+
 <script lang="ts">
 export default { name: 'y-rate' };
 </script>
@@ -7,6 +25,7 @@ import { ref, watch, computed } from 'vue';
 import './style/index.less';
 import { rateProps } from './types';
 import Icon from '../Icon/icon.vue';
+import { sizeChange } from '../utils';
 
 const prop = defineProps(rateProps);
 const emit = defineEmits(['update:modelValue', 'change']);
@@ -27,21 +46,3 @@ const textContent = computed((): string => {
   return '';
 });
 </script>
-
-<template>
-  <div class="y-rate">
-    <div class="y-rate-list" @mouseout="width = modelValue">
-      <Icon
-        v-for="(num, index) in 5"
-        :size="iconSize"
-        :key="num"
-        :name="iconName"
-        :color="width > index ? effectColor : invalidColor"
-        class="y-rete-icon"
-        @click="upDataValue"
-        @mouseover="width = num"
-      />
-    </div>
-    <span v-if="showText" class="show-text">{{ textContent }}</span>
-  </div>
-</template>

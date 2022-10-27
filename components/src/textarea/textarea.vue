@@ -16,31 +16,27 @@
       @focus="emit('onfocus')"
     />
     <div v-if="max" class="y-textarea-max">
-      {{ modelValue.length }}/{{ max }}
+      {{ modelValue?.length }}/{{ max }}
     </div>
   </div>
 </template>
 
-
 <script lang="ts">
-export default { name: "y-textarea" };
+export default { name: 'y-textarea' };
 </script>
 
-<script lang="ts" setup >
-import "./style/index.less";
-import { computed } from "vue";
-import { textareaProps } from "./types";
+<script lang="ts" setup>
+import './style/index.less';
+import { computed } from 'vue';
+import { textareaProps } from './types';
 
 const props = defineProps(textareaProps);
-const emit = defineEmits(["update:modelValue", "onfocus", "onblur"]);
+const emit = defineEmits(['update:modelValue', 'onfocus', 'onblur']);
 
 const input = (e: Event): void =>
-  emit("update:modelValue", (e.target as HTMLTextAreaElement).value);
+  emit('update:modelValue', (e.target as HTMLTextAreaElement).value);
 
 const isClass = computed((): (string | object)[] => {
-  return ["y-textarea-textarea", { "y-textarea-disabled": props.disabled }];
+  return ['y-textarea-textarea', { 'y-textarea-disabled': props.disabled }];
 });
 </script>
-
-
-

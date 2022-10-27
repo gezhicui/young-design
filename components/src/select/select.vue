@@ -31,20 +31,20 @@
 
 <script>
 export default {
-  name: "y-select",
+  name: 'y-select',
 };
 </script>
 
 <script setup>
-import { ref, watchEffect } from "vue";
-import "./style/index.less";
-import { selectProps } from "./types";
+import { ref, watchEffect } from 'vue';
+import './style/index.less';
+import { selectProps } from './types';
 
 const props = defineProps(selectProps);
-const inputlabel = ref("");
+const inputlabel = ref('');
 const positionShow = ref(false);
 
-const emit = defineEmits(["change", "update:modelValue"]);
+const emit = defineEmits(['change', 'update:modelValue']);
 
 const vClickOutSide = {
   beforeMount(el) {
@@ -52,17 +52,17 @@ const vClickOutSide = {
       if (!props.disabled) {
         if (
           el.contains(e.target) &&
-          e.target.className.indexOf("y-options-item") === -1
+          e.target.className.indexOf('y-options-item') === -1
         ) {
           positionShow.value = true;
         } else {
-          if (e.target.className.indexOf("y-disabled") === -1) {
+          if (e.target.className.indexOf('y-disabled') === -1) {
             positionShow.value = false;
           }
         }
       }
     };
-    document.addEventListener("click", handler);
+    document.addEventListener('click', handler);
   },
 };
 
@@ -78,9 +78,8 @@ watchEffect(() => {
 const change = (item, index) => {
   if (!item.disabled) {
     positionShow.value = false;
-    emit("update:modelValue", item[props.fieldValue]);
-    emit("change", item);
+    emit('update:modelValue', item[props.fieldValue]);
+    emit('change', item);
   }
 };
 </script>
-

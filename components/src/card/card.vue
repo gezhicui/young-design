@@ -14,15 +14,12 @@
   </div>
 </template>
 
-
 <script lang="ts">
-export default { name: "y-card" };
+export default { name: 'y-card' };
 </script>
-
 
 <script lang="ts" setup>
-import "./style/index.less";
-import { cardProps } from "./types";
+import './style/index.less';
+import { cardProps } from './types';
 defineProps(cardProps);
 </script>
-

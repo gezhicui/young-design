@@ -15,6 +15,7 @@ export default { name: 'y-icon' };
 import './style/index.less';
 import { computed, onMounted } from 'vue';
 import { iconProps } from './types';
+import { sizeChange } from '../utils';
 
 onMounted(() => {
   import('./font/iconfont.js' as any);
@@ -35,8 +36,8 @@ const badge = computed(() => {
 const iconStyle = computed(() => {
   return {
     color: props.color,
-    width: props.size,
-    height: props.size,
+    width: sizeChange(props.size),
+    height: sizeChange(props.size),
   };
 });
 </script>

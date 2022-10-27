@@ -27,12 +27,11 @@
 </template>
 
 <script lang="ts">
-export default { name: "y-info" };
+export default { name: 'y-info' };
 </script>
 
-<script lang="ts" setup >
-import { infoProps } from "./types";
-import "./style/index.less";
+<script lang="ts" setup>
+import { infoProps } from './types';
+import './style/index.less';
 defineProps(infoProps);
 </script>
-

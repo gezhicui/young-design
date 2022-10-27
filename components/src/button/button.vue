@@ -1,14 +1,14 @@
 <template>
   <button class="y-button" :class="styleClass">
     <Icon
-      :size="iconSize"
+      :size="sizeChange(iconSize)"
       :class="leftIconClass"
       v-if="iconFont.iconName && iconFont.position != 'right'"
       :name="iconFont.iconName"
     />
     <slot />
     <Icon
-      :size="iconSize"
+      :size="sizeChange(iconSize)"
       :class="rightIconClass"
       v-if="iconFont.position == 'right' && iconFont.iconName"
       :name="iconFont.iconName"
@@ -25,6 +25,7 @@ import './style/index.less';
 import { computed, useSlots } from 'vue';
 import Icon from '../Icon/icon.vue';
 import { buttonProps } from './types';
+import { sizeChange } from '../utils';
 
 const props = defineProps(buttonProps);
 const slots = useSlots();
