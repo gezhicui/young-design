@@ -243,7 +243,7 @@ app.mount('#app');
 <!-- 组件 -->
 <template>
   <div>
-    <y-button plain @click="closeInfo">Info Message</y-button>
+    <y-button plain @click="globalMessage">Info Message</y-button>
   </div>
 </template>
 

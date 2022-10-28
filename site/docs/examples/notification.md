@@ -251,8 +251,63 @@ const custLikeIcon = () => {
 
 :::
 
+## 全局注册时的使用方法
+
+`vue`为我们提供了`app.config.globalProperties`来挂载全局属性和方法,如果不需要按需导入，而是在入口文件中直接注册整个组件库的话，则`Notification`将挂载到全局,名为`$notification`，不需要每个组件中都`import`
+
+<y-button plain @click="globalNotification">全局挂载</y-button>
+
+::: details 显示代码
+
+```js
+//main.ts
+import youngDesign from 'young-design';
+const app = createApp(App);
+app.use(youngDesign);
+app.mount('#app');
+```
+
+```vue
+<!-- 组件 -->
+<template>
+  <div>
+    <y-button plain @click="globalNotification">Info Notification</y-button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { getCurrentInstance } from 'vue';
+const { proxy } = getCurrentInstance();
+
+const globalNotification = () => {
+  proxy.$notification({
+    message: 'This is a message.',
+    showClose: true,
+  });
+};
+</script>
+```
+
+:::
+
+## API
+
+方法调用和属性方法调用参数一致
+
+| 参数        | 说明                                          | 类型    | 可选值                                | 默认值 |
+| ----------- | --------------------------------------------- | ------- | ------------------------------------- | ------ |
+| type        | message 类型                                  | string  | ['success','warning','danger','info'] | ——     |
+| message     | 消息提示标题                                  | string  | ——                                    | ——     |
+| description | 消息提示描述                                  | string  | ——                                    | ——     |
+| icon        | 自定义图标名                                  | string  | <a href='/examples/icon'>Icon</a>     | ——     |
+| color       | 图标的颜色                                    | string  | ——                                    | ——     |
+| duration    | 自动关闭的延时，单位毫秒。设为 0 时不自动关闭 | number  | ——                                    | 4500   |
+| showClose   | 是否显示关闭按钮                              | boolean | ——                                    | false  |
+
 <script setup lang="ts">
 import { Notification } from 'young-design';
+import { getCurrentInstance } from 'vue';
+const { proxy } = getCurrentInstance();
 const open = () => {
   Notification('我是个Notification');
 };
@@ -354,6 +409,15 @@ const closesuccess = () => {
     duration:0
   })
 }
+const globalNotification = () => {
+  proxy.$notification({
+    icon: 'like-fill',
+    color:'red',
+    message: '干得不错小老弟',
+    description:'给你点个赞',
+    showClose:true,
+  });
+};
 </script>
 <style scope>
 .y-button {
