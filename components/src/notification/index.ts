@@ -18,7 +18,7 @@ const formatParams = (
   let formatOpts: NotificationFunAttrs = {
     type,
     message: '',
-    duration: 3000,
+    duration: 4500,
     showClose: false,
   };
 
@@ -34,8 +34,6 @@ const Notification: NotificationFun = function (
   options: NotificationFunAttrs | string
 ) {
   const formatOpts = formatParams(options);
-  console.log('formatOpts', formatOpts);
-
   let top = 20;
   instances.forEach((vm: VNode) => {
     top += vm?.el?.offsetHeight + 16 || 16;

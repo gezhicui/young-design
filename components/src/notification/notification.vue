@@ -5,16 +5,16 @@
     name="y-notification-fade"
   >
     <div v-show="visiable" class="y-notification" :style="{ top: `${top}px` }">
-      <div class="before-icon" v-if="type">
+      <div class="before-icon" v-if="type || icon">
         <Icon
           size="22"
-          :color="color || iconType[type]?.color"
-          :name="icon || iconType[type]?.name"
+          :color="color || iconType[type as string]?.color"
+          :name="icon || iconType[type as string]?.name"
         />
       </div>
 
       <div class="y-notification-content">
-        <div class="y-notification-content-title">{{ message }}{{ type }}</div>
+        <div class="y-notification-content-title">{{ message }}</div>
         <div class="y-notification-content-description" v-if="description">
           {{ description }}
         </div>
@@ -28,10 +28,9 @@
 import { notificationType, notificationProps } from './types';
 import './style/index.less';
 import Icon from '../Icon/icon.vue';
-import { onMounted, ref, computed } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const props = defineProps(notificationProps);
-console.log('props', props);
 
 const visiable = ref(false);
 

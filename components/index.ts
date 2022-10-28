@@ -9,5 +9,6 @@ export default {
       );
     }
     app.config.globalProperties.$message = components.Message;
+    app.config.globalProperties.$notification = components.Notification;
   },
 };

@@ -121,6 +121,10 @@ export default {
               link: '/examples/message',
             },
             {
+              text: 'Notification 通知',
+              link: '/examples/notification',
+            },
+            {
               text: 'Dialog 对话框',
               link: '/examples/dialog',
             },
