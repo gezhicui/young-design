@@ -1,39 +1,43 @@
 <template>
-  <transition name="y-dialog-fade">
-    <div v-show="visible" class="y-dialog-warpper">
-      <div class="y-dialog-inner" @click.self="handleMaskClose">
-        <div class="y-dialog-box transition-inner" :style="`width:${width}`">
-          <div class="y-dialog-header">
-            <span class="y-dialog-title" v-if="showHeader">
+  <transition name="y-drawer-fade">
+    <div
+      v-show="visible"
+      @click.self="handleMaskClose"
+      class="y-drawer-warpper"
+    >
+      <div class="y-drawer-box transition-inner" :style="`width:${width}`">
+        <div>
+          <div class="y-drawer-header">
+            <span class="y-drawer-title" v-if="showHeader">
               {{ title }}
             </span>
             <slot v-else name="headerContent" />
             <Icon
               v-if="closable"
               @click="onClickCancelButton"
-              class="y-dialog-close"
+              class="y-drawer-close"
               name="close"
             />
           </div>
+        </div>
 
-          <div class="y-dialog-body">
-            <slot />
-          </div>
+        <div class="y-drawer-body">
+          <slot />
+        </div>
 
-          <div>
-            <slot name="footerContent" />
-            <div class="y-dialog-footer" v-if="showFooter">
-              <Button v-if="showCancelButton" @click="onClickCancelButton">
-                {{ cancelText }}
-              </Button>
-              <Button
-                type="primary"
-                v-if="showConfirmButton"
-                @click="onClickConfirmButton"
-              >
-                {{ confirmText }}
-              </Button>
-            </div>
+        <div>
+          <slot name="footerContent" />
+          <div class="y-drawer-footer" v-if="showFooter">
+            <Button v-if="showCancelButton" @click="onClickCancelButton">
+              {{ cancelText }}
+            </Button>
+            <Button
+              type="primary"
+              v-if="showConfirmButton"
+              @click="onClickConfirmButton"
+            >
+              {{ confirmText }}
+            </Button>
           </div>
         </div>
       </div>
@@ -42,17 +46,17 @@
 </template>
 
 <script lang="ts">
-export default { name: 'y-dialog' };
+export default { name: 'y-drawer' };
 </script>
 
 <script setup lang="ts">
 import './style/index.less';
 import { ref, useSlots } from 'vue';
 import Button from '../button/button.vue';
-import Icon from '../icon/icon.vue';
-import { dialogProps } from './types';
+import Icon from '../Icon/icon.vue';
+import { drawerProps } from './types';
 
-const props = defineProps(dialogProps);
+const props = defineProps(drawerProps);
 const emit = defineEmits(['cancel', 'confirm']);
 const slots = useSlots();
 

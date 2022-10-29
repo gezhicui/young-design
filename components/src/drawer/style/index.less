@@ -1,0 +1,75 @@
+.y-drawer-warpper {
+  position: fixed;
+  z-index: 2022;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  user-select: none;
+  .y-drawer-box {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    text-align: left;
+  }
+  .y-drawer-header {
+    display: flex;
+    padding: 20px 20px 15px;
+    position: relative;
+
+    .y-drawer-title {
+      font-size: 18px;
+      color: #303133;
+    }
+    .y-drawer-close {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      &:hover {
+        color: #409eff;
+      }
+    }
+  }
+
+  .y-drawer-body {
+    flex: 1;
+    padding: 0 20px;
+  }
+  .y-drawer-footer {
+    padding: 10px 20px 20px;
+    text-align: right;
+    & > * {
+      margin-left: 10px;
+    }
+  }
+}
+
+.y-drawer-fade-enter-to,
+.y-drawer-fade-leave-from {
+  transition: all 0.2s linear;
+  opacity: 1;
+}
+.y-drawer-fade-enter-from,
+.y-drawer-fade-leave-to {
+  transition: all 0.2s linear;
+  opacity: 0;
+}
+
+.y-drawer-fade-enter-to .transition-inner,
+.y-drawer-fade-leave-from .transition-inner {
+  transition: all 0.2s linear;
+  opacity: 1;
+}
+.y-drawer-fade-enter-from .transition-inner,
+.y-drawer-fade-leave-to .transition-inner {
+  transform: translatex(100%);
+  transition: all 0.2s linear;
+  opacity: 0;
+}

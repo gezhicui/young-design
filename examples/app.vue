@@ -1,9 +1,9 @@
 <template>
-  <Notification></Notification>
+  <Dialog></Dialog>
 </template>
 
 <script lang="ts" setup>
-import Notification from './src/Notification.vue';
+import Dialog from './src/Dialog.vue';
 </script>
 
 <style scoped></style>

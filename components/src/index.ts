@@ -2,6 +2,7 @@ export { default as Button } from './button';
 export { default as Icon } from './icon';
 export { default as Upload } from './upload';
 export { default as Dialog } from './dialog';
+export { default as Drawer } from './drawer';
 export { default as Container } from './container/container';
 export { default as Aside } from './container/aside';
 export { default as Footer } from './container/footer';

@@ -1,13 +1,13 @@
 import { ExtractPropTypes } from 'vue';
 
-export const dialogProps = {
-  // dialog标题
+export const drawerProps = {
+  // drawer标题
   title: {
     required: false,
     default: '',
     type: String,
   },
-  // dialog 是否出现
+  // drawer 是否出现
   visible: {
     required: false,
     default: false,
@@ -69,4 +69,4 @@ export const dialogProps = {
   },
 };
 
-export type DialogProps = ExtractPropTypes<typeof dialogProps>;
+export type DrawerProps = ExtractPropTypes<typeof drawerProps>;

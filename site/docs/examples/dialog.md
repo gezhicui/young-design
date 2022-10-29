@@ -88,7 +88,7 @@ const handleClose = () => {
 
 对话框的头部和尾部可以通过 slot 自定义
 
-<y-dialog :visible="customVisible" :showClose="false" @cancel="handleClose" @confirm="handleClose" title="我就是个传进来的标题" width="500px">
+<y-dialog :visible="customVisible" :closable="false" @cancel="handleClose" @confirm="handleClose" title="我就是个传进来的标题" width="500px">
 <template v-slot:headerContent>
 
 <div class="my-header">
@@ -112,7 +112,7 @@ const handleClose = () => {
 <template>
   <y-dialog
     :visible="customVisible"
-    :showClose="false"
+    :closable="false"
     @cancel="handleClose"
     @confirm="handleClose"
     title="我就是个传进来的标题"
@@ -157,7 +157,8 @@ const handleClose = () => {
 | confirmText       | confirm 按钮的文字    | string  | ——     | '确认' |
 | showHeader        | 是否需要头部          | boolean | ——     | true   |
 | showFooter        | 是否需要尾部          | boolean | ——     | true   |
-| showClose         | 是否需要 close        | boolean | ——     | true   |
+| closable          | 是否需要 close        | boolean | ——     | true   |
+| maskClosable      | 点击蒙层是否可以关闭  | boolean | ——     | true   |
 | showCancelButton  | 是否需要 cancel 按钮  | boolean | ——     | true   |
 | showConfirmButton | 是否需要 confirm 按钮 | boolean | ——     | true   |
 | width             | 自定义宽度            | string  | ——     | 'auto' |
