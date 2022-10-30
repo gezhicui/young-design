@@ -128,6 +128,10 @@ export default {
               text: 'Dialog 对话框',
               link: '/examples/dialog',
             },
+            {
+              text: 'Drawer 抽屉',
+              link: '/examples/drawer',
+            },
           ],
         },
       ],
