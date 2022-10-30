@@ -1,11 +1,14 @@
 <template>
-  <transition name="y-drawer-fade">
+  <transition :name="transitionName">
     <div
       v-show="visible"
       @click.self="handleMaskClose"
       class="y-drawer-warpper"
     >
-      <div class="y-drawer-box transition-inner" :style="`width:${width}`">
+      <div
+        :class="['y-drawer', 'transition-inner', `y-drawer-${direction}`]"
+        :style="isDirection ? `width: ${size}` : `height: ${size}`"
+      >
         <div>
           <div class="y-drawer-header">
             <span class="y-drawer-title" v-if="showHeader">
@@ -51,7 +54,7 @@ export default { name: 'y-drawer' };
 
 <script setup lang="ts">
 import './style/index.less';
-import { ref, useSlots } from 'vue';
+import { ref, useSlots, computed } from 'vue';
 import Button from '../button/button.vue';
 import Icon from '../Icon/icon.vue';
 import { drawerProps } from './types';
@@ -59,6 +62,15 @@ import { drawerProps } from './types';
 const props = defineProps(drawerProps);
 const emit = defineEmits(['cancel', 'confirm']);
 const slots = useSlots();
+
+const transitionName = computed((): string => {
+  return `y-drawer-fade-${props.direction}`;
+});
+
+const isDirection = computed((): boolean => {
+  const p: string = props.direction;
+  return p === 'left' || p === 'right' || p === '';
+});
 
 const handleMaskClose = (e: Event) => {
   if (props.maskClosable) {

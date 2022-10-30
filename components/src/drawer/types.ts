@@ -1,4 +1,6 @@
-import { ExtractPropTypes } from 'vue';
+import { ExtractPropTypes, PropType } from 'vue';
+
+export type Direction = 'top' | 'left' | 'bottom' | 'right';
 
 export const drawerProps = {
   // drawer标题
@@ -61,11 +63,19 @@ export const drawerProps = {
     default: true,
     type: Boolean,
   },
-  // 自定义宽度 默认auto
-  width: {
+  // 自定义宽度 默认30%
+  size: {
     required: false,
-    default: 'auto',
+    default: '30%',
     type: String,
+  },
+  // 自定义弹出方向
+  direction: {
+    type: String as PropType<Direction>,
+    default: (): Direction => 'right',
+    validator: (v: Direction): boolean => {
+      return ['top', 'left', 'bottom', 'right', ''].includes(v);
+    },
   },
 };
 

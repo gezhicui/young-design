@@ -4,31 +4,32 @@
     @cancel="handleClose"
     @confirm="handleClose"
     title="这是标题"
-    width="500px"
+    size="50%"
+    :direction="direction"
   >
-    <!-- <template v-slot:headerContent>
+    <template v-slot:headerContent>
       <div>
-        我是 header：啊实打实大所 <Button @click="handleClose">点我关闭</Button>
+        我是 header：啊实打实大所
+        <y-button @click="handleClose">点我关闭</y-button>
       </div>
-    </template> -->
-    <!-- <template v-slot:footerContent>
+    </template>
+    <template v-slot:footerContent>
       <div>我是 footer</div>
-    </template> -->
+    </template>
     这是内容这是内容这是内容这是内容这是内容
   </y-drawer>
+
+  <y-radio v-model="direction" label="right">从右面弹出</y-radio>
+  <y-radio v-model="direction" label="left">从左面弹出</y-radio>
+  <y-radio v-model="direction" label="bottom">从下面弹出</y-radio>
+  <y-radio v-model="direction" label="top">从上面弹出</y-radio>
   <y-button @click="openDialog">点击</y-button>
 </template>
 
 <script lang="ts" setup>
-// import { Options, Vue } from "vue-class-component";
-//import Dialog from "./src/Dialog.vue";
-// import { Button, Dialog } from "young-design";
 import { ref } from 'vue';
-// export default {
-//   components: {
-//     Dialog,
-//   },
-// };
+
+const direction = ref('right');
 const normalViaible = ref(false);
 const openDialog = () => {
   normalViaible.value = true;

@@ -1,9 +1,9 @@
 <template>
-  <Dialog></Dialog>
+  <Drawer></Drawer>
 </template>
 
 <script lang="ts" setup>
-import Dialog from './src/Dialog.vue';
+import Drawer from './src/Drawer.vue';
 </script>
 
 <style scoped></style>
