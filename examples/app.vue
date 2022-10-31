@@ -1,9 +1,9 @@
 <template>
-  <Drawer></Drawer>
+  <Shake></Shake>
 </template>
 
 <script lang="ts" setup>
-import Drawer from './src/Drawer.vue';
+import Shake from './src/Shake.vue';
 </script>
 
 <style scoped></style>
