@@ -132,6 +132,10 @@ export default {
               text: 'Drawer 抽屉',
               link: '/examples/drawer',
             },
+            {
+              text: 'Shake 抖动',
+              link: '/examples/shake',
+            },
           ],
         },
       ],

@@ -1,6 +1,6 @@
 <template>
-  <k-shake v-model="trigger"> 抖动 </k-shake>
-  <y-button @click="handletrigger"> 点击 </y-button>
+  <y-shake :duration="500" v-model="trigger"> 这是一段要抖动的文字 </y-shake>
+  <y-button @click="handletrigger"> 点击抖动文字 </y-button>
 </template>
 
 <script setup>
