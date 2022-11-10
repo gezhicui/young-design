@@ -1,6 +1,16 @@
-import { PropType, ExtractPropTypes } from 'vue'
+import { options } from 'less';
+import { PropType, ExtractPropTypes } from 'vue';
 
-export type Size = 'large' | 'medium' | 'small' | 'mini'
+export type Size = 'large' | 'medium' | 'small' | 'mini';
+
+export type optionsItemValue = string | number;
+export interface OptionsArray {
+  [index: number]: {
+    label: string;
+    value: optionsItemValue;
+    disabled?: boolean;
+  };
+}
 
 export const radioProps = {
   modelValue: String,
@@ -12,9 +22,12 @@ export const radioProps = {
     type: String as PropType<Size>,
     default: (): Size => 'large',
     validator: (v: Size): boolean => {
-      return ['large', 'medium', 'small', 'mini', ''].includes(v)
-    }
-  }
-}
+      return ['large', 'medium', 'small', 'mini', ''].includes(v);
+    },
+  },
+  options: {
+    type: Object as PropType<OptionsArray>,
+  },
+};
 
-export type RadioProps = ExtractPropTypes<typeof radioProps>
+export type RadioProps = ExtractPropTypes<typeof radioProps>;

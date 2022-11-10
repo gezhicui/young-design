@@ -1,9 +1,9 @@
 <template>
-  <Shake></Shake>
+  <Radio />
 </template>
 
 <script lang="ts" setup>
-import Shake from './src/Shake.vue';
+import Radio from './src/Radio.vue';
 </script>
 
 <style scoped></style>
