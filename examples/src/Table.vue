@@ -1,42 +1,18 @@
 <template>
-  <y-button @click="handlechick">点我change</y-button>
   <y-table
-    align="center"
     :data="tableData"
     :columns="columns"
-    :zebra="zebra"
-    height="400px"
+    :rowSelect="true"
     v-model:selectItems="selectItems"
-  >
-    <!-- <template #address="record">
-      {{ record.rowData.name + '住在' + record.rowData.address }}
-      <y-button
-        @click="handleClickButtonItem(record)"
-        size="mini"
-        type="primary"
-        >点我log</y-button
-      >
-    </template> -->
-  </y-table>
-  <div class="inpit">
-    <input :value="inputValue" />
-  </div>
-
-  <!-- <MyTable
-    :columns="columns2"
-    :data="data"
-    border
-    zebra
-    hover
-    v-model:selectItems="selectItems"
-    @change="itemsChange"
-  ></MyTable> -->
+  />
+  <y-button @click="handleShowRowSelect">查看选中结果</y-button>
 </template>
-
-<script lang="ts" setup>
-import MyTable from './TableComponent.vue';
+<script setup>
 import { ref } from 'vue';
-const inputValue = '123123sadasdas';
+const selectItems = ref([]);
+const handleShowRowSelect = () => {
+  console.log(selectItems.value);
+};
 const columns = [
   {
     title: '日期',
@@ -67,50 +43,14 @@ const tableData = [
   {
     id: '3',
     date: '2021-10-01',
-    name: '王五',
+    name: '王英',
     address: '浙江省杭州市临平区 2 号',
   },
   {
     id: '4',
     date: '2021-11-03',
-    name: '赵六',
-    address: '浙江省杭州市拱墅区 199 号',
-  },
-  {
-    id: '5',
-    date: '2021-11-03',
-    name: '田七',
-    address: '浙江省杭州市拱墅区 199 号',
-  },
-  {
-    id: '6',
-    date: '2021-11-03',
-    name: '德萨吧',
-    address: '浙江省杭州市拱墅区 199 号',
-  },
-  {
-    id: '7',
-    date: '2021-11-03',
-    name: '魏九',
-    address: '浙江省杭州市拱墅区 199 号',
-  },
-  {
-    id: '8',
-    date: '2021-11-03',
-    name: '高十',
-    address: '浙江省杭州市拱墅区 199 号',
-  },
-  {
-    id: '9',
-    date: '2021-11-03',
-    name: '钱十一',
+    name: '李逵',
     address: '浙江省杭州市拱墅区 199 号',
   },
 ];
-const selectItems = ref([]);
-const zebra = ref(false);
-const handlechick = () => {
-  zebra.value = !zebra.value;
-  console.log(selectItems.value);
-};
 </script>

@@ -1,9 +1,9 @@
 <template>
-  <Radio />
+  <Table />
 </template>
 
 <script lang="ts" setup>
-import Radio from './src/Radio.vue';
+import Table from './src/Table.vue';
 </script>
 
 <style scoped></style>

@@ -1,13 +1,7 @@
 <template>
   <!-- {{ JSON.stringify(selectItems) }} -->
   <div class="y-table" :style="{ height }">
-    <table
-      class="y-origin-table"
-      border="0"
-      cellspacing="0"
-      cellpadding="0"
-      :width="width"
-    >
+    <table class="y-origin-table" border="0" cellspacing="0" cellpadding="0" :width="width">
       <thead class="y-thead">
         <tr class="y-thead-th" :height="trHeight">
           <th v-if="rowSelect" style="width: 30px; text-align: center">
@@ -18,11 +12,7 @@
               @change="selectAllChange($event)"
             />
           </th>
-          <th
-            v-if="num"
-            :class="[`y-thead-td`, isBorder()]"
-            :align="align || 'left'"
-          />
+          <th v-if="num" :class="[`y-thead-td`, isBorder()]" :align="align || 'left'" />
           <th
             v-for="(item, i) in columns"
             :key="i"
@@ -55,11 +45,7 @@
               :checked="isRowChecked"
             />
           </td>
-          <td
-            v-if="num"
-            :class="[`y-tbody-td`, isBorder()]"
-            :align="align || 'left'"
-          >
+          <td v-if="num" :class="[`y-tbody-td`, isBorder()]" :align="align || 'left'">
             {{ ind + 1 }}
           </td>
           <td
@@ -85,7 +71,7 @@ export default { name: 'y-table' };
 </script>
 <script lang="ts" setup>
 import { tableProps } from './types';
-import { ref, reactive, toRef, watch } from 'vue';
+import { ref, nextTick } from 'vue';
 import type { CSSProperties } from 'vue';
 import './style/index.less';
 
@@ -117,10 +103,16 @@ const selectAllChange = (e: Event): void => {
   copySelectItems.value = JSON.parse(JSON.stringify(props.selectItems));
   if ((e.target as HTMLInputElement).checked) {
     //全选
-    isRowChecked.value = true;
+    isAllChecked.value = true;
+    isRowChecked.value = false;
+    nextTick(() => {
+      isRowChecked.value = true;
+    });
+
     //将数组全部放入
     copySelectItems.value = props.data;
   } else {
+    isAllChecked.value = false;
     isRowChecked.value = false;
     copySelectItems.value = [];
   }
@@ -147,9 +139,9 @@ const checkAllBox = ref();
 
 const changeCheckboxStatus = () => {
   if (checkAllBox.value) {
-    console.log('changeCheckboxStatus', checkAllBox.value);
     if (props.data.length === copySelectItems.value.length) {
       checkAllBox.value.indeterminate = false;
+      isRowChecked.value = true;
       isAllChecked.value = true;
     } else if (
       props.data.length !== copySelectItems.value.length &&
@@ -157,12 +149,12 @@ const changeCheckboxStatus = () => {
     ) {
       //设置半选状态
       checkAllBox.value.indeterminate = true;
+      isAllChecked.value = false;
     } else {
       checkAllBox.value.indeterminate = false;
+      isRowChecked.value = false;
       isAllChecked.value = false;
     }
   }
-
-  console.log(checkAllBox);
 };
 </script>
