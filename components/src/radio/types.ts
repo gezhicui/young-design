@@ -1,4 +1,3 @@
-import { options } from 'less';
 import { PropType, ExtractPropTypes } from 'vue';
 
 export type Size = 'large' | 'medium' | 'small' | 'mini';

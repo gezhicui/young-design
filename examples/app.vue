@@ -1,9 +1,9 @@
 <template>
-  <Table />
+  <Scroll />
 </template>
 
 <script lang="ts" setup>
-import Table from './src/Table.vue';
+import Scroll from './src/Scroll.vue';
 </script>
 
 <style scoped></style>

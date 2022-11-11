@@ -18,6 +18,7 @@ export { default as Radio } from './radio';
 export { default as Rate } from './rate';
 export { default as Table } from './table';
 export { default as BackTop } from './back-top';
+export { default as Scroll } from './scroll';
 export { default as Shake } from './shake';
 export { default as Message } from './message';
 export { default as Notification } from './notification';

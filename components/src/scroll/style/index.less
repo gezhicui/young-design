@@ -1,0 +1,37 @@
+.y-scroll {
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+
+  .y-scroll-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: -17px;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .y-scroll-bar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 7px;
+
+    .y-scroll-thumb {
+      position: relative;
+      width: 100%;
+      background: rgb(0, 0, 0, 0.2);
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.2s ease-in;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

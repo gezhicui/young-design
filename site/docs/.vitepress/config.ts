@@ -13,9 +13,7 @@ export default {
       { text: '指南', link: '/guild/installation' },
       { text: '组件', link: '/examples/button' },
     ],
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/gezhicui/young-design' },
-    ],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/gezhicui/young-design' }],
     sidebar: {
       '/guild/': [
         {
@@ -73,6 +71,10 @@ export default {
             {
               text: 'Card 卡片',
               link: '/examples/card',
+            },
+            {
+              text: 'Scroll 滚动',
+              link: '/examples/scroll',
             },
             {
               text: 'Switch 开关',
