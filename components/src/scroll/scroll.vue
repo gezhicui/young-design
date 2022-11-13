@@ -8,7 +8,7 @@
     <div class="y-scroll-content" :style="{ paddingRight: `${size}px` }" @scroll="viewScroll">
       <slot></slot>
     </div>
-    <transition name="fade">
+    <Transition name="fade">
       <div
         class="y-scroll-bar"
         v-show="!alwaysVisible || isShow"
@@ -23,9 +23,9 @@
             top: `${BarTop}px`,
             borderRadius: `${size}px`,
           }"
-        ></div>
+        />
       </div>
-    </transition>
+    </Transition>
   </div>
 </template>
 <script lang="ts">

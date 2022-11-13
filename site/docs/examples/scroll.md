@@ -16,6 +16,21 @@
     <div class="demo-scroll-item" v-for="item in 10">{{item}}</div>
   </y-scroll>
 </template>
+<style>
+  .y-scroll {
+    .demo-scroll-item {
+      padding: 20px 0;
+      background-color: rgba(242, 235, 235, 0.2);
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+
+      &:nth-of-type(odd) {
+        background-color: rgba(134, 110, 110, 0.1);
+      }
+    }
+  }
+</style>
 ```
 
 :::
@@ -60,6 +75,21 @@
     }
   };
 </script>
+<style>
+  .y-scroll {
+    .demo-scroll-item {
+      padding: 20px 0;
+      background-color: rgba(242, 235, 235, 0.2);
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+
+      &:nth-of-type(odd) {
+        background-color: rgba(134, 110, 110, 0.1);
+      }
+    }
+  }
+</style>
 ```
 
 :::
@@ -95,6 +125,21 @@
   import { ref } from 'vue';
   const to = ref(0);
 </script>
+<style>
+  .y-scroll {
+    .demo-scroll-item {
+      padding: 20px 0;
+      background-color: rgba(242, 235, 235, 0.2);
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+
+      &:nth-of-type(odd) {
+        background-color: rgba(134, 110, 110, 0.1);
+      }
+    }
+  }
+</style>
 ```
 
 :::
@@ -126,6 +171,21 @@
     }
   };
 </script>
+<style>
+  .y-scroll {
+    .demo-scroll-item {
+      padding: 20px 0;
+      background-color: rgba(242, 235, 235, 0.2);
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+
+      &:nth-of-type(odd) {
+        background-color: rgba(134, 110, 110, 0.1);
+      }
+    }
+  }
+</style>
 ```
 
 :::
@@ -159,6 +219,21 @@
     }
   }
 </script>
+
+## API
+
+| 参数          | 说明               | 类型    | 可选值 | 默认值 |
+| ------------- | ------------------ | ------- | ------ | ------ |
+| height        | 容器高度           | number  | ——     | 100    |
+| to            | 滚动到的位置       | number  | ——     | ——     |
+| alwaysVisible | 是否始终显示滚动条 | boolean | ——     | false  |
+| size          | 滚动条大小(px)     | number  | ——     | 6      |
+
+## Events
+
+| 事件名称 | 说明             | 回调参数              |
+| -------- | ---------------- | --------------------- |
+| onScroll | 滚动是触发的事件 | 当前内容所在位置(0-1) |
 
 <style lang='less' scope>
 .y-button{
