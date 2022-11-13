@@ -52,8 +52,7 @@ const viewScroll = () => {
   if (!el) return;
   const view = el.children[0];
   //计算视图现在所在位置 范围0-1
-  let catchTop = view.scrollTop / (view.scrollHeight - view.offsetHeight);
-  /* TODO:解决精度折损 */
+  let catchTop = Number(view.scrollTop.toFixed(0)) / (view.scrollHeight - view.offsetHeight);
   //计算滚动条所在位置
   BarTop.value = catchTop * (view.offsetHeight - thumb.value.offsetHeight);
   emit('onScroll', catchTop);

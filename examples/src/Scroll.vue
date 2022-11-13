@@ -43,12 +43,8 @@ export default {
 .y-scroll {
   width: 500px;
   .demo-scroll-item {
-    padding: 20px 0;
+    height: 50px;
     background-color: rgba(242, 235, 235, 0.2);
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-align: center;
-
     &:nth-of-type(odd) {
       background-color: rgba(134, 110, 110, 0.1);
     }
