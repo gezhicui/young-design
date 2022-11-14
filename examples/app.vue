@@ -1,9 +1,9 @@
 <template>
-  <Scroll />
+  <Popover />
 </template>
 
 <script lang="ts" setup>
-import Scroll from './src/Scroll.vue';
+import Popover from './src/Popover.vue';
 </script>
 
 <style scoped></style>

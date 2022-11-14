@@ -1,0 +1,131 @@
+<template>
+  <div
+    class="popover-box"
+    @mouseenter="hoverTriggerEnterHandler"
+    @mouseleave="hoverTriggerLeaveHandler"
+  >
+    <transition name="fade" @after-enter="handleAfterEnter" @after-leave="handleAfterLeave">
+      <div
+        v-show="!disabled && showPopover"
+        :class="['popover-outbox', placement, popperClass]"
+        :aria-hidden="disabled || !showPopover ? 'true' : 'false'"
+      >
+        <div class="popover-arrow" ref="popoverArrow"></div>
+        <div :class="['popover-box-content']" :style="popoverStyles">
+          <div v-if="title" v-text="title" class="popover-title"></div>
+          <slot>{{ content }}</slot>
+        </div>
+      </div>
+    </transition>
+    <div
+      ref="reference"
+      class="reference-content"
+      @click="clickTriggerHandler"
+      @mousedown="focusTriggerHandler"
+      @mouseup="blurTriggerHandler"
+    >
+      <slot name="reference"></slot>
+    </div>
+  </div>
+</template>
+<script lang="ts">
+export default {
+  name: 'y-popover',
+};
+</script>
+<script setup lang="ts">
+import { ref, onMounted, computed } from 'vue';
+import { popoverProps } from './types';
+import './style/index.less';
+
+const props = defineProps(popoverProps);
+const emit = defineEmits(['after-enter', 'after-leave']);
+
+const visible = ref(false);
+
+const showPopover = computed(() => {
+  if (props.trigger !== 'manual') {
+    return visible.value;
+  } else {
+    console.log(props.modelValue);
+    //自定义触发
+    return props.modelValue;
+  }
+});
+const popoverStyles = computed(() => {
+  let style = { width: '' };
+  if (props.width) {
+    style.width = props.width + 'px';
+  }
+  return style;
+});
+
+//计算arrow的位置
+const reference = ref();
+const popoverArrow = ref();
+onMounted(() => {
+  if (props.placement.includes('top') || props.placement.includes('bottom')) {
+    let clientWidth = reference.value.clientWidth;
+    popoverArrow.value.style.setProperty('--geticonsite', clientWidth / 2 + 'px');
+  } else if (props.placement.includes('left') || props.placement.includes('right')) {
+    let clientHeight = reference.value.clientHeight;
+    popoverArrow.value.style.setProperty('--geticonsite', clientHeight / 2 + 'px');
+  }
+});
+
+const timer = ref();
+//点击触发
+function clickTriggerHandler() {
+  if (props.trigger.toLowerCase() == 'click') {
+    if (!props.disabled) {
+      visible.value = !visible.value;
+    }
+  }
+}
+//聚焦触发
+function focusTriggerHandler() {
+  if (props.trigger.toLowerCase() == 'focus') {
+    if (!props.disabled) {
+      visible.value = true;
+    }
+  }
+}
+//失焦消时
+function blurTriggerHandler() {
+  if (props.trigger.toLowerCase() == 'focus') {
+    if (!props.disabled) {
+      visible.value = false;
+    }
+  }
+}
+//hover——鼠标移入触发
+function hoverTriggerEnterHandler() {
+  if (props.trigger.toLowerCase() == 'hover') {
+    console.log('hoverlo');
+
+    if (!props.disabled) {
+      clearTimeout(timer.value);
+      visible.value = true;
+    }
+  }
+}
+//hover——鼠标移出,关闭popover 可延迟关闭
+function hoverTriggerLeaveHandler() {
+  if (props.trigger.toLowerCase() == 'hover') {
+    if (!props.disabled) {
+      timer.value = setTimeout(() => {
+        visible.value = false;
+      }, props.delay);
+    }
+  }
+}
+//弹窗显示时触发
+function handleAfterEnter() {
+  emit('after-enter');
+}
+//弹窗消时时触发
+function handleAfterLeave() {
+  emit('after-leave');
+}
+//获取组件实例
+</script>
