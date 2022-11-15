@@ -138,6 +138,10 @@ export default {
               text: 'Shake 抖动',
               link: '/examples/shake',
             },
+            {
+              text: 'Popover 弹出框',
+              link: '/examples/popover',
+            },
           ],
         },
       ],

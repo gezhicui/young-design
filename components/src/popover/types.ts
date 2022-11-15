@@ -30,7 +30,7 @@ export const popoverProps = {
   //trigger可选值——click,hover,manual,focus
   trigger: {
     type: String,
-    default: 'click',
+    default: 'hover',
   },
   delay: {
     type: Number,

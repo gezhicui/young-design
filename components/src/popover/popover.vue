@@ -1,25 +1,25 @@
 <template>
   <div
-    class="popover-box"
+    class="y-popover-box"
     @mouseenter="hoverTriggerEnterHandler"
     @mouseleave="hoverTriggerLeaveHandler"
   >
     <transition name="fade" @after-enter="handleAfterEnter" @after-leave="handleAfterLeave">
       <div
         v-show="!disabled && showPopover"
-        :class="['popover-outbox', placement, popperClass]"
+        :class="['y-popover-outbox', placement, popperClass]"
         :aria-hidden="disabled || !showPopover ? 'true' : 'false'"
       >
-        <div class="popover-arrow" ref="popoverArrow"></div>
-        <div :class="['popover-box-content']" :style="popoverStyles">
-          <div v-if="title" v-text="title" class="popover-title"></div>
+        <div class="y-popover-arrow" ref="popoverArrow"></div>
+        <div :class="['y-popover-box-content']" :style="popoverStyles">
+          <div v-if="title" v-text="title" class="y-popover-title"></div>
           <slot>{{ content }}</slot>
         </div>
       </div>
     </transition>
     <div
       ref="reference"
-      class="reference-content"
+      class="y-reference-content"
       @click="clickTriggerHandler"
       @mousedown="focusTriggerHandler"
       @mouseup="blurTriggerHandler"
@@ -39,7 +39,7 @@ import { popoverProps } from './types';
 import './style/index.less';
 
 const props = defineProps(popoverProps);
-const emit = defineEmits(['after-enter', 'after-leave']);
+const emit = defineEmits(['afterEnter', 'afterLeave']);
 
 const visible = ref(false);
 
@@ -121,11 +121,11 @@ function hoverTriggerLeaveHandler() {
 }
 //弹窗显示时触发
 function handleAfterEnter() {
-  emit('after-enter');
+  emit('afterEnter');
 }
 //弹窗消时时触发
 function handleAfterLeave() {
-  emit('after-leave');
+  emit('afterLeave');
 }
 //获取组件实例
 </script>
