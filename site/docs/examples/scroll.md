@@ -59,14 +59,14 @@
 
   const count = ref(3);
 
-  const scroll = (val) => {
+  const scroll = val => {
     if (val === 0) {
       Message.info('到顶部了');
     } else if (val === 1) {
       Message.danger('到底部了');
     }
   };
-  const handleClick = (val) => {
+  const handleClick = val => {
     if (val) {
       count.value += 3;
     } else {
@@ -165,7 +165,7 @@
 <script setup>
   import { ref } from 'vue';
   const scrollData = ref(10);
-  const handleScroll = (val) => {
+  const handleScroll = val => {
     if (val >= 0.8) {
       scrollData.value += 3;
     }
@@ -237,7 +237,7 @@
 
 <style lang='less' scope>
 .y-button{
-  margin:10px
+  margin-right:10px
 }
 .y-scroll {
   .demo-scroll-item {

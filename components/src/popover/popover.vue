@@ -87,8 +87,6 @@ function blurTriggerHandler() {
 //hover——鼠标移入触发
 function hoverTriggerEnterHandler() {
   if (props.trigger.toLowerCase() == 'hover') {
-    console.log('hoverlo');
-
     if (!props.disabled) {
       clearTimeout(timer.value);
       visible.value = true;
