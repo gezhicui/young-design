@@ -1,3 +1,5 @@
+@import '../../global.less';
+
 .y-message {
   position: fixed;
   display: flex;
@@ -22,28 +24,32 @@
 .y-message .close-icon {
   font-size: 12px;
   margin-left: 12px;
-  color: #a8a8a8;
+  color: #colors[info];
   cursor: pointer;
 }
 
 .y-message.info {
-  color: #73767a;
-  background: #f4f4f5;
+  color: #colors[info];
+  background: #colors[info-plain];
+  border: 1px solid #colors[info-border];
 }
 
 .y-message.danger {
-  color: #c45656;
-  background: #fde2e2;
+  color: #colors[danger];
+  background: #colors[danger-plain];
+  border: 1px solid #colors[danger-border];
 }
 
 .y-message.success {
-  color: #529b2e;
-  background: #e1f3d8;
+  color: #colors[success];
+  background: #colors[success-plain];
+  border: 1px solid #colors[success-border];
 }
 
 .y-message.warning {
-  color: #b88230;
-  background: #faecd8;
+  color: #colors[warn];
+  background: #colors[warn-plain];
+  border: 1px solid #colors[warn-border];
 }
 
 .y-message-fade-enter-from,
