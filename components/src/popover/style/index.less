@@ -1,5 +1,5 @@
+@import '../../global.less';
 .y-popover-box {
-  --geticonsite: 0;
   display: inline-block;
   position: relative;
   .y-popover-outbox {
@@ -8,6 +8,7 @@
     background-color: #ffffff;
     position: absolute;
     z-index: 1001;
+    border-radius: 5px;
     box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
   }
   .y-popover-box-content {
@@ -41,7 +42,7 @@
       width: 0;
       height: 0;
       transform: translateX(-50%);
-      border-top: 6px solid #ffffff;
+      border-top: 6px solid @arrowColor;
       border-left: 6px solid transparent;
       border-bottom: 6px solid transparent;
       border-right: 6px solid transparent;
@@ -54,13 +55,13 @@
     .y-popover-arrow {
       position: absolute;
       top: 100%;
-      left: var(--geticonsite);
+      left: @arrowPosition;
       content: '';
       display: block;
       width: 0;
       height: 0;
-      transform: translateX(-50%);
-      border-top: 6px solid #ffffff;
+      transform: translateX(50%);
+      border-top: 6px solid @arrowColor;
       border-left: 6px solid transparent;
       border-bottom: 6px solid transparent;
       border-right: 6px solid transparent;
@@ -73,13 +74,13 @@
     .y-popover-arrow {
       position: absolute;
       top: 100%;
-      right: var(--geticonsite);
+      right: @arrowPosition;
       content: '';
       display: block;
       width: 0;
       height: 0;
       transform: translateX(-50%);
-      border-top: 6px solid #ffffff;
+      border-top: 6px solid @arrowColor;
       border-left: 6px solid transparent;
       border-bottom: 6px solid transparent;
       border-right: 6px solid transparent;
@@ -101,7 +102,7 @@
       transform: translateX(-50%);
       border-top: 6px solid transparent;
       border-left: 6px solid transparent;
-      border-bottom: 6px solid #ffffff;
+      border-bottom: 6px solid @arrowColor;
       border-right: 6px solid transparent;
     }
   }
@@ -112,15 +113,15 @@
     .y-popover-arrow {
       position: absolute;
       bottom: 100%;
-      left: var(--geticonsite);
+      left: @arrowPosition;
       content: '';
       display: block;
       width: 0;
       height: 0;
-      transform: translateX(-50%);
+      transform: translateX(50%);
       border-top: 6px solid transparent;
       border-left: 6px solid transparent;
-      border-bottom: 6px solid #ffffff;
+      border-bottom: 6px solid @arrowColor;
       border-right: 6px solid transparent;
     }
   }
@@ -131,7 +132,7 @@
     .y-popover-arrow {
       position: absolute;
       bottom: 100%;
-      right: var(--geticonsite);
+      right: @arrowPosition;
       content: '';
       display: block;
       width: 0;
@@ -139,7 +140,7 @@
       transform: translateX(-50%);
       border-top: 6px solid transparent;
       border-left: 6px solid transparent;
-      border-bottom: 6px solid #ffffff;
+      border-bottom: 6px solid @arrowColor;
       border-right: 6px solid transparent;
     }
   }
@@ -158,7 +159,7 @@
       height: 0;
       transform: translateY(-50%);
       border-top: 6px solid transparent;
-      border-left: 6px solid #ffffff;
+      border-left: 6px solid @arrowColor;
       border-bottom: 6px solid transparent;
       border-right: 6px solid transparent;
     }
@@ -171,14 +172,14 @@
     .y-popover-arrow {
       position: absolute;
       left: 100%;
-      top: var(--geticonsite);
+      top: @arrowPosition;
       content: '';
       display: block;
       width: 0;
       height: 0;
-      transform: translateY(-50%);
+      transform: translateY(50%);
       border-top: 6px solid transparent;
-      border-left: 6px solid #ffffff;
+      border-left: 6px solid @arrowColor;
       border-bottom: 6px solid transparent;
       border-right: 6px solid transparent;
     }
@@ -191,14 +192,14 @@
     .y-popover-arrow {
       position: absolute;
       left: 100%;
-      bottom: var(--geticonsite);
+      bottom: @arrowPosition;
       content: '';
       display: block;
       width: 0;
       height: 0;
       transform: translateY(-50%);
       border-top: 6px solid transparent;
-      border-left: 6px solid #ffffff;
+      border-left: 6px solid @arrowColor;
       border-bottom: 6px solid transparent;
       border-right: 6px solid transparent;
     }
@@ -220,27 +221,26 @@
       border-top: 6px solid transparent;
       border-left: 6px solid transparent;
       border-bottom: 6px solid transparent;
-      border-right: 6px solid #ffffff;
+      border-right: 6px solid @arrowColor;
     }
   }
   .right-start {
-    --geticonsite: 0;
     left: 100%;
     top: 0;
     margin-left: 12px;
     .y-popover-arrow {
       position: absolute;
       right: 100%;
-      top: var(--geticonsite);
+      top: @arrowPosition;
       content: '';
       display: block;
       width: 0;
       height: 0;
-      transform: translateY(-50%);
+      transform: translateY(50%);
       border-top: 6px solid transparent;
       border-left: 6px solid transparent;
       border-bottom: 6px solid transparent;
-      border-right: 6px solid #ffffff;
+      border-right: 6px solid @arrowColor;
     }
   }
   .right-end {
@@ -250,7 +250,7 @@
     .y-popover-arrow {
       position: absolute;
       right: 100%;
-      bottom: var(--geticonsite);
+      bottom: @arrowPosition;
       content: '';
       display: block;
       width: 0;
@@ -259,7 +259,7 @@
       border-top: 6px solid transparent;
       border-left: 6px solid transparent;
       border-bottom: 6px solid transparent;
-      border-right: 6px solid #ffffff;
+      border-right: 6px solid @arrowColor;
     }
   }
   .y-reference-content {

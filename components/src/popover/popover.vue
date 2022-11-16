@@ -10,7 +10,7 @@
         :class="['y-popover-outbox', placement, popperClass]"
         :aria-hidden="disabled || !showPopover ? 'true' : 'false'"
       >
-        <div class="y-popover-arrow" ref="popoverArrow"></div>
+        <div class="y-popover-arrow"></div>
         <div :class="['y-popover-box-content']" :style="popoverStyles">
           <div v-if="title" v-text="title" class="y-popover-title"></div>
           <slot>{{ content }}</slot>
@@ -18,7 +18,6 @@
       </div>
     </transition>
     <div
-      ref="reference"
       class="y-reference-content"
       @click="clickTriggerHandler"
       @mousedown="focusTriggerHandler"
@@ -34,7 +33,7 @@ export default {
 };
 </script>
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue';
+import { ref, computed } from 'vue';
 import { popoverProps } from './types';
 import './style/index.less';
 
@@ -58,19 +57,6 @@ const popoverStyles = computed(() => {
     style.width = props.width + 'px';
   }
   return style;
-});
-
-//计算arrow的位置
-const reference = ref();
-const popoverArrow = ref();
-onMounted(() => {
-  if (props.placement.includes('top') || props.placement.includes('bottom')) {
-    let clientWidth = reference.value.clientWidth;
-    popoverArrow.value.style.setProperty('--geticonsite', clientWidth / 2 + 'px');
-  } else if (props.placement.includes('left') || props.placement.includes('right')) {
-    let clientHeight = reference.value.clientHeight;
-    popoverArrow.value.style.setProperty('--geticonsite', clientHeight / 2 + 'px');
-  }
 });
 
 const timer = ref();
