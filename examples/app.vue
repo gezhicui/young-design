@@ -1,9 +1,9 @@
 <template>
-  <Popover />
+  <Input />
 </template>
 
 <script lang="ts" setup>
-import Popover from './src/Popover.vue';
+import Input from './src/Input.vue';
 </script>
 
 <style scoped></style>

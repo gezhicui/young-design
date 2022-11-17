@@ -85,6 +85,10 @@ export default {
               link: '/examples/select',
             },
             {
+              text: 'Input 输入框',
+              link: '/examples/input',
+            },
+            {
               text: 'Textarea 文本域',
               link: '/examples/textarea',
             },

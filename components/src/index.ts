@@ -13,6 +13,7 @@ export { default as Avatar } from './avatar';
 export { default as Card } from './card';
 export { default as Switch } from './switch';
 export { default as Select } from './select';
+export { default as Input } from './input';
 export { default as Textarea } from './textarea';
 export { default as Radio } from './radio';
 export { default as Rate } from './rate';
