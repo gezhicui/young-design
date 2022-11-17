@@ -99,7 +99,7 @@ const labelStyle = (itemValue?: optionsItemValue, disabled?: boolean): CSSProper
   return {
     cursor: disabled || props.disabled ? 'no-drop' : 'pointer',
     border: props.border
-      ? ` 1px solid ${isLabel(itemValue) ? (props.disabled ? '#b6b5b5' : '#3a6ff4') : '#b6b5b5'}`
+      ? ` 1px solid ${isLabel(itemValue) ? (props.disabled ? '#d3d4d6' : '#a6a9ad') : '#d3d4d6'}`
       : '',
   };
 };

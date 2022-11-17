@@ -1,3 +1,5 @@
+@import '../../global.less';
+
 .y-dialog-warpper {
   position: fixed;
   z-index: 2022;
@@ -5,7 +7,7 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.3);
+  background: @opacity-dark-3;
   user-select: none;
 
   .y-dialog-inner {
@@ -39,7 +41,7 @@
       transform: translateY(-50%);
       cursor: pointer;
       &:hover {
-        color: #409eff;
+        color: #colors[primary];
       }
     }
   }

@@ -1,31 +1,31 @@
-import { PropType, ExtractPropTypes } from 'vue'
+import { PropType, ExtractPropTypes } from 'vue';
 
-export type Type = 'circle' | 'square'
-export const SwitchType = ['circle', 'square']
+export type Type = 'circle' | 'square';
+export const SwitchType = ['circle', 'square'];
 
 export const switchProps = {
   modelValue: Boolean,
   closeColor: {
     type: String,
-    default: '#dcdfe6'
+    default: '#dcdfe6',
   },
   openColor: {
     type: String,
-    default: '#3a6ff4'
+    default: '#409eff',
   },
   type: {
     type: String as PropType<Type>,
     validator(value: Type) {
-      return SwitchType.includes(value)
-    }
+      return SwitchType.includes(value);
+    },
   },
   closeText: String,
   openText: String,
   disabled: Boolean,
   width: {
     type: Number,
-    default: 40
-  }
-}
+    default: 40,
+  },
+};
 
-export type SwitchProps = ExtractPropTypes<typeof switchProps>
+export type SwitchProps = ExtractPropTypes<typeof switchProps>;

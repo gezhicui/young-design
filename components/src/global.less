@@ -1,28 +1,28 @@
 #colors() {
   primary: #409eff;
   primary-light: #66b1ff;
+  primary-lighter: #c6e2ff;
   primary-plain: #ecf5ff;
-  primary-border: #c6e2ff;
 
   success: #67c23a;
   success-light: #85ce61;
+  success-lighter: #c2e7b0;
   success-plain: #f0f9eb;
-  success-border: #c2e7b0;
 
   info: #909399;
   info-light: #a6a9ad;
+  info-lighter: #d3d4d6;
   info-plain: #f4f4f5;
-  info-border: #d3d4d6;
 
   warn: #e6a23c;
   warn-light: #ebb563;
+  warn-lighter: #f3d19e;
   warn-plain: #fdf6ec;
-  warn-border: #f3d19e;
 
   danger: #f56c6c;
   danger-light: #f78989;
+  danger-lighter: #fbc4c4;
   danger-plain: #fef0f0;
-  danger-border: #fbc4c4;
 }
 
 #disabledColors() {
@@ -32,6 +32,11 @@
   warn: #fddba8;
   danger: #fab6b6;
 }
+
+@border: 1px solid #colors[info-lighter];
+@opacity-dark-1: rgba(0, 0, 0, 0.1);
+@opacity-dark-2: rgba(0, 0, 0, 0.2);
+@opacity-dark-3: rgba(0, 0, 0, 0.3);
 
 //popover箭头
 @arrow-position: 10px;

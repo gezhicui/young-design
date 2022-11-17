@@ -1,11 +1,12 @@
-@border: #d4d3d3;
+@import '../../global.less';
+
 .y-select {
   min-width: 250px;
   display: inline-block;
   height: 40px;
   position: relative;
   input {
-    border: 1px solid #d4d3d3;
+    border: @border;
     padding: 8px 10px;
     outline: none;
     width: 100%;
@@ -20,7 +21,7 @@
     position: absolute;
     top: 42px;
     border: 1px solid @border;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 12px 0 @opacity-dark-1;
     li {
       list-style: none;
       line-height: 40px;
@@ -39,7 +40,7 @@
     background: #f0f0f0;
   }
   .y-options-item-active {
-    color: #409eff;
+    color: #colors[primary];
   }
 }
 .options-fade-enter-active {

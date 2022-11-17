@@ -1,9 +1,5 @@
 <template>
-  <transition
-    @before-leave="onClose"
-    @after-leave="onDestroy"
-    name="y-notification-fade"
-  >
+  <transition @before-leave="onClose" @after-leave="onDestroy" name="y-notification-fade">
     <div v-show="visiable" class="y-notification" :style="{ top: `${top}px` }">
       <div class="before-icon" v-if="type || icon">
         <Icon
@@ -35,10 +31,10 @@ const props = defineProps(notificationProps);
 const visiable = ref(false);
 
 const iconType = {
-  [notificationType.SUCCESS]: { name: 'yixuanze', color: '#529b2e' },
-  [notificationType.WARNING]: { name: 'error', color: '#b88230' },
-  [notificationType.DANGER]: { name: 'close-circle', color: '#c45656' },
-  [notificationType.INFO]: { name: 'info-circle', color: '#73767a' },
+  [notificationType.SUCCESS]: { name: 'yixuanze', color: '#67c23a' },
+  [notificationType.WARNING]: { name: 'error', color: '#ebb563' },
+  [notificationType.DANGER]: { name: 'close-circle', color: '#f56c6c' },
+  [notificationType.INFO]: { name: 'info-circle', color: '#909399' },
 };
 
 const close = () => {

@@ -2,7 +2,7 @@
   <span
     v-if="closeText"
     class="y-switch-closeText"
-    :style="[`color:${switchValue ? '#333' : '#3a6ff4'}`]"
+    :style="[`color:${switchValue ? '#333' : '#409eff'}`]"
   >
     {{ closeText }}
   </span>
@@ -16,7 +16,7 @@
   <span
     v-if="openText"
     class="y-switch-openText"
-    :style="[`color:${modelValue ? '#3a6ff4' : '#333'}`]"
+    :style="[`color:${modelValue ? '#409eff' : '#333'}`]"
   >
     {{ openText }}
   </span>

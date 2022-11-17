@@ -1,3 +1,5 @@
+@import '../../global.less';
+
 .y-upload-dragger {
   background-color: #fff;
   border: 1px dashed #d9d9d9;
@@ -10,7 +12,7 @@
   align-items: center;
   justify-content: center;
   &:hover {
-    border: 1px dashed #409eff;
+    border: 1px dashed #colors[primary];
   }
   .y-upload-content {
     text-align: center;
@@ -19,11 +21,11 @@
       font-size: 20px;
     }
     em {
-      color: #409eff;
+      color: #colors[primary];
       font-style: normal;
     }
   }
 }
 .y-upload-draggerenter {
-  border: 1px dashed #409eff;
+  border: 1px dashed #colors[primary];
 }
