@@ -23,7 +23,7 @@
         v-if="showClear"
         class="y-input-suffix"
       >
-        <Icon :color="closeColor" name="close-circle-fill" />
+        <Icon :style="{transition:'color 0.2s'}" :color="closeColor" name="close-circle-fill" />
       </div>
     </Transition>
     <div class="y-input-suffix" v-show="isShowEye">
@@ -84,7 +84,7 @@ const clearValue = () => {
 //显示隐藏密码框 password
 const ipt = ref();
 nextTick(() => {
-  if (props.password) {
+  if (props.password && ipt.value) {
     ipt.value.type = 'password';
   }
 });

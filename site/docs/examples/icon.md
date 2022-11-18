@@ -93,13 +93,15 @@
 
 ## API
 
-| 参数  | 说明                             | 类型          | 可选值                           | 默认值 |
-| ----- | -------------------------------- | ------------- | -------------------------------- | ------ |
-| name  | icon 名                          | string        | <a href="#基础用法">基础用法</a> | ——     |
-| dot   | 是否有角标                       | boolean       | ——                               | false  |
-| badge | 数字角标内容(dot 为 true 才生效) | string        | ——                               | ——     |
-| color | icon 颜色                        | string        | ——                               | ——     |
-| size  | icon 大小,传入 25 就是 25px      | string/number | ——                               | 16     |
+| 参数      | 说明                             | 类型            | 可选值                           | 默认值 |
+| --------- | -------------------------------- | --------------- | -------------------------------- | ------ |
+| name      | icon 名                          | string          | <a href="#基础用法">基础用法</a> | ——     |
+| dot       | 是否有角标                       | boolean         | ——                               | false  |
+| badge     | 数字角标内容(dot 为 true 才生效) | string          | ——                               | ——     |
+| color     | icon 颜色                        | string          | ——                               | ——     |
+| size      | icon 大小,传入 25 就是 25px      | string/number   | ——                               | 16     |
+| iconStyle | svg 的内联样式                   | CSSProperties{} | ——                               | ——     |
+| iconClass | svg 的 class 名                  | string          | ——                               | ——     |
 
 <script setup lang="ts">
 const iconList =[
