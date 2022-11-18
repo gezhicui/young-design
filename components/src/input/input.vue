@@ -11,15 +11,19 @@
       v-bind="attrs"
       :value="modelValue"
       @input="changeInputVal"
-      @focus="isEnter = true"
-      @blur="isEnter = false"
     />
     <div class="y-input-append" v-if="slots.append">
       <slot name="append"></slot>
     </div>
     <Transition name="fade">
-      <div @click="clearValue" v-if="showClear" class="y-input-suffix">
-        <Icon name="close-circle" />
+      <div
+        @click="clearValue"
+        @mouseenter="closeColor = '#888'"
+        @mouseleave="closeColor = ''"
+        v-if="showClear"
+        class="y-input-suffix"
+      >
+        <Icon :color="closeColor" name="close-circle-fill" />
       </div>
     </Transition>
     <div class="y-input-suffix" v-show="isShowEye">
@@ -40,7 +44,7 @@ export default { name: 'y-input' };
 
 <script setup lang="ts">
 import './style/index.less';
-import { useAttrs, computed, ref, useSlots } from 'vue';
+import { useAttrs, computed, ref, useSlots, nextTick } from 'vue';
 import Icon from '../icon/icon.vue';
 import { inputProps } from './types';
 
@@ -66,25 +70,27 @@ const styleClass = computed(() => {
 const inputStyle = computed(() => {
   return {
     ['y-input--prefix']: props.prefixIcon,
+    ['y-input--suffix']: props.suffixIcon || props.clearable,
   };
 });
 
 //清除按钮
-const isEnter = ref(false);
-const showClear = computed(() => props.clearable && props.modelValue && isEnter.value);
+const closeColor = ref('');
+const showClear = computed(() => props.clearable && props.modelValue);
 const clearValue = () => {
   inputEmits('update:modelValue', '');
 };
 
-//显示隐藏密码框 showPassword
+//显示隐藏密码框 password
 const ipt = ref();
-Promise.resolve().then(() => {
-  if (props.showPassword) {
+nextTick(() => {
+  if (props.password) {
     ipt.value.type = 'password';
   }
 });
+
 const eyeIcon = ref('eye');
-const isShowEye = computed(() => props.showPassword && props.modelValue && !props.clearable);
+const isShowEye = computed(() => props.password && props.modelValue && !props.clearable);
 const changeType = () => {
   if (ipt.value.type === 'password') {
     eyeIcon.value = 'eye-close';
@@ -96,9 +102,7 @@ const changeType = () => {
 };
 
 //带Icon输入框
-const isShowSuffixIcon = computed(
-  () => props.suffixIcon && !props.clearable && !props.showPassword
-);
+const isShowSuffixIcon = computed(() => props.suffixIcon && !props.clearable && !props.password);
 
 //复合输入框
 const slots = useSlots();

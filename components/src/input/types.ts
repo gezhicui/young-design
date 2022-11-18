@@ -8,7 +8,7 @@ export const inputProps = {
   disabled: Boolean,
   size: String,
   clearable: Boolean,
-  showPassword: Boolean,
+  password: Boolean,
   prefixIcon: String,
   suffixIcon: String,
 };

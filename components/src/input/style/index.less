@@ -1,3 +1,5 @@
+@import '../../global.less';
+
 .y-input {
   font-size: 14px;
   display: inline-block;
@@ -22,11 +24,12 @@
     }
 
     &:hover {
-      border: 1px solid #c0c4cc;
+      border: 1px solid #colors[primary];
     }
 
     &:focus {
-      border: 1px solid #409eff;
+      border: 1px solid #colors[primary];
+      box-shadow: 0 0 3px #colors[primary];
     }
   }
 
@@ -54,7 +57,9 @@
   .y-input--prefix.y-input-inner {
     padding-left: 30px;
   }
-
+  .y-input--suffix.y-input-inner {
+    padding-right: 30px;
+  }
   .y-input-prefix {
     position: absolute;
     width: 20px;
