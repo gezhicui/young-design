@@ -38,7 +38,7 @@ const iconStyle = computed(() => {
     color: props.color,
     width: sizeChange(props.size),
     height: sizeChange(props.size),
-    ...props.style
+    ...props.iconStyle,
   };
 });
 </script>

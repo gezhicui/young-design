@@ -1,25 +1,38 @@
-import { ExtractPropTypes } from 'vue'
-
+import { ExtractPropTypes } from 'vue';
 
 export const selectProps = {
+  modelValue: [String, Array],
+  placeholder: String,
+  // customClass: String,
+  disabled: Boolean,
+  searchable: Boolean,
+  width: {
+    type: [String, Number],
+    default: '260px',
+    validator: (v: string | number): boolean => {
+      return parseInt(String(v)) > 100;
+    },
+  },
+  // height: {
+  //   type: String,
+  //   default: '',
+  // },
   options: {
     type: Array,
-    default: () => [],
+    default: () => {
+      return [];
+    },
   },
-  disabled: Boolean,
+  //默认需要显示的label字段
   fieldLabel: {
     type: String,
-    default: "label",
+    default: 'label',
   },
+  //默认需要显示的value字段
   fieldValue: {
     type: String,
-    default: "value",
+    default: 'value',
   },
-  placeholder: {
-    type: String,
-    default: "请选择",
-  },
-  modelValue: String,
-}
-
-export type SelectProps = ExtractPropTypes<typeof selectProps>
+  multiple: Boolean,
+};
+export type SelectProps = ExtractPropTypes<typeof selectProps>;

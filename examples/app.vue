@@ -1,9 +1,9 @@
 <template>
-  <Input />
+  <Select />
 </template>
 
 <script lang="ts" setup>
-import Input from './src/Input.vue';
+import Select from './src/Select.vue';
 </script>
 
 <style scoped></style>
