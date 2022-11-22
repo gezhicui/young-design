@@ -7,6 +7,7 @@
   ></iframe>
   <div class="select">
     <y-select
+      searchable
       v-model="selVal"
       placeholder="请选择"
       :options="selOptions"
@@ -31,7 +32,7 @@ const state = reactive({
   ],
 });
 const selchange = val => {
-  // console.log('selchange', val);
+  console.log('selchange', val);
 };
 const { selOptions } = state;
 </script>

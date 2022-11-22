@@ -53,7 +53,7 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { ref, computed, watch } from 'vue';
+import { ref, computed, watch, nextTick } from 'vue';
 import { sizeChange } from '../utils';
 import { selectProps, HTMLElementPlus } from './types';
 import Icon from '../icon/icon.vue';
@@ -94,11 +94,6 @@ watch(
         item => item[props.fieldValue] === selectedValue.value
       )?.[props.fieldLabel];
     }
-    emit('update:modelValue', selectedValue.value);
-    emit('change', {
-      lable: selectedLabel.value,
-      value: selectedValue.value,
-    });
   },
   { deep: true, immediate: true }
 );
@@ -228,5 +223,12 @@ const selChange = (item: any) => {
       }
     }
   }
+  nextTick(() => {
+    emit('update:modelValue', selectedValue.value);
+    emit('change', {
+      lable: selectedLabel.value,
+      value: selectedValue.value,
+    });
+  });
 };
 </script>
