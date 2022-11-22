@@ -46,7 +46,6 @@ const showPopover = computed(() => {
   if (props.trigger !== 'manual') {
     return visible.value;
   } else {
-    console.log(props.modelValue);
     //自定义触发
     return props.modelValue;
   }
