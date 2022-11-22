@@ -1,4 +1,8 @@
-import { ExtractPropTypes } from 'vue';
+import { ExtractPropTypes, PropType } from 'vue';
+
+export interface HTMLElementPlus extends HTMLElement {
+  handler: (e: Event) => void;
+}
 
 export const selectProps = {
   modelValue: [String, Array],
@@ -18,7 +22,7 @@ export const selectProps = {
   //   default: '',
   // },
   options: {
-    type: Array,
+    type: Array as PropType<any[]>,
     default: () => {
       return [];
     },
@@ -30,7 +34,7 @@ export const selectProps = {
   },
   //默认需要显示的value字段
   fieldValue: {
-    type: String,
+    type: [String, Number],
     default: 'value',
   },
   multiple: Boolean,
