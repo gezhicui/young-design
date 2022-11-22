@@ -43,7 +43,7 @@
   });
   const { options } = state;
   const selectVal = ref('china');
-  const changeSelect = (item) => {
+  const changeSelect = item => {
     console.log(selectVal.value);
     console.log(item);
   };
@@ -54,10 +54,16 @@
 
 ## 禁用
 
-禁用可以分为输入框禁用和下拉项禁用
+禁用可以分为输入框禁用和下拉选项禁用
 
+### 输入框禁用
+
+<br>
 <y-select :options="options1" v-model="selectVal2" @change="changeSelect" disabled placeholder="请选择内容" />
-&emsp;
+
+### 下拉选项禁用
+
+<br>
 <y-select :options="options2" v-model="selectVal3" @change="changeSelect" />
 
 ::: details 显示代码
@@ -81,6 +87,22 @@
       {
         label: '中国',
         value: 'china',
+      },
+      {
+        label: '日本',
+        value: 'japan',
+      },
+      {
+        label: '美国',
+        value: 'usa',
+      },
+      {
+        label: '俄罗斯',
+        value: 'russia',
+      },
+      {
+        label: '韩国',
+        value: 'korea',
       },
     ],
     options2: [
@@ -111,7 +133,105 @@
   const { options } = state;
   const selectVal2 = ref('');
   const selectVal3 = ref('');
-  const changeSelect = (item) => {
+  const changeSelect = item => {
+    console.log(item);
+  };
+</script>
+```
+
+:::
+
+## 可过滤搜索
+
+通过设置 `searchable` 属性来开启过滤搜索
+
+<y-select searchable :options="options1" v-model="selectVal4" @change="changeSelect" />
+
+::: details 显示代码
+
+```html
+<template>
+  <y-select multiple :options="options1" v-model="selectVal4" @change="changeSelect" />
+</template>
+
+<script setup>
+  import { reactive, ref } from 'vue';
+  const state = reactive({
+    options1: [
+      {
+        label: '中国',
+        value: 'china',
+      },
+      {
+        label: '日本',
+        value: 'japan',
+      },
+      {
+        label: '美国',
+        value: 'usa',
+      },
+      {
+        label: '俄罗斯',
+        value: 'russia',
+      },
+      {
+        label: '韩国',
+        value: 'korea',
+      },
+    ],
+  });
+  const { options } = state;
+  const selectVal4 = ref([]);
+  const changeSelect = item => {
+    console.log(item);
+  };
+</script>
+```
+
+:::
+
+## 多选
+
+通过设置 `multiple` 属性来开启多选
+
+<y-select multiple :options="options1" v-model="selectVal5" @change="changeSelect" />
+
+::: details 显示代码
+
+```html
+<template>
+  <y-select multiple :options="options1" v-model="selectVal5" @change="changeSelect" />
+</template>
+
+<script setup>
+  import { reactive, ref } from 'vue';
+  const state = reactive({
+    options1: [
+      {
+        label: '中国',
+        value: 'china',
+      },
+      {
+        label: '日本',
+        value: 'japan',
+      },
+      {
+        label: '美国',
+        value: 'usa',
+      },
+      {
+        label: '俄罗斯',
+        value: 'russia',
+      },
+      {
+        label: '韩国',
+        value: 'korea',
+      },
+    ],
+  });
+  const { options } = state;
+  const selectVal5 = ref([]);
+  const changeSelect = item => {
     console.log(item);
   };
 </script>
@@ -123,7 +243,7 @@
 
 可以通过传入 `fieldLabel`和`fieldValue`属性实现自定义 label 和 value
 
-<y-select :options="options3" fieldLabel="name" fieldValue="id" v-model="selectVal4" @change="changeSelect" />
+<y-select :options="options3" fieldLabel="name" fieldValue="id" v-model="selectVal6" @change="changeSelect" />
 
 ::: details 显示代码
 
@@ -133,7 +253,7 @@
     :options="options3"
     fieldLabel="name"
     fieldValue="id"
-    v-model="selectVal4"
+    v-model="selectVal6"
     @change="changeSelect"
   />
 </template>
@@ -165,8 +285,8 @@
     ],
   });
   const { options } = state;
-  const selectVal4 = ref('');
-  const changeSelect = (item) => {
+  const selectVal6 = ref('');
+  const changeSelect = item => {
     console.log(item);
   };
 </script>
@@ -176,14 +296,17 @@
 
 ## API
 
-| 参数        | 说明       | 类型    | 可选值 | 默认值   |
-| ----------- | ---------- | ------- | ------ | -------- |
-| v-model     | 绑定的值   | string  | ——     | ——       |
-| options     | 下拉选项   | Array   | ——     | ——       |
-| disabled    | 是否禁用   | boolean | ——     | false    |
-| fieldLabel  | 自定义标签 | string  | ——     | 'label'  |
-| fieldValue  | 自定义值   | string  | ——     | 'value'  |
-| placeholder | 占位文字   | string  | ——     | '请选择' |
+| 参数        | 说明                 | 类型    | 可选值 | 默认值   |
+| ----------- | -------------------- | ------- | ------ | -------- |
+| v-model     | 绑定的值             | string  | ——     | ——       |
+| width       | 输入框长度           | string  | ——     | ——       |
+| options     | 下拉选项             | Array   | ——     | ——       |
+| disabled    | 是否禁用             | boolean | ——     | false    |
+| fieldLabel  | 自定义标签           | string  | ——     | 'label'  |
+| fieldValue  | 自定义值             | string  | ——     | 'value'  |
+| placeholder | 占位文字             | string  | ——     | '请选择' |
+| searchable  | 是否可搜索(支持单选) | boolean | ——     | false    |
+| searchable  | 是否可多选           | boolean | ——     | false    |
 
 ## Events
 
@@ -268,6 +391,8 @@ const selectVal1 = ref("china");
 const selectVal2 = ref("");
 const selectVal3 = ref("");
 const selectVal4 = ref("");
+const selectVal5 = ref([]);
+const selectVal6 = ref("")
 const changeSelect = (item) => {
   console.log(item);
 }
@@ -278,4 +403,8 @@ const changeSelect = (item) => {
  .y-options-item{
    margin-top:0 !important;
  }
+
+input:disabled {
+  background-color:rgba(239, 239, 239, 0.3)
+}
   </style>

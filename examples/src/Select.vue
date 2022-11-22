@@ -13,6 +13,13 @@
       :options="selOptions"
       @change="selchange"
     ></y-select>
+    <y-select
+      disabled
+      v-model="selVal"
+      placeholder="请选择"
+      :options="selOptions"
+      @change="selchange"
+    ></y-select>
   </div>
 </template>
 
