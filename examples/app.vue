@@ -1,9 +1,9 @@
 <template>
-  <Select />
+  <Popover />
 </template>
 
 <script lang="ts" setup>
-import Select from './src/Select.vue';
+import Popover from './src/Popover.vue';
 </script>
 
 <style scoped></style>
